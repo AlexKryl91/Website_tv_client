@@ -2,6 +2,40 @@
   overflow: hidden;
 
   &::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: var(--scroll-w);
+
+    &-track {
+      background: transparent;
+    }
+
+    &-thumb {
+      background: var(--c-blue-green-3);
+      border-radius: var(--br-sm);
+
+      &:hover {
+        background: var(--c-blue-green-4);
+      }
+    }
+  }
+}
+
+body {
+  background: var(--c-greyish-blue-2);
+  // font-family: var(--ff-main);
+  color: var(--c-whitish);
+}
+
+a,
+a:visited,
+a:focus {
+  color: var(--c-whitish);
 }

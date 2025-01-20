@@ -26,10 +26,7 @@
 //   visibility: hidden;
 // }
 
-// @mixin flex-center($isInline: false) {
-//   @if $isInline {
-//     display: inline-flex;
-//   } @else {
-//     display: flex;
-//   }
-// }
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}

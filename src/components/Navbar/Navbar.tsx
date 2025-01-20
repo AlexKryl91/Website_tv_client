@@ -1,48 +1,59 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Navbar.module.scss';
-import chevronSVG from '@/assets/img/chevron.svg';
+import Chevron from '@/assets/icons/chevron.svg';
+// import LangButton from './LangButton';
 
-// console.log(chevronSVG)
-
-const Navbar = () => {
+const Navbar = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
   return (
     <header className={classes.navbar}>
       <Link href="/" className={classes.logo}>
         <Image
-          src="/icons/logo_large_ru.svg"
+          src="/img/logo_large_ru.svg"
           alt="Логотип компании"
           width={265}
           height={32}
+          priority
         />
       </Link>
       <nav aria-label="">
         <ul className={classes.menubar} role="menubar" aria-label="">
           <li role="none">
             <Link className={classes['menubar__item']} href="/" role="menuitem">
-              ITEM 1
-              {/* <Image
-                src="/icons/chevron.svg"
-                alt="Логотип компании"
-                width={265}
-                height={32}
-              /> */}
+              Разработки и решения
+              <Chevron className={classes.chevron} />
             </Link>
           </li>
           <li role="none">
             <Link className={classes['menubar__item']} href="/" role="menuitem">
-              ITEM 2
+              О нас
+              <Chevron className={classes.chevron} />
             </Link>
           </li>
           <li role="none">
             <Link className={classes['menubar__item']} href="/" role="menuitem">
-              ITEM 3
+              Контакты
+              <Chevron className={classes.chevron} />
             </Link>
           </li>
         </ul>
       </nav>
-      <div>LangSwitcher</div>
-      <button>LOGIN</button>
+      <div className={classes.actions}>
+        {children}
+        {/* <div className={classes['lang-switch']}>RU | EN</div>
+        <input type="checkbox" name="lang-switch" id="lang-switch" /> */}
+        <button
+          className={classes['login-btn']}
+          type="button"
+          title="Вход в Личный кабинет"
+        >
+          вход
+        </button>
+      </div>
 
       {/* <nav class="menu">
         <div class="logo">

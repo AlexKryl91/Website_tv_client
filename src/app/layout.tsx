@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/main.scss';
 import { roboto } from '../utils/fonts';
 import Navbar from '@/components/Navbar/Navbar';
+import LangButton from '@/components/Navbar/LangButton';
 
 export const metadata: Metadata = {
   title: 'Template for TV 2.0',
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={roboto.className}>
-        <Navbar />
+        <Navbar>
+          <LangButton />
+        </Navbar>
         {children}
       </body>
     </html>

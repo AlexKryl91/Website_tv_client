@@ -2,10 +2,10 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  i18n: {
-    locales: ['ru', 'en'],
-    defaultLocale: 'ru',
-  },
+  // i18n: {
+  //   locales: ['ru', 'en'],
+  //   defaultLocale: 'ru',
+  // },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
 

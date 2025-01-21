@@ -1,6 +1,6 @@
 'use client';
 
-// import classes from './LangButton.module.scss';
+import classes from './LangButton.module.scss';
 
 import { ChangeEvent, useState } from 'react';
 

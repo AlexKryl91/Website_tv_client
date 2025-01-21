@@ -15,13 +15,16 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@formatjs/intl-localematcher": "^0.5.10",
     "@svgr/webpack": "^8.1.0",
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
+    "negotiator": "^1.0.0",
     "postcss": "^8.5.1",
     "sass": "^1.83.4",
     "typescript": "^5"

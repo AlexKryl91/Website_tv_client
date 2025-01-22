@@ -1,15 +1,16 @@
 import { getLocales } from '@/locales/locales';
-import { montserrat } from '../../utils/fonts';
+import { montserrat } from '@/utils/fonts';
 import classes from './homepage.module.scss';
 
 type TProps = {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
 export default async function Home({ params }: TProps) {
-  const { lang } = params;
-
+  const { lang } = await params;
   const t = await getLocales(lang);
+
+  console.log('| ================> Homepage lang ================>', lang);
 
   return (
     // <h1 className={`${montserrat.className} ${classes.test}`}>HOME PAGE</h1>

@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import type { Configuration, RuleSetRule } from 'webpack'
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -6,10 +7,13 @@ const nextConfig: NextConfig = {
   //   locales: ['ru', 'en'],
   //   defaultLocale: 'ru',
   // },
-  webpack(config) {
+
+  webpack(config: Configuration) {
     // Grab the existing rule that handles SVG imports
 
-    const fileLoaderRule = config.module.rules.find((rule) =>
+    // if (config.module !== undefined && config.module.rules !== undefined) {
+
+    const fileLoaderRule = config?.module?.rules.find((rule) =>
       rule.test?.test?.('.svg')
     );
 
@@ -31,6 +35,8 @@ const nextConfig: NextConfig = {
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
+
+    // }
 
     return config;
   },

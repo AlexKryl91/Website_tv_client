@@ -6,14 +6,16 @@ import Chevron from '@/assets/icons/chevron.svg';
 
 const Navbar = ({
   children,
+  lang,
 }: Readonly<{
   children: React.ReactNode;
+  lang: string;
 }>) => {
   return (
     <header className={classes.navbar}>
       <Link href="/" className={classes.logo}>
         <Image
-          src="/img/logo_large_ru.svg"
+          src={`/img/logo_large_${lang}.svg`}
           alt="Логотип компании"
           width={265}
           height={32}

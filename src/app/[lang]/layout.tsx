@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import '@/styles/main.scss';
 import { roboto } from '../../utils/fonts';
-import Navbar from '@/components/Navbar/Navbar';
-import LangButton from '@/components/Navbar/LangButton';
+import Navbar from '@/app/components/Navbar/Navbar';
+import LangButton from '@/app/components/Navbar/LangButton';
 // import { getLocales } from '@/locales/locales';
 
 export const metadata: Metadata = {
@@ -16,19 +16,22 @@ export async function generateStaticParams() {
 
 type TProps = {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
 export default async function RootLayout({
   children,
-  params: { lang },
+  params,
 }: Readonly<TProps>) {
   // const t = await getLocales(lang);
+  const { lang } = await params;
+
+  console.log('| ================> RootLayout lang ================>', lang);
 
   return (
     <html lang={lang}>
       <body className={roboto.className}>
-        <Navbar>
+        <Navbar lang={lang}>
           <LangButton />
         </Navbar>
         {children}

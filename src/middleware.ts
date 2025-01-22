@@ -1,40 +1,34 @@
-// import Negotiator from 'negotiator';
-// import { match } from '@formatjs/intl-localematcher';
+import Negotiator from 'negotiator';
 import { type NextRequest, NextResponse } from 'next/server';
-import { i18n } from 'i18n-config';
 
-const { defaultLocale, locales } = i18n;
-// const cookieName = "i18nlang";
+function setDefaultLocale(request: NextRequest) {
+  // Get accept language from HTTP headers
+  const acceptLang = request.headers.get('Accept-Language');
 
-// function getLocale(request: NextRequest): string {
-//   // Get locale from cookie
-//   // if (request.cookies.has(cookieName))
-//   //   return request.cookies.get(cookieName)!.value;
+  if (!acceptLang) return 'ru';
 
-//   // Get accept language from HTTP headers
-//   const acceptLang = request.headers.get('Accept-Language');
+  // Get match locale
+  const ruCountryRegex = /(ru|az|am|by|ge|kz|kg|md|tj|tm|uz|ua)/gi;
 
-//   if (!acceptLang) return defaultLocale;
+  const headers = { 'accept-language': acceptLang };
+  const languages = new Negotiator({ headers }).languages();
 
-//   // Get match locale
-//   const headers = { 'accept-language': acceptLang };
-//   const languages = new Negotiator({ headers }).languages();
-//   return match(languages, locales, defaultLocale);
-// }
+  return languages[0].match(ruCountryRegex) ? 'ru' : 'en';
+}
 
 export function middleware(request: NextRequest) {
-  // if (request.nextUrl.pathname.startsWith('/_next')) return NextResponse.next();
-
-  console.log('| ================> Middleware ================>');
+  // console.log('| ================> Middleware ================>');
 
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
+  const defaultLocale = setDefaultLocale(request);
+  const locales = ['ru', 'en'];
 
-  if (
-    pathname.startsWith(`/${defaultLocale}`) ||
-    pathname === `${defaultLocale}`
-  ) {
-    // The incoming request is for /ru/something, so we'll reDIRECT to /something
+  const pathnameHasDefaultLocale =
+    pathname.startsWith(`/${defaultLocale}`) || pathname === `${defaultLocale}`;
+
+  if (pathnameHasDefaultLocale) {
+    // The incoming request is for "/ru/something", so we'll redirect to "/something"
     return NextResponse.redirect(
       new URL(
         pathname.replace(
@@ -46,7 +40,7 @@ export function middleware(request: NextRequest) {
     );
   }
 
-  const pathnameIsMissingLocale = i18n.locales.every(
+  const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
@@ -66,9 +60,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    // '/((?!_next).*)',
     '/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',
-    // Optional: only run on root (/) URL
-    // '/',
   ],
 };

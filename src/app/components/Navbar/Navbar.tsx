@@ -2,18 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Navbar.module.scss';
 import Chevron from '@/assets/icons/chevron.svg';
+import { TComponentProps } from '@/types/types';
 // import LangButton from './LangButton';
 
-const Navbar = ({
-  children,
-  lang,
-}: Readonly<{
-  children: React.ReactNode;
-  lang: string;
-}>) => {
+const Navbar = ({ children, lang }: TComponentProps) => {
   return (
     <header className={classes.navbar}>
-      <Link href="/" className={classes.logo}>
+      <Link href={`/${lang}`} className={classes.logo}>
         <Image
           src={`/img/logo_large_${lang}.svg`}
           alt="Логотип компании"
@@ -46,8 +41,6 @@ const Navbar = ({
       </nav>
       <div className={classes.actions}>
         {children}
-        {/* <div className={classes['lang-switch']}>RU | EN</div>
-        <input type="checkbox" name="lang-switch" id="lang-switch" /> */}
         <button
           className={classes['login-btn']}
           type="button"

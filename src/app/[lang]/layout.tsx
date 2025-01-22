@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import '@/styles/main.scss';
 import { roboto } from '../../utils/fonts';
 import Navbar from '@/app/components/Navbar/Navbar';
-import LangButton from '@/app/components/Navbar/LangButton';
+import LangSwitcher from '@/app/components/Navbar/LangSwitcher';
+import { TGeneralProps } from '@/types/types';
 // import { getLocales } from '@/locales/locales';
 
 export const metadata: Metadata = {
@@ -14,25 +15,20 @@ export async function generateStaticParams() {
   return [{ lang: 'ru' }, { lang: 'en' }];
 }
 
-type TProps = {
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>;
-};
-
 export default async function RootLayout({
   children,
   params,
-}: Readonly<TProps>) {
+}: Readonly<TGeneralProps>) {
   // const t = await getLocales(lang);
   const { lang } = await params;
 
-  console.log('| ================> RootLayout lang ================>', lang);
+  // console.log('| ================> RootLayout lang ================>', lang);
 
   return (
     <html lang={lang}>
       <body className={roboto.className}>
         <Navbar lang={lang}>
-          <LangButton />
+          <LangSwitcher lang={lang} />
         </Navbar>
         {children}
       </body>

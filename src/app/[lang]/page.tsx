@@ -1,16 +1,13 @@
 import { getLocales } from '@/locales/locales';
 import { montserrat } from '@/utils/fonts';
 import classes from './homepage.module.scss';
+import { TGeneralProps } from '@/types/types';
 
-type TProps = {
-  params: Promise<{ lang: string }>;
-};
-
-export default async function Home({ params }: TProps) {
+export default async function Home({ params }: TGeneralProps) {
   const { lang } = await params;
   const t = await getLocales(lang);
 
-  console.log('| ================> Homepage lang ================>', lang);
+  // console.log('| ================> Homepage lang ================>', lang);
 
   return (
     // <h1 className={`${montserrat.className} ${classes.test}`}>HOME PAGE</h1>

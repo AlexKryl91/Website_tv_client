@@ -1,16 +1,18 @@
-import { getLocales } from '@/locales/locales';
+// import { getLocales } from '@/locales/locales';
 import { montserrat } from '@/utils/fonts';
 import classes from './homepage.module.scss';
-import { TGeneralProps } from '@/types/types';
+import { TPageProps } from '@/types/types';
 
-export default async function Home({ params }: TGeneralProps) {
+import localeRU from '@/locales/homepage_ru.json';
+import localeEN from '@/locales/homepage_en.json';
+
+export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
-  const t = await getLocales(lang);
+  // const t = await getLocales(lang);
 
-  // console.log('| ================> Homepage lang ================>', lang);
+  const t = lang === 'ru' ? localeRU : localeEN;
 
   return (
-    // <h1 className={`${montserrat.className} ${classes.test}`}>HOME PAGE</h1>
-    <h1 className={`${montserrat.className} ${classes.test}`}>{t.home.test}</h1>
+    <h1 className={`${montserrat.className} ${classes.test}`}>{t.test}</h1>
   );
 }

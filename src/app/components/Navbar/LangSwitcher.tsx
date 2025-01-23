@@ -1,36 +1,53 @@
 'use client';
 
-import { TComponentProps } from '@/types/types';
+import { TLocaleSet, TNavigationJSON } from '@/types/types';
 import { usePathname, useRouter } from 'next/navigation';
 
-// import classes from './LangSwitcher.module.scss';
+import classes from './LangSwitcher.module.scss';
 
-const LangSwitcher = ({ lang }: TComponentProps) => {
+type TComponent = {
+  lang: TLocaleSet;
+  content: TNavigationJSON;
+};
+
+const LangSwitcher = ({ lang, content }: TComponent) => {
   const pathname = usePathname();
   const router = useRouter();
 
   function switchLocale(locale: 'ru' | 'en') {
     if (lang !== locale) {
-      // console.log("| =======> Let's switch lang!!! =======> ");
       const pathnameHasLocale = !!pathname.match(/^\/(en|ru)/gi);
       const isRootPath = pathname.length > 3;
-      // console.log('| =======> Locale exist? =======>', pathnameHasLocale);
 
       const newPath = pathnameHasLocale
         ? pathname.replace(/^\/(en|ru)/gi, `${isRootPath ? '' : '/'}`)
         : `/${locale}${pathname}`;
 
-      // console.log('| =======> New path =======>', newPath);
-
       router.push(newPath);
     }
   }
 
+  function styleHandler(locale: 'ru' | 'en') {
+    return `${classes['switch-btn']} ${lang !== locale ? classes.active : ''}`;
+  }
+
   return (
-    <>
-      <button onClick={() => switchLocale('ru')}>RU</button>
-      <button onClick={() => switchLocale('en')}>EN</button>
-    </>
+    <div className={classes.switcher}>
+      <button
+        className={styleHandler('ru')}
+        title={content.lang_titles.ru}
+        onClick={() => switchLocale('ru')}
+      >
+        ru
+      </button>
+      <button
+        className={styleHandler('en')}
+        title={content.lang_titles.en}
+        onClick={() => switchLocale('en')}
+      >
+        en
+      </button>
+    </div>
   );
 };
 

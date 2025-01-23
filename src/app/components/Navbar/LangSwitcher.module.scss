@@ -1,0 +1,45 @@
+@use '@/styles/helpers/functions' as *;
+
+.switcher {
+  position: relative;
+  display: flex;
+  column-gap: rem(8);
+
+  &:before {
+    $line-w: 2px;
+    $line-h: calc(100% - (2 * var(--br-sm)));
+
+    content: '';
+    position: absolute;
+    top: var(--br-sm);
+    left: calc(50% - $line-w / 2);
+    width: $line-w;
+    height: $line-h;
+    margin-block: auto;
+    background: var(--c-whitish-tr40);
+  }
+}
+
+.switch-btn {
+  width: rem(44);
+  height: rem(40);
+  border-radius: var(--br-sm);
+  background: none;
+  font-size: rem(18);
+  text-transform: uppercase;
+  color: var(--c-whitish);
+  transition: all var(--transition-duration);
+}
+
+.active {
+  font-size: rem(16);
+  color: var(--c-whitish-tr40);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: var(--c-whitish-tr20);
+      font-size: rem(18);
+      color: var(--c-whitish);
+    }
+  }
+}

@@ -1,52 +1,37 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Navbar.module.scss';
-import Chevron from '@/assets/icons/chevron.svg';
-import { TComponentProps } from '@/types/types';
-// import LangButton from './LangButton';
+import { TComponentProps, TNavigationJSON } from '@/types/types';
+import NavMenu from './NavMenu';
+import LangSwitcher from '@/app/components/Navbar/LangSwitcher';
 
-const Navbar = ({ children, lang }: TComponentProps) => {
+import localeRU from '@/locales/navigation_ru.json';
+import localeEN from '@/locales/navigation_en.json';
+
+const Navbar = ({ lang }: TComponentProps) => {
+  const t: TNavigationJSON = lang === 'ru' ? localeRU : localeEN;
+
   return (
     <header className={classes.navbar}>
-      <Link href={`/${lang}`} className={classes.logo}>
+      <Link href={`/${lang}`} className={classes.logo} title={t.logo.alt}>
         <Image
           src={`/img/logo_large_${lang}.svg`}
-          alt="Логотип компании"
+          alt={t.logo.alt}
           width={265}
           height={32}
           priority
         />
       </Link>
-      <nav aria-label="">
-        <ul className={classes.menubar} role="menubar" aria-label="">
-          <li role="none">
-            <Link className={classes['menubar__item']} href="/" role="menuitem">
-              Разработки и решения
-              <Chevron className={classes.chevron} />
-            </Link>
-          </li>
-          <li role="none">
-            <Link className={classes['menubar__item']} href="/" role="menuitem">
-              О нас
-              <Chevron className={classes.chevron} />
-            </Link>
-          </li>
-          <li role="none">
-            <Link className={classes['menubar__item']} href="/" role="menuitem">
-              Контакты
-              <Chevron className={classes.chevron} />
-            </Link>
-          </li>
-        </ul>
-      </nav>
+
+      <NavMenu lang={lang} content={t} />
       <div className={classes.actions}>
-        {children}
+        <LangSwitcher lang={lang} content={t} />
         <button
           className={classes['login-btn']}
           type="button"
-          title="Вход в Личный кабинет"
+          title={t.login_btn.desc}
         >
-          вход
+          {t.login_btn.value}
         </button>
       </div>
 

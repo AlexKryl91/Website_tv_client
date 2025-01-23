@@ -2,8 +2,6 @@
 @use '@/styles/helpers/mixins' as *;
 
 .navbar,
-.menubar,
-.menubar__item,
 .actions {
   @include flex-center;
 }
@@ -37,8 +35,6 @@
       border-bottom: $border-b;
       width: $navbar-side-space;
       height: calc(100% + $border-thickness);
-      //
-      // background: teal;
     }
 
     &:before {
@@ -48,37 +44,6 @@
       left: 100%;
     }
   }
-}
-
-.menubar {
-  list-style: none;
-
-  &__item {
-    position: relative;
-    height: rem(88);
-    padding-inline: rem(16);
-    margin-block: auto;
-    column-gap: rem(8);
-
-    &:after {
-      content: '';
-      position: absolute;
-      height: rem(4);
-      left: 0;
-      bottom: 0;
-      width: 0;
-      background: var(--c-orange-bright);
-      transition: width var(--transition-duration);
-    }
-
-    &:hover:after {
-      width: 100%;
-    }
-  }
-}
-
-.chevron {
-  margin-bottom: 1px;
 }
 
 .actions {

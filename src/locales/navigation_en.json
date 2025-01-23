@@ -1,0 +1,49 @@
+{
+  "logo": { "alt": "To home page" },
+  "menu": [
+    {
+      "title": "Solutions & Products",
+      "content": [
+        { "name": "Solutions", "path": "/solutions" },
+        {
+          "name": "Products & Services",
+          "path": "/products"
+        }
+      ]
+    },
+    {
+      "title": "About Us",
+      "content": [
+        { "name": "Our Company", "path": "/about" },
+        { "name": "Implementations", "path": "/implementations" },
+        { "name": "Publications", "path": "/publications" }
+      ]
+    },
+    {
+      "title": "Contacts",
+      "content": [
+        { "name": "Contacts", "path": "/contacts" },
+        { "name": "Career", "path": "/career" }
+      ]
+    }
+  ],
+  "menu_aria_label": "Navigation menu",
+  "lang_titles": {"ru": "Russian", "en": "English"},
+  "login_btn": { "value": "Login", "desc": "Login to your account" },
+  "info": {
+    "organization": "2025. TECHNOVACUUM LLC",
+    "address": [
+      "Russia, 105082, Moscow",
+      "Bolshaya Pochtovaya St, 26В,",
+      "building 2, floor 5,",
+      "placement 1, room 11А"
+    ],
+    "telephone": [
+      "+7 (495) 956-76-21",
+      "+7 (499) 261-99-98",
+      "+7 (499) 267-82-03"
+    ],
+    "email": "info@technovacuum.ru"
+  },
+  "dev": "Designed and build by Krylovsky Alexander"
+}

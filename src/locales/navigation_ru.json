@@ -4,32 +4,32 @@
     {
       "title": "Разработки и решения",
       "content": [
-        { "name": "Разработки", "path": "/solutions" },
+        { "label": "Разработки", "href": "/solutions" },
         {
-          "name": "Продукция и услуги",
-          "path": "/products"
+          "label": "Продукция и услуги",
+          "href": "/products"
         }
       ]
     },
     {
       "title": "О нас",
       "content": [
-        { "name": "О компании", "path": "/about" },
-        { "name": "Внедрения", "path": "/implementations" },
-        { "name": "Публикации", "path": "/publications" }
+        { "label": "О компании", "href": "/about" },
+        { "label": "Внедрения", "href": "/implementations" },
+        { "label": "Публикации", "href": "/publications" }
       ]
     },
     {
       "title": "Контакты",
       "content": [
-        { "name": "Контакты", "path": "/contacts" },
-        { "name": "Вакансии", "path": "/career" }
+        { "label": "Контакты", "href": "/contacts" },
+        { "label": "Вакансии", "href": "/career" }
       ]
     }
   ],
   "menu_aria_label": "Меню навигации",
-  "lang_titles": {"ru": "Русский", "en": "Английский"},
-  "login_btn": { "value": "Вход", "desc": "Вход в личный кабинет"},
+  "lang_titles": { "ru": "Русский", "en": "Английский" },
+  "login_btn": { "value": "Вход", "desc": "Вход в личный кабинет" },
   "info": {
     "organization": "2025. ООО ТЕХНОВАКУУМ",
     "address": [

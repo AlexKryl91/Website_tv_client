@@ -1,45 +1,42 @@
 @use '@/styles/helpers/functions' as *;
 @use '@/styles/helpers/mixins' as *;
 
-.menubar,
 .menubar__item {
   @include flex-center;
-}
 
-.menubar {
-  list-style: none;
+  position: relative;
+  height: rem(88);
+  padding-inline: rem(16);
+  margin-block: auto;
+  column-gap: rem(8);
 
-  &__item {
-    position: relative;
-    height: rem(88);
-    padding-inline: rem(16);
-    margin-block: auto;
-    column-gap: rem(8);
+  &:after {
+    content: '';
+    position: absolute;
+    height: rem(4);
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--c-orange-bright);
+    transition: width var(--transition-duration);
+  }
 
-    &:after {
-      content: '';
-      position: absolute;
-      height: rem(4);
-      left: 0;
-      bottom: 0;
-      width: 0;
-      background: var(--c-orange-bright);
-      transition: width var(--transition-duration);
-    }
+  &:not(.active):hover:after {
+    width: 100%;
+  }
 
-    &:hover:after {
-      width: 100%;
-    }
-
-    &:hover .dropdown {
-      opacity: 1;
-      pointer-events: all;
-    }
+  &:hover .dropdown {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 
-.chevron {
-  margin-bottom: 1px;
+.active {
+  color: var(--c-orange-dull);
+
+  &:after {
+    width: 100%;
+  }
 }
 
 .dropdown {
@@ -50,7 +47,6 @@
   top: 100%;
   left: 0;
   width: 100%;
-  // min-width: fit-content;
   min-width: rem(160);
   padding-top: 2px;
   list-style: none;

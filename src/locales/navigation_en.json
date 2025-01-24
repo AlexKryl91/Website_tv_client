@@ -4,31 +4,31 @@
     {
       "title": "Solutions & Products",
       "content": [
-        { "name": "Solutions", "path": "/solutions" },
+        { "label": "Solutions", "href": "/solutions" },
         {
-          "name": "Products & Services",
-          "path": "/products"
+          "label": "Products & Services",
+          "href": "/products"
         }
       ]
     },
     {
       "title": "About Us",
       "content": [
-        { "name": "Our Company", "path": "/about" },
-        { "name": "Implementations", "path": "/implementations" },
-        { "name": "Publications", "path": "/publications" }
+        { "label": "Our Company", "href": "/about" },
+        { "label": "Implementations", "href": "/implementations" },
+        { "label": "Publications", "href": "/publications" }
       ]
     },
     {
       "title": "Contacts",
       "content": [
-        { "name": "Contacts", "path": "/contacts" },
-        { "name": "Career", "path": "/career" }
+        { "label": "Contacts", "href": "/contacts" },
+        { "label": "Career", "href": "/career" }
       ]
     }
   ],
   "menu_aria_label": "Navigation menu",
-  "lang_titles": {"ru": "Russian", "en": "English"},
+  "lang_titles": { "ru": "Russian", "en": "English" },
   "login_btn": { "value": "Login", "desc": "Login to your account" },
   "info": {
     "organization": "2025. TECHNOVACUUM LLC",

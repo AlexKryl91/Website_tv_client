@@ -1,11 +1,12 @@
 @use '@/styles/helpers/functions' as *;
+@use '@/styles/helpers/mixins' as *;
 
 .switcher {
   position: relative;
   display: flex;
   column-gap: rem(8);
 
-  &:before {
+  &::before {
     $line-w: 2px;
     $line-h: calc(100% - (2 * var(--br-sm)));
 
@@ -15,7 +16,6 @@
     left: calc(50% - $line-w / 2);
     width: $line-w;
     height: $line-h;
-    margin-block: auto;
     background: var(--c-whitish-tr40);
   }
 }

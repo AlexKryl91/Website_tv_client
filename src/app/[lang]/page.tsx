@@ -7,9 +7,11 @@ export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
   const t = (await getLocale('homepage', lang)) as THomepageJSON;
 
+  const style = `${montserrat.className} ${classes['screen-reader-only']}`;
+
   return (
-    <h1 className={`${montserrat.className} ${classes.test}`}>
-      {t.banner.header}
-    </h1>
+    <main className={classes.test}>
+      <h1 className={style}>{t.banner.header}</h1>
+    </main>
   );
 }

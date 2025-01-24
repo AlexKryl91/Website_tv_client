@@ -3,11 +3,12 @@
 
 .navbar,
 .actions {
-  @include flex-center;
+  @include flex-al-center;
 }
 
 .navbar {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -17,18 +18,19 @@
   max-width: var(--view-max-w);
 
   justify-content: space-between;
+  column-gap: rem(22);
 
   $border-thickness: 2px;
   $border-b: $border-thickness solid var(--c-greyish-blue-1-tr60);
   border-bottom: $border-b;
 
-  @media screen and (width >= rem(1280.98)) {
+  @media screen and (min-width: rem(1280.98)) {
     $navbar-side-space: calc(
       (100dvw - var(--view-max-w) - var(--scroll-w)) / 2
     );
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       top: 0;
@@ -37,10 +39,10 @@
       height: calc(100% + $border-thickness);
     }
 
-    &:before {
+    &::before {
       right: 100%;
     }
-    &:after {
+    &::after {
       left: 100%;
     }
   }
@@ -73,5 +75,22 @@
         color: var(--c-orange-bright);
       }
     }
+  }
+}
+
+@media screen and (max-width: rem(1159.98)) {
+  .navbar {
+    flex-wrap: wrap;
+    order: 1;
+    margin-top: rem(12);
+
+    & > nav {
+      order: 3;
+      margin-inline: auto;
+    }
+  }
+
+  .actions {
+    order: 2;
   }
 }

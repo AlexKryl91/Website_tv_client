@@ -2,7 +2,7 @@
 @use '@/styles/helpers/mixins' as *;
 
 .menubar__item {
-  @include flex-center;
+  @include flex-al-center;
 
   position: relative;
   height: rem(88);
@@ -79,5 +79,11 @@
       background: var(--c-whitish-blue);
       font-weight: 500;
     }
+  }
+}
+
+@media screen and (max-width: rem(1159.98)) {
+  .menubar__item {
+    height: rem(50);
   }
 }

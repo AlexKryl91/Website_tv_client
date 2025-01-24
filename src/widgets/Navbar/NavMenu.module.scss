@@ -1,6 +1,6 @@
 @use '@/styles/helpers/mixins' as *;
 
 .menubar {
-  @include flex-center;
+  @include flex-al-center;
   list-style: none;
 }

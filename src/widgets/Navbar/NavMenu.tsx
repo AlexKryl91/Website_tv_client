@@ -2,11 +2,11 @@
 
 import classes from './NavMenu.module.scss';
 import { usePathname } from 'next/navigation';
-import { TLocaleSet, TNavigationJSON } from '@/types/types';
+import { TLangSet, TNavigationJSON } from '@/types/types';
 import NavMenuItem from './NavMenuItem';
 
 type TComponent = {
-  lang: TLocaleSet;
+  lang: TLangSet;
   content: TNavigationJSON;
 };
 
@@ -21,7 +21,12 @@ const NavMenu = ({ lang, content }: TComponent) => {
         aria-label={content.menu_aria_label}
       >
         {content.menu.map((item) => (
-          <NavMenuItem key={item.title} item={item} pathname={pathname} lang={lang}/>
+          <NavMenuItem
+            key={item.title}
+            item={item}
+            pathname={pathname}
+            lang={lang}
+          />
         ))}
       </ul>
     </nav>

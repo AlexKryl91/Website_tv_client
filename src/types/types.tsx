@@ -1,6 +1,6 @@
 export type TLangSet = 'ru' | 'en';
 
-export type TRootProps = {
+export type TLayoutProps = {
   children: React.ReactNode;
   params: Promise<{ lang: TLangSet }>;
 };

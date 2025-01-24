@@ -1,13 +1,13 @@
 'use client';
 
-import { TLocaleSet } from '@/types/types';
+import { TLangSet } from '@/types/types';
 import { usePathname, useRouter } from 'next/navigation';
 
 import classes from './LangSwitcher.module.scss';
 import LangButton from './LangButton';
 
 type TSwitcher = {
-  lang: TLocaleSet;
+  lang: TLangSet;
   titles: { [key: string]: string };
 };
 

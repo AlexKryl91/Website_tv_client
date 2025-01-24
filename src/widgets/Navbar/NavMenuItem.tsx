@@ -1,7 +1,7 @@
 import classes from './NavMenuItem.module.scss';
 import Link from 'next/link';
 import Chevron from '@/assets/icons/chevron.svg';
-import { TLocaleSet } from '@/types/types';
+import { TLangSet } from '@/types/types';
 
 type TMenuItem = {
   item: {
@@ -12,7 +12,7 @@ type TMenuItem = {
     }[];
   };
   pathname: string;
-  lang: TLocaleSet;
+  lang: TLangSet;
 };
 
 const NavMenuItem = ({ item, pathname, lang }: TMenuItem) => {

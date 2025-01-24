@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Navbar.module.scss';
+import { getLocale } from '@utils/getLocale';
 import { TComponentProps, TNavigationJSON } from '@/types/types';
 import NavMenu from './NavMenu';
 import LangSwitcher from './LangSwitcher';
 
-import localeRU from '@locales/navigation_ru.json';
-import localeEN from '@locales/navigation_en.json';
-
-const Navbar = ({ lang }: TComponentProps) => {
-  const t: TNavigationJSON = lang === 'ru' ? localeRU : localeEN;
+const Navbar = async ({ lang }: TComponentProps) => {
+  const t = (await getLocale('navigation', lang)) as TNavigationJSON;
 
   return (
     <header className={classes.navbar}>

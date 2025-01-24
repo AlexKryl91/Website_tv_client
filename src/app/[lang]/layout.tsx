@@ -3,7 +3,9 @@ import '@styles/main.scss';
 import { roboto } from '@utils/fonts';
 import Navbar from '@widgets/Navbar/Navbar';
 
-import { TRootProps } from '@/types/types';
+import { TLayoutProps } from '@/types/types';
+
+// const t = await getLocales(lang);
 
 export const metadata: Metadata = {
   title: 'Template for TV 2.0',
@@ -13,8 +15,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
   params,
-}: Readonly<TRootProps>) {
-  // const t = await getLocales(lang);
+}: Readonly<TLayoutProps>) {
   const { lang } = await params;
 
   return (

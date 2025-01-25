@@ -1,6 +1,7 @@
 @use '@/styles/helpers/mixins' as *;
 
 .menubar {
+  @include no-select;
   @include flex-al-center;
   list-style: none;
 }

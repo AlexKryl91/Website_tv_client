@@ -16,15 +16,22 @@
   overflow: hidden !important;
 }
 
-@mixin hide {
-  opacity: 0;
-  visibility: hidden;
+@mixin no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-@mixin show {
-  opacity: 1;
-  visibility: hidden;
-}
+// @mixin hide {
+//   opacity: 0;
+//   visibility: hidden;
+// }
+
+// @mixin show {
+//   opacity: 1;
+//   visibility: hidden;
+// }
 
 @mixin flex-al-center {
   display: flex;
@@ -37,3 +44,20 @@
   left: 50%;
   translate: -50% 50%;
 }
+
+@mixin abs-x-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+
+// @mixin bg-image-set($url, $bg-size) {
+//   background-image: image-set(
+//     url($url + '.avif') type('image/avif'),
+//     url($url + '.jpg') type('image/jpeg')
+//   );
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }

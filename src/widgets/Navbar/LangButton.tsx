@@ -18,11 +18,9 @@ const LangButton = ({
   const style = `${classes['switch-btn']} ${isActive ? classes.active : ''}`;
 
   return (
-    <div>
-      <button onClick={clickHandler} className={style} title={title}>
-        {locale}
-      </button>
-    </div>
+    <button onClick={clickHandler} className={style} title={title}>
+      {locale}
+    </button>
   );
 };
 

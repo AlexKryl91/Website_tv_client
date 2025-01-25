@@ -5,7 +5,7 @@
   @include flex-al-center;
 
   position: relative;
-  height: rem(88);
+  height: calc(var(--navbar-h) - rem(2));
   padding-inline: rem(16);
   margin-block: auto;
   column-gap: rem(8);
@@ -48,7 +48,7 @@
   left: 0;
   width: 100%;
   min-width: rem(160);
-  padding-top: 2px;
+  padding-top: rem(2);
   list-style: none;
   border-radius: 0 0 var(--br-sm) var(--br-sm);
   overflow: hidden;

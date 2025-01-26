@@ -3,18 +3,18 @@
   height: $size;
 }
 
-@mixin visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
-}
+// @mixin visually-hidden {
+//   position: absolute !important;
+//   width: 1px !important;
+//   height: 1px !important;
+//   margin: -1px !important;
+//   border: 0 !important;
+//   padding: 0 !important;
+//   white-space: nowrap !important;
+//   clip-path: inset(100%) !important;
+//   clip: rect(0 0 0 0) !important;
+//   overflow: hidden !important;
+// }
 
 @mixin no-select {
   user-select: none;
@@ -53,11 +53,21 @@
   margin-inline: auto;
 }
 
-// @mixin bg-image-set($url, $bg-size) {
-//   background-image: image-set(
-//     url($url + '.avif') type('image/avif'),
-//     url($url + '.jpg') type('image/jpeg')
-//   );
-//   background-repeat: no-repeat;
-//   background-size: contain;
-// }
+@mixin bg-image-set($url) {
+  background-image: image-set(
+    url($url + '.avif') type('image/avif'),
+    url($url + '.jpg') type('image/jpeg')
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin bg-mask {
+  mask-image: linear-gradient(
+    90deg,
+    var(--c-tr) 0%,
+    var(--c-white) 5%,
+    var(--c-white) 95%,
+    var(--c-tr) 100%
+  );
+}

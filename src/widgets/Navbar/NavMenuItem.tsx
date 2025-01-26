@@ -1,6 +1,6 @@
 import classes from './NavMenuItem.module.scss';
 import Link from 'next/link';
-import Chevron from '@/assets/icons/chevron.svg';
+import Chevron from '@icons/chevron.svg';
 import { TLangSet } from '@/types/types';
 
 type TMenuItem = {

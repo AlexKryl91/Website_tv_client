@@ -36,7 +36,7 @@ export type THomepageJSON = {
   banner: {
     header: string;
     img_alt: string;
-    tagline: string[];
+    taglines: string[];
     profile: string;
   };
   advantage: {

@@ -14,7 +14,6 @@ export default async function Home({ params }: TPageProps) {
     <main>
       <h1 className="sr-only">{t.banner.header}</h1>
       <section className={classes.section}>
-        <DecorationStripes className={classes.stripes} />
         <div className={`${classes['section-body']} ${classes.banner}`}>
           <h2 className={styleH2}>
             {t.banner.taglines.map((line) => (
@@ -34,6 +33,22 @@ export default async function Home({ params }: TPageProps) {
             </div>
           </div> */}
         </div>
+        <DecorationStripes className={classes.stripes} />
+        <picture>
+          <source srcSet="/img/steam_ejector.avif" type="image/avif" />
+          <img
+            className={classes['ejector-img']}
+            src="/img/steam_ejector.png"
+            width="520"
+            height="412"
+            alt={t.banner.img_alt}
+          />
+        </picture>
+      </section>
+      <section className={`${classes.section} ${classes.light}`}>
+        <h2 className={`${montserrat.className} ${classes['section-header']}`}>
+          {t.advantage.header}
+        </h2>
       </section>
     </main>
   );

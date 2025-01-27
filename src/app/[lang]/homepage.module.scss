@@ -2,13 +2,12 @@
 @use '@styles/helpers/functions' as *;
 
 .section {
+  position: relative;
   width: 100%;
   background: var(--c-greyish-blue-2);
   margin-bottom: rem(-40);
-  overflow-x: hidden;
 
   &-body {
-    position: relative;
     width: 100%;
     max-width: var(--view-max-w);
     margin-inline: auto;
@@ -24,14 +23,8 @@
   &-header {
     font-size: rem(36);
     line-height: 3.5rem;
+    text-align: center;
   }
-}
-
-.stripes {
-  position: absolute;
-  top: var(--navbar-h);
-  left: calc(50% - rem(40));
-  z-index: 1;
 }
 
 .banner {
@@ -40,6 +33,7 @@
 
   &-header {
     margin-top: rem(148);
+    text-align: left;
     text-transform: uppercase;
 
     span {
@@ -61,6 +55,54 @@
     font-size: rem(24);
     font-weight: 300;
     line-height: var(--line-h);
+  }
+}
+
+.stripes {
+  position: absolute;
+  top: var(--navbar-h);
+  left: calc(50% - rem(40));
+}
+
+.ejector-img {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + rem(72));
+  translate: 0 calc(-50% + rem(2));
+  filter: drop-shadow(0 10px 4px var(--c-black-tr25));
+}
+
+.light {
+  padding: rem(48) var(--side-spacing) rem(140);
+  color: var(--c-blue-green-5);
+  background-color: var(--c-whitish);
+
+  // ===> for desktop below 1280px
+  // clip-path: polygon(
+  //   0% 0%,
+  //   22% 0,
+  //   22% rem(40),
+  //   calc(22% + rem(40)) 0,
+  //   100% 0,
+  //   100% 100%,
+  //   0 100%
+  // );
+
+  // ===> for desktop higher 1280px
+  clip-path: polygon(
+    0% 0%,
+    calc(50% - 360px) 0,
+    calc(50% - 360px) 40px,
+    calc(50% - 320px) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+@media screen and (min-width: rem(1280.98)) {
+  .light {
+    padding-inline: calc((100% - var(--view-max-w)) / 2 + var(--side-spacing));
   }
 }
 

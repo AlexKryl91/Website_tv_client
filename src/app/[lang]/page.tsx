@@ -15,12 +15,16 @@ export default async function Home({ params }: TPageProps) {
       <h1 className="sr-only">{t.banner.header}</h1>
       <section className={classes.section}>
         <div className={`${classes['section-body']} ${classes.banner}`}>
-          <h2 className={styleH2}>
-            {t.banner.taglines.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </h2>
-          <p className={classes['banner-profile']}>{t.banner.profile}</p>
+          <div className={classes['h2-wrap']}>
+            <h2 className={styleH2}>
+              {t.banner.taglines.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </h2>
+          </div>
+          <div className={classes['profile-wrap']}>
+            <p className={classes['banner-profile']}>{t.banner.profile}</p>
+          </div>
           {/* <div className={classes['animated-title']}>
             <div className={classes['text-top']}>
               <div>

@@ -31,30 +31,102 @@
   width: 100%;
   height: rem(840);
 
-  &-header {
+  .h2-wrap {
     margin-top: rem(148);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      width: rem(548);
+      height: rem(4);
+      margin-top: rem(36);
+      background: var(--c-orange-bright);
+      animation: line-width 1.4s 0.9s forwards;
+    }
+  }
+
+  &-header {
     text-align: left;
     text-transform: uppercase;
 
     span {
       display: block;
     }
-
-    &::after {
-      content: '';
-      display: block;
-      width: rem(368);
-      height: rem(4);
-      margin-block: rem(36) rem(50);
-      background: var(--c-orange-bright);
+    span:nth-child(1) {
+      transform: translate3d(0, calc(300% + rem(36)), 0);
+      animation: showTopText1 2.1s 0.2s forwards;
+    }
+    span:nth-child(2) {
+      transform: translate3d(0, calc(200% + rem(36)), 0);
+      animation: showTopText2 1.4s 0.9s forwards;
+    }
+    span:nth-child(3) {
+      transform: translate3d(0, calc(100% + rem(36)), 0);
+      animation: showTopText3 0.7s 1.6s forwards;
     }
   }
 
-  &-profile {
+  @keyframes line-width {
+    30%,
+    50% {
+      width: rem(428);
+    }
+    100% {
+      width: rem(368);
+    }
+  }
+
+  @keyframes showTopText1 {
+    23%,
+    33% {
+      transform: translate3d(0, 200%, 0);
+    }
+    56%,
+    66% {
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes showTopText2 {
+    30%,
+    50% {
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes showTopText3 {
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  $padding-top: rem(50);
+
+  .profile-wrap {
+    width: 100%;
     max-width: rem(550);
+    padding-top: $padding-top;
+    overflow: hidden;
+  }
+
+  &-profile {
     font-size: rem(24);
     font-weight: 300;
     line-height: var(--line-h);
+    transform: translate3d(0, calc(-100% - $padding-top), 0);
+    animation: showBottomText 0.8s 1.6s forwards;
+  }
+
+  @keyframes showBottomText {
+    to {
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
@@ -105,62 +177,3 @@
     padding-inline: calc((100% - var(--view-max-w)) / 2 + var(--side-spacing));
   }
 }
-
-// @keyframes showTopText {
-//   0% { transform: translate3d(0, 100%, 0); }
-//   40%, 60% { transform: translate3d(0, 50%, 0); }
-//   100% { transform: translate3d(0, 0, 0); }
-// }
-// @keyframes showBottomText {
-//   0% { transform: translate3d(0, -100%, 0); }
-//   100% { transform: translate3d(0, 0, 0); }
-// }
-
-// .animated-title {
-//   color: #222;
-//   font-family: Roboto, Arial, sans-serif;
-//   height: 90vmin;
-//   left: 50%;
-//   position: absolute;
-//   top: 50%;
-//   transform: translate(-50%, -50%);
-//   width: 90vmin;
-// }
-// .animated-title > div {
-//   height: 50%;
-//   overflow: hidden;
-//   position: absolute;
-//   width: 100%;
-// }
-// .animated-title > div div {
-//   font-size: 12vmin;
-//   padding: 2vmin 0;
-//   position: absolute;
-// }
-// .animated-title > div div span {
-//   display: block;
-// }
-// .animated-title > div.text-top {
-//   border-bottom: 1vmin solid #000;
-//   top: 0;
-// }
-// .animated-title > div.text-top div {
-//   animation: showTopText 1s;
-//   animation-delay: 0.5s;
-//   animation-fill-mode: forwards;
-//   bottom: 0;
-//   transform: translate(0, 100%);
-// }
-// .animated-title > div.text-top div span:first-child {
-//   color: #767676;
-// }
-// .animated-title > div.text-bottom {
-//   bottom: 0;
-// }
-// .animated-title > div.text-bottom div {
-//   animation: showBottomText 0.5s;
-//   animation-delay: 1.75s;
-//   animation-fill-mode: forwards;
-//   top: 0;
-//   transform: translate(0, -100%);
-// }

@@ -2,7 +2,7 @@ import { getLocale } from '@utils/getLocale';
 import { montserrat } from '@utils/fonts';
 import classes from './homepage.module.scss';
 import { THomepageJSON, TPageProps } from '@/types/types';
-import DecorationStripes from '@img/banner_stripes.svg';
+import StripedBg from '@img/banner_stripes_animated.svg';
 
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
@@ -37,7 +37,7 @@ export default async function Home({ params }: TPageProps) {
             </div>
           </div> */}
         </div>
-        <DecorationStripes className={classes.stripes} />
+        <StripedBg className={classes.stripes} />
         <picture>
           <source srcSet="/img/steam_ejector.avif" type="image/avif" />
           <img

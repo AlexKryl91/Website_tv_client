@@ -29,10 +29,11 @@
 
 .banner {
   width: 100%;
-  height: rem(840);
+  // hardcoded height
+  height: rem(890);
 
   .h2-wrap {
-    margin-top: rem(148);
+    margin-top: rem(160);
     overflow: hidden;
 
     &::after {
@@ -77,7 +78,6 @@
       width: rem(368);
     }
   }
-
   @keyframes showTopText1 {
     23%,
     33% {

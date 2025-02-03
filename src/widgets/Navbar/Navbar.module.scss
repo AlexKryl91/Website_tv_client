@@ -21,6 +21,8 @@
   $border-thickness: rem(2);
   $border-b: $border-thickness solid var(--c-greyish-blue-1-tr60);
   border-bottom: $border-b;
+
+  @include side-space-xl(rem(1280.98));
 }
 
 .actions {
@@ -50,12 +52,6 @@
         color: var(--c-orange-bright);
       }
     }
-  }
-}
-
-@media screen and (min-width: rem(1280.98)) {
-  .navbar {
-    padding-inline: calc((100% - var(--view-max-w)) / 2 + var(--side-spacing));
   }
 }
 

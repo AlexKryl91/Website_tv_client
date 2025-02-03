@@ -41,14 +41,13 @@ export type THomepageJSON = {
   };
   advantage: {
     header: string;
-    img1_alt: string;
-    mark1: string;
-    img2_alt: string;
-    mark2: string;
-    adv1: string;
-    adv2: string;
-    adv3: string;
-    link_btn: string;
+    collage: {
+      img_alt: string;
+      number: string;
+      text: string;
+    }[];
+    adv_list: string[];
+    link_label: string;
   };
   offer: {
     header: string;

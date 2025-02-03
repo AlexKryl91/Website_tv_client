@@ -11,14 +11,24 @@
   },
   "advantage": {
     "header": "Why do people choose us?",
-    "img1_alt": "Photo of the second stage of the vacuum-creating system",
-    "mark1": "projects",
-    "img2_alt": "Photo of the jet absorption unit on an oil loading rack",
-    "mark2": "exp years",
-    "adv1": "Modern and advanced solutions for many different industrial problems",
-    "adv2": "Solutions based on scientific research and testing",
-    "adv3": "Extensive experience in implementing industrial systems and installations",
-    "link_btn": "Learn more >"
+    "collage": [
+      {
+        "img_alt": "Photo of the second stage of the vacuum-creating system",
+        "number": "60+",
+        "text": "projects"
+      },
+      {
+        "img_alt": "Photo of the jet absorption unit on an oil loading rack",
+        "number": "30+",
+        "text": "exp years"
+      }
+    ],
+    "adv_list": [
+      "Modern and advanced solutions for many different industrial problems",
+      "Solutions based on scientific research and testing",
+      "Extensive experience in implementing industrial systems and installations"
+    ],
+    "link_label": "Learn more >"
   },
   "offer": {
     "header": "What we do?",

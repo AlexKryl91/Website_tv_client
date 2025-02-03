@@ -2,9 +2,29 @@
 
 import { TLangSet } from '@/types/types';
 import { usePathname, useRouter } from 'next/navigation';
-
 import classes from './LangSwitcher.module.scss';
-import LangButton from './LangButton';
+
+type TSwitcherBtn = {
+  isActive: boolean;
+  title: string;
+  locale: string;
+  clickHandler: () => void;
+};
+
+const LangButton = ({
+  isActive,
+  title,
+  locale,
+  clickHandler,
+}: TSwitcherBtn) => {
+  const style = `${classes['switch-btn']} ${isActive ? classes.active : ''}`;
+
+  return (
+    <button onClick={clickHandler} className={style} title={title}>
+      {locale}
+    </button>
+  );
+};
 
 type TSwitcher = {
   lang: TLangSet;

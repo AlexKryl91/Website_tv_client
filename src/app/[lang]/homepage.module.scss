@@ -4,33 +4,41 @@
 .section {
   position: relative;
   width: 100%;
-  background: var(--c-greyish-blue-2);
+
+  &-header {
+    font-size: rem(36);
+    text-align: center;
+    margin-bottom: rem(56);
+  }
+}
+
+.section--dark {
   margin-bottom: rem(-40);
 
-  &-body {
+  &__body {
     width: 100%;
     max-width: var(--view-max-w);
     margin-inline: auto;
     padding: var(--navbar-h) var(--side-spacing) rem(140);
 
-    @include bg-image-set('/img/homepage_bg_1');
-
     @media screen and (min-width: rem(1280.98)) {
       @include bg-mask;
     }
   }
-
-  &-header {
-    font-size: rem(36);
-    line-height: 3.5rem;
-    text-align: center;
-  }
 }
 
+// Dark section - Banner
+
+$striped-bg-h: rem(800);
+
 .banner {
-  width: 100%;
-  // hardcoded height
-  height: rem(890);
+  background-color: var(--c-greyish-blue-2);
+
+  &__body {
+    width: 100%;
+    height: calc(var(--navbar-h) + $striped-bg-h);
+    @include bg-image-set('/img/homepage_bg_1');
+  }
 
   .h2-wrap {
     margin-top: rem(160);
@@ -51,6 +59,8 @@
   &-header {
     text-align: left;
     text-transform: uppercase;
+    line-height: 3.5rem;
+    margin-bottom: 0;
 
     span {
       display: block;
@@ -115,7 +125,7 @@
     overflow: hidden;
   }
 
-  &-profile {
+  .profile {
     font-size: rem(24);
     font-weight: 300;
     line-height: var(--line-h);
@@ -131,6 +141,7 @@
 }
 
 .stripes {
+  height: $striped-bg-h;
   position: absolute;
   top: var(--navbar-h);
   left: calc(50% - rem(40));
@@ -141,11 +152,13 @@
   top: 50%;
   left: calc(50% + rem(72));
   translate: 0 calc(-50% + rem(2));
-  filter: drop-shadow(0 10px 4px var(--c-black-tr25));
+  filter: drop-shadow(0 rem(12) rem(4) var(--c-black-tr25));
 }
 
-.light {
-  padding: rem(48) var(--side-spacing) rem(140);
+// Light section - Advantages
+
+.section--light {
+  padding: rem(56) var(--side-spacing) rem(140);
   color: var(--c-blue-green-5);
   background-color: var(--c-whitish);
 
@@ -163,17 +176,158 @@
   // ===> for desktop higher 1280px
   clip-path: polygon(
     0% 0%,
-    calc(50% - 360px) 0,
-    calc(50% - 360px) 40px,
-    calc(50% - 320px) 0,
+    calc(50% - rem(360)) 0,
+    calc(50% - rem(360)) rem(40),
+    calc(50% - rem(320)) 0,
     100% 0,
     100% 100%,
     0 100%
   );
+
+  //
+  // filter: drop-shadow(0 -4px 4px var(--c-black-tr40));
+
+  @include side-space-xl(rem(1280.98));
 }
 
-@media screen and (min-width: rem(1280.98)) {
-  .light {
-    padding-inline: calc((100% - var(--view-max-w)) / 2 + var(--side-spacing));
+.advantages {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(60) rem(70);
+
+  .collage {
+    display: grid;
+    grid-template-columns: repeat(2, rem(270));
+    grid-template-rows: repeat(2, rem(200));
+
+    .img-card {
+      @include shadow-blue;
+
+      & > img {
+        @include shaped-card;
+      }
+
+      &:nth-of-type(1) {
+        order: 1;
+      }
+
+      &:nth-of-type(2) {
+        order: 4;
+      }
+    }
+
+    .text-card {
+      background: var(--c-whitish-blue);
+      padding: rem(22) rem(28);
+      color: var(--c-blue-green-3);
+
+      &:nth-of-type(1) {
+        order: 2;
+        margin: rem(20) rem(20) rem(30) rem(30);
+      }
+      &:nth-of-type(2) {
+        order: 3;
+        margin: rem(30) rem(30) rem(20) rem(20);
+      }
+
+      & > span {
+        display: block;
+
+        &:first-child {
+          font-size: rem(48);
+          font-weight: 500;
+          line-height: var(--line-h);
+        }
+        &:last-child {
+          font-size: rem(32);
+        }
+      }
+    }
+  }
+
+  .adv-list {
+    &__item {
+      $bg-size: rem(120);
+
+      background-repeat: no-repeat;
+      background-size: $bg-size;
+      background-position: left;
+      padding-left: calc($bg-size + rem(10));
+
+      &:not(:last-of-type) {
+        margin-bottom: rem(20);
+      }
+
+      &:nth-child(1) {
+        background-image: url('/icons/computer.svg');
+      }
+      &:nth-child(2) {
+        background-image: url('/icons/science.svg');
+      }
+      &:nth-child(3) {
+        background-image: url('/icons/experience.svg');
+      }
+
+      & > a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: rem(8);
+        width: 100%;
+        min-height: rem(120);
+        padding: rem(12) rem(20) rem(16);
+        background: var(--c-whitish-blue);
+        color: var(--c-blue-green-5);
+        text-align: right;
+        font-size: rem(20);
+        line-height: 1.1;
+        transition: var(--transition-duration);
+        @include shaped-card;
+        border-radius: var(--br-lg);
+
+        & > span:first-child {
+          padding-left: rem(16);
+        }
+
+        & > span:last-child {
+          display: block;
+          text-align: left;
+          font-size: 1rem;
+          transition: color var(--transition-duration);
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            border-radius: 0;
+            background: var(--c-blue-green-1);
+
+            & > span:last-child {
+              color: var(--c-white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dark section - Offer
+
+.offer {
+  background-color: #645643;
+  background: linear-gradient(
+    90deg,
+    #383531 0%,
+    #645643 calc((100% - var(--view-max-w)) / 2),
+    #645643 calc(((100% - var(--view-max-w)) / 2) + var(--view-max-w)),
+    #383531 100%
+  );
+
+  &__body {
+    // for tests
+    height: rem(900);
+
+    width: 100%;
+    @include bg-image-set('/img/homepage_bg_2');
   }
 }

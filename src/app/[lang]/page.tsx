@@ -4,11 +4,14 @@ import { getLocale } from '@utils/getLocale';
 import { montserrat } from '@utils/fonts';
 import classes from './homepage.module.scss';
 import { THomepageJSON, TPageProps } from '@/types/types';
-import StripedBg from '@img/striped_bg_animated.svg';
 import srcSetTemplate from '@/utils/srcSetTemplate';
 import { Fragment } from 'react';
+import {
+  SectionDark,
+  SectionIntro,
+  SectionLight,
+} from '@/components/Sections/Sections';
 
-const styleH2 = `${montserrat.className} ${classes['section-header']} ${classes['banner-header']}`;
 const cardImgs = ['afip', 'krot'];
 const advLinks = ['products', 'about', 'implementations'];
 
@@ -20,40 +23,22 @@ export default async function Home({ params }: TPageProps) {
     <main>
       <h1 className="sr-only">{t.banner.header}</h1>
 
-      <section
-        className={`${classes.section} ${classes['section--dark']} ${classes.banner}`}
-      >
-        <div
-          className={`${classes['section--dark__body']} ${classes['banner__body']}`}
-        >
-          <div className={classes['h2-wrap']}>
-            <h2 className={styleH2}>
-              {t.banner.taglines.map((line) => (
-                <span key={line}>{line}</span>
-              ))}
-            </h2>
-          </div>
-          <div className={classes['profile-wrap']}>
-            <p className={classes.profile}>{t.banner.profile}</p>
-          </div>
+      <SectionIntro addClass={classes.banner} imgAlt={t.banner.img_alt}>
+        <div className={classes['h2-wrap']}>
+          <h2
+            className={`${montserrat.className} ${classes['banner__header']}`}
+          >
+            {t.banner.taglines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </h2>
         </div>
-        <StripedBg className={classes.stripes} />
-        <picture>
-          <source srcSet="img/steam_ejector.avif" type="image/avif" />
-          <img
-            className={classes['ejector-img']}
-            src="img/steam_ejector.png"
-            width="520"
-            height="412"
-            alt={t.banner.img_alt}
-          />
-        </picture>
-      </section>
+        <div className={classes['profile-wrap']}>
+          <p className={classes.profile}>{t.banner.profile}</p>
+        </div>
+      </SectionIntro>
 
-      <section className={`${classes.section} ${classes['section--light']}`}>
-        <h2 className={`${montserrat.className} ${classes['section-header']}`}>
-          {t.advantage.header}
-        </h2>
+      <SectionLight header={t.advantage.header}>
         <div className={classes.advantages}>
           <div className={classes.collage}>
             {cardImgs.map((imgName, i) => (
@@ -89,15 +74,11 @@ export default async function Home({ params }: TPageProps) {
             ))}
           </ul>
         </div>
-      </section>
+      </SectionLight>
 
-      <section
-        className={`${classes.section} ${classes['section--dark']} ${classes.offer}`}
-      >
-        <div
-          className={`${classes['section--dark__body']} ${classes['offer__body']}`}
-        ></div>
-      </section>
+      <SectionDark addClass={classes.offer} header={t.offer.header}>
+        <div>TEST</div>
+      </SectionDark>
     </main>
   );
 }

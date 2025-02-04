@@ -1,44 +1,16 @@
 @use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
 
-.section {
-  position: relative;
-  width: 100%;
+// Intro section - Banner
 
-  &-header {
-    font-size: rem(36);
-    text-align: center;
-    margin-bottom: rem(56);
-  }
+section:has(.banner) {
+  background-color: var(--c-greyish-blue-2);
 }
-
-.section--dark {
-  margin-bottom: rem(-40);
-
-  &__body {
-    width: 100%;
-    max-width: var(--view-max-w);
-    margin-inline: auto;
-    padding: var(--navbar-h) var(--side-spacing) rem(140);
-
-    @media screen and (min-width: rem(1280.98)) {
-      @include bg-mask;
-    }
-  }
-}
-
-// Dark section - Banner
-
-$striped-bg-h: rem(800);
 
 .banner {
-  background-color: var(--c-greyish-blue-2);
-
-  &__body {
-    width: 100%;
-    height: calc(var(--navbar-h) + $striped-bg-h);
-    @include bg-image-set('/img/homepage_bg_1');
-  }
+  width: 100%;
+  height: calc(var(--navbar-h) + rem(800));
+  @include bg-image-set('/img/homepage_bg_1');
 
   .h2-wrap {
     margin-top: rem(160);
@@ -56,11 +28,11 @@ $striped-bg-h: rem(800);
     }
   }
 
-  &-header {
+  &__header {
+    font-size: rem(36);
     text-align: left;
     text-transform: uppercase;
     line-height: 3.5rem;
-    margin-bottom: 0;
 
     span {
       display: block;
@@ -140,55 +112,7 @@ $striped-bg-h: rem(800);
   }
 }
 
-.stripes {
-  height: $striped-bg-h;
-  position: absolute;
-  top: var(--navbar-h);
-  left: calc(50% - rem(40));
-}
-
-.ejector-img {
-  position: absolute;
-  top: 50%;
-  left: calc(50% + rem(72));
-  translate: 0 calc(-50% + rem(2));
-  filter: drop-shadow(0 rem(12) rem(4) var(--c-black-tr25));
-}
-
 // Light section - Advantages
-
-.section--light {
-  padding: rem(56) var(--side-spacing) rem(140);
-  color: var(--c-blue-green-5);
-  background-color: var(--c-whitish);
-
-  // ===> for desktop below 1280px
-  // clip-path: polygon(
-  //   0% 0%,
-  //   22% 0,
-  //   22% rem(40),
-  //   calc(22% + rem(40)) 0,
-  //   100% 0,
-  //   100% 100%,
-  //   0 100%
-  // );
-
-  // ===> for desktop higher 1280px
-  clip-path: polygon(
-    0% 0%,
-    calc(50% - rem(360)) 0,
-    calc(50% - rem(360)) rem(40),
-    calc(50% - rem(320)) 0,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-
-  //
-  // filter: drop-shadow(0 -4px 4px var(--c-black-tr40));
-
-  @include side-space-xl(rem(1280.98));
-}
 
 .advantages {
   display: flex;
@@ -313,8 +237,8 @@ $striped-bg-h: rem(800);
 
 // Dark section - Offer
 
-.offer {
-  background-color: #645643;
+section:has(.offer) {
+  // background-color: #645643;
   background: linear-gradient(
     90deg,
     #383531 0%,
@@ -322,12 +246,12 @@ $striped-bg-h: rem(800);
     #645643 calc(((100% - var(--view-max-w)) / 2) + var(--view-max-w)),
     #383531 100%
   );
+}
 
-  &__body {
-    // for tests
-    height: rem(900);
+.offer {
+  // for tests
+  height: rem(900);
 
-    width: 100%;
-    @include bg-image-set('/img/homepage_bg_2');
-  }
+  width: 100%;
+  @include bg-image-set('/img/homepage_bg_2');
 }

@@ -34,22 +34,19 @@
     "header": "What we do?",
     "list": [
       {
-        "id": 1,
         "img_alt": "Refinery",
-        "description": "Developments and technological solutions based on vacuum-creating systems, jet compressors or jet absorption units for various industrial problems"
+        "text": "Developments and technological solutions based on vacuum-creating systems, jet compressors or jet absorption units for various industrial problems"
       },
       {
-        "id": 2,
         "img_alt": "Employees inspect the installation",
-        "description": "Inspection services of production and installations, process modeling, technical and economic analysis, development of technical specifications and basic design, etc."
+        "text": "Inspection services of production and installations, process modeling, technical and economic analysis, development of technical specifications and basic design, etc."
       },
       {
-        "id": 3,
         "img_alt": "Piping",
-        "description": "Optimal installation of our products in modernization or reconstruction conditions installations to suit the Client’s goals with an overall increase in productivity and efficiency"
+        "text": "Optimal installation of our products in modernization or reconstruction conditions installations to suit the Client’s goals with an overall increase in productivity and efficiency"
       }
     ],
-    "link_btn": "Learn more >"
+    "link_label": "Learn more >"
   },
   "clients": {
     "header": "Our Clients"

@@ -14,6 +14,7 @@ import {
 
 const cardImgs = ['afip', 'krot'];
 const advLinks = ['products', 'about', 'implementations'];
+const offerLinks = ['solutions', 'products', 'implementations'];
 
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
@@ -66,7 +67,7 @@ export default async function Home({ params }: TPageProps) {
           <ul className={classes['adv-list']}>
             {t.advantage.adv_list.map((item, i) => (
               <li key={item} className={classes['adv-list__item']}>
-                <Link href={`/${lang}/${advLinks[i]}`} className={classes.logo}>
+                <Link href={`/${lang}/${advLinks[i]}`}>
                   <span>{item}</span>
                   <span>{t.advantage.link_label}</span>
                 </Link>
@@ -77,8 +78,44 @@ export default async function Home({ params }: TPageProps) {
       </SectionLight>
 
       <SectionDark addClass={classes.offer} header={t.offer.header}>
-        <div>TEST</div>
+        <ul className={classes['offer__list']}>
+          {t.offer.list.map((item, i) => (
+            <li key={item.text}>
+              <picture className={classes['item-img']}>
+                <source
+                  srcSet={srcSetTemplate(`offer_item${i + 1}`, 'avif')}
+                  type="image/avif"
+                />
+                <img
+                  src={`img/offer_item${i + 1}.jpg`}
+                  srcSet={srcSetTemplate(`offer_item${i + 1}`, 'jpg')}
+                  width="270"
+                  height="180"
+                  alt={item.img_alt}
+                />
+              </picture>
+              <div className={classes['text-wrapper']}>
+                <span>{item.text}</span>
+                <Link href={`/${lang}/${offerLinks[i]}`}>
+                  {t.offer.link_label}
+                </Link>
+              </div>
+            </li>
+          ))}
+        </ul>
       </SectionDark>
+
+      <SectionLight header={t.clients.header}>
+        <div>| ===&gt; CLIENTS</div>
+      </SectionLight>
+
+      <SectionDark addClass={classes.join} header={t.join.header}>
+        <div>| ===&gt; JOIN US</div>
+      </SectionDark>
+
+      <SectionLight header={t.feedback.header}>
+        <div>| ===&gt; CONTACT US</div>
+      </SectionLight>
     </main>
   );
 }

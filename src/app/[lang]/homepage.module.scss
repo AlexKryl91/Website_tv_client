@@ -3,13 +3,10 @@
 
 // Intro section - Banner
 
-section:has(.banner) {
-  background-color: var(--c-greyish-blue-2);
-}
-
 .banner {
   width: 100%;
   height: calc(var(--navbar-h) + rem(800));
+  padding-inline: var(--side-spacing);
   @include bg-image-set('/img/homepage_bg_1');
 
   .h2-wrap {
@@ -125,7 +122,7 @@ section:has(.banner) {
     grid-template-rows: repeat(2, rem(200));
 
     .img-card {
-      @include shadow-blue;
+      @include filter-shadow-blue;
 
       & > img {
         @include shaped-card;
@@ -202,21 +199,17 @@ section:has(.banner) {
         padding: rem(12) rem(20) rem(16);
         background: var(--c-whitish-blue);
         color: var(--c-blue-green-5);
-        text-align: right;
-        font-size: rem(20);
-        line-height: 1.1;
         transition: var(--transition-duration);
         @include shaped-card;
-        border-radius: var(--br-lg);
 
         & > span:first-child {
           padding-left: rem(16);
+          font-size: rem(20);
+          line-height: 1.1;
+          text-align: right;
         }
 
         & > span:last-child {
-          display: block;
-          text-align: left;
-          font-size: 1rem;
           transition: color var(--transition-duration);
         }
 
@@ -237,21 +230,91 @@ section:has(.banner) {
 
 // Dark section - Offer
 
-section:has(.offer) {
-  // background-color: #645643;
-  background: linear-gradient(
-    90deg,
-    #383531 0%,
-    #645643 calc((100% - var(--view-max-w)) / 2),
-    #645643 calc(((100% - var(--view-max-w)) / 2) + var(--view-max-w)),
-    #383531 100%
-  );
+.offer {
+  @include bg-image-set('/img/homepage_bg_2');
+
+  &__list {
+    width: 100%;
+
+    & > li {
+      padding-inline: var(--side-spacing);
+      display: flex;
+      // flex-wrap: wrap;
+      gap: rem(10) rem(80);
+      background: var(--c-black-tr40);
+      transition: var(--transition-duration);
+
+      &:not(:last-of-type) {
+        margin-bottom: rem(40);
+      }
+
+      .item-img {
+        @include filter-shadow-black;
+
+        & > img {
+          @include shaped-card;
+          margin-block: rem(-10);
+          transition: filter var(--transition-duration);
+          filter: grayscale(1);
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--c-blue-green-5);
+          background: var(--c-whitish-blue-tr80);
+
+          .item-img > img {
+            filter: grayscale(0);
+          }
+
+          .text-wrapper a {
+            color: var(--c-white);
+            background: var(--c-blue-green-3);
+          }
+        }
+      }
+
+      .text-wrapper {
+        width: 100%;
+        max-width: rem(750);
+
+        & > span {
+          display: block;
+          margin-block: rem(24) rem(4);
+          font-size: rem(20);
+          line-height: 1.1;
+        }
+
+        a {
+          display: block;
+          width: fit-content;
+          min-width: rem(144);
+          padding: rem(14) rem(16);
+          margin-inline: auto rem(32);
+          background: var(--c-whitish-blue-tr80);
+          color: var(--c-blue-green-5);
+          border-radius: var(--br-sm);
+          text-align: center;
+          transition: var(--transition-duration);
+
+          @media (any-hover: hover) {
+            &:hover {
+              background: var(--c-blue-sea);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.offer {
-  // for tests
-  height: rem(900);
+@media screen and (min-width: rem(1280.98)) {
+  section:has(.banner) {
+    @include section-bg-gradient(var(--c-greyish-blue-2), #272d37);
+  }
 
-  width: 100%;
-  @include bg-image-set('/img/homepage_bg_2');
+  section:has(.offer) {
+    @include section-bg-gradient(#645643, #383531);
+  }
 }

@@ -27,11 +27,11 @@
 }
 
 .middle {
-  padding: rem(56) var(--side-spacing) rem(140);
+  padding-block: rem(56) rem(140);
 }
 
 .top {
-  padding: var(--navbar-h) var(--side-spacing) rem(140);
+  padding-block: var(--navbar-h) rem(140);
 }
 
 .section--light {

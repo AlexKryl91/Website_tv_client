@@ -52,11 +52,10 @@ export type THomepageJSON = {
   offer: {
     header: string;
     list: {
-      id: string;
       img_alt: string;
-      description: string;
+      text: string;
     }[];
-    link_btn: string;
+    link_label: string;
   };
   clients: {
     header: string;

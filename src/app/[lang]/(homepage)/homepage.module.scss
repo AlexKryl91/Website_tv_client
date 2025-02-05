@@ -309,12 +309,58 @@
   }
 }
 
-@media screen and (min-width: rem(1280.98)) {
+// Light section - Clients
+
+.clients {
+}
+
+// Dark section - Join
+
+.join {
+  @include bg-image-set('/img/homepage_bg_3');
+  //
+  // test
+  height: 850px;
+}
+
+// Light section - Feedback
+
+.feedback {
+}
+
+@media screen and (min-width: rem(1599.98)) {
   section:has(.banner) {
     @include section-bg-gradient(var(--c-greyish-blue-2), #272d37);
   }
 
   section:has(.offer) {
     @include section-bg-gradient(#645643, #383531);
+  }
+
+  section:has(.join) {
+    // @include section-bg-gradient(#634831, #272d37);
+    // @include section-bg-gradient(#4b3b2c, #272d37);
+
+    background: linear-gradient(
+      90deg,
+      #272d37 0%,
+      #3b3629 calc((100% - var(--view-max-w)) / 2),
+      #634831 calc(((100% - var(--view-max-w)) / 2) + var(--view-max-w)),
+      #272d37 100%
+    );
+  }
+}
+
+@media screen and (min-width: rem(1280.98)) {
+  section:has(.banner) {
+    background-color: var(--c-greyish-blue-2);
+  }
+
+  section:has(.offer) {
+    background-color: #645643;
+  }
+
+  section:has(.join) {
+    background-color: #312a23;
   }
 }

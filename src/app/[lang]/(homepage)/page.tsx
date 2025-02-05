@@ -21,7 +21,7 @@ export default async function Home({ params }: TPageProps) {
   const t = (await getLocale('homepage', lang)) as THomepageJSON;
 
   return (
-    <main>
+    <>
       <h1 className="sr-only">{t.banner.header}</h1>
 
       <SectionIntro addClass={classes.banner} imgAlt={t.banner.img_alt}>
@@ -116,6 +116,6 @@ export default async function Home({ params }: TPageProps) {
       <SectionLight header={t.feedback.header}>
         <div>| ===&gt; CONTACT US</div>
       </SectionLight>
-    </main>
+    </>
   );
 }

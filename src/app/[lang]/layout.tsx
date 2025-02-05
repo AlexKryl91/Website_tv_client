@@ -22,7 +22,7 @@ export default async function RootLayout({
     <html lang={lang}>
       <body className={roboto.className}>
         <Navbar lang={lang} />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

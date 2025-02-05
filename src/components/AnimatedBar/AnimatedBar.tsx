@@ -1,1 +1,1 @@
-import classes from './AnimatedBar.module.scss';
+// import classes from './AnimatedBar.module.scss';

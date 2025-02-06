@@ -338,16 +338,20 @@
   }
 
   section:has(.join) {
-    // @include section-bg-gradient(#634831, #272d37);
-    // @include section-bg-gradient(#4b3b2c, #272d37);
+    // $side-space: calc((100% - var(--view-max-w)) / 2);
 
-    background: linear-gradient(
-      90deg,
-      #272d37 0%,
-      #3b3629 calc((100% - var(--view-max-w)) / 2),
-      #634831 calc(((100% - var(--view-max-w)) / 2) + var(--view-max-w)),
-      #272d37 100%
-    );
+    // background: linear-gradient(
+    //   90deg,
+    //   #272d37 0%,
+    //   #3b3629 calc($side-space * 0.6),
+    //   #634831 $side-space,
+    //   #634831 calc($side-space + var(--view-max-w)),
+    //   #3b3629 calc($side-space * 1.4 + var(--view-max-w)),
+    //   #272d37 100%
+    // );
+
+    // @include section-bg-gradient(#3b3629, #272d37);
+    @include section-bg-gradient(#3b3629, #28292b);
   }
 }
 
@@ -361,6 +365,6 @@
   }
 
   section:has(.join) {
-    background-color: #312a23;
+    background-color: #28292b;
   }
 }

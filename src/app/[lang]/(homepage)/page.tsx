@@ -11,6 +11,7 @@ import {
   SectionIntro,
   SectionLight,
 } from '@/components/Sections/Sections';
+import AnimatedBar from '@/components/AnimatedBar/AnimatedBar';
 
 const cardImgs = ['afip', 'krot'];
 const advLinks = ['products', 'about', 'implementations'];

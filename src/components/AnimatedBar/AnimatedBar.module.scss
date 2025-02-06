@@ -1,0 +1,99 @@
+@use '@styles/helpers/functions' as *;
+
+$bar-h: rem(52);
+
+.bar {
+  position: absolute;
+  top: rem(-20);
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  height: $bar-h;
+
+  display: flex;
+  justify-content: flex-end;
+
+  filter: drop-shadow(var(--sh-black-dark));
+}
+
+$width-l: rem(82);
+$width-m: rem(72);
+$width-s: rem(62);
+$width-xl: 60dvw;
+
+$dx-l: calc($width-xl + $width-l);
+$dx-m: calc($width-xl + $width-l + $width-m);
+$dx-s: calc($width-xl + $width-l + $width-m + $width-s);
+
+.stripe-xl {
+  width: $width-xl;
+  height: 100%;
+  background: var(--c-blue-green-3);
+  clip-path: polygon($bar-h 0, 100% 0, 100% 100%, 0 100%);
+  transform: translate3d(100%, 0, 0);
+}
+
+$clip-blocks: polygon($bar-h 0, 100% 0, calc(100% - $bar-h) 100%, 0 100%);
+
+.stripe-s,
+.stripe-m,
+.stripe-l {
+  height: 100%;
+  clip-path: $clip-blocks;
+}
+
+.stripe-l {
+  width: $width-l;
+  margin-right: rem(-36);
+  background: var(--c-orange-dull);
+  transform: translate3d($dx-l, 0, 0);
+}
+
+.stripe-m {
+  width: $width-m;
+  margin-right: rem(-32);
+  background: var(--c-orange-persian);
+  transform: translate3d($dx-l, 0, 0);
+}
+
+.stripe-s {
+  width: $width-s;
+  margin-right: rem(-28);
+  background: var(--c-orange-bright);
+  transform: translate3d($dx-s, 0, 0);
+}
+
+.active {
+  $animation-duration: 0.5s;
+
+  .stripe-xl {
+    transform: translate3d(0, 0, 0);
+    transition: transform $animation-duration ease-out;
+  }
+
+  .stripe-s,
+  .stripe-m,
+  .stripe-l {
+    animation: slide $animation-duration ease-out forwards;
+  }
+
+  .stripe-l {
+    animation-delay: 0.1s;
+  }
+  .stripe-m {
+    animation-delay: 0.2s;
+  }
+  .stripe-s {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes slide {
+    95% {
+      scale: 0.6;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      scale: 1;
+    }
+  }
+}

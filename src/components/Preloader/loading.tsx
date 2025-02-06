@@ -9,12 +9,10 @@ export default function Loader() {
   // }
 
   return (
-    <>
-      <div className={classes.container}>
-        {/* <LogoIcon className={classes.logo} /> */}
-        {/* <p>{isClient ? 'CSR' : 'SSR'}</p> */}
-        <div className={classes.loader}></div>
-      </div>
-    </>
+    <div className={classes.container}>
+      {/* <LogoIcon className={classes.logo} /> */}
+      {/* <p>{isClient ? 'CSR' : 'SSR'}</p> */}
+      <div className={classes.loader}></div>
+    </div>
   );
 }

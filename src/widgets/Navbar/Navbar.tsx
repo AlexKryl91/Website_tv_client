@@ -13,7 +13,7 @@ const Navbar = async ({ lang }: TComponentProps) => {
     <header className={classes.navbar}>
       <Link href={`/${lang}`} className={classes.logo} title={t.logo.alt}>
         <Image
-          src={`/img/logo_large_${lang}.svg`}
+          src={`img/logo_large_${lang}.svg`}
           alt={t.logo.alt}
           width={265}
           height={32}

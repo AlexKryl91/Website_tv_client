@@ -45,13 +45,124 @@
     "link_label": "Подробнее >"
   },
   "clients": {
-    "header": "Наши Клиенты"
+    "header": "Наши Клиенты",
+    "cards": [
+      {
+        "id": "anpz",
+        "name": "Афипский НПЗ",
+        "href": "https://www.afipnpz.ru"
+      },
+      {
+        "id": "bashneft",
+        "name": "Башнефть",
+        "href": "https://bashneft.ru"
+      },
+      {
+        "id": "essar",
+        "name": "Эссар",
+        "href": "https://www.essar.com"
+      },
+      {
+        "id": "gazpromneft",
+        "name": "Газпромнефть",
+        "href": "https://www.gazprom-neft.ru"
+      },
+      {
+        "id": "hyundai",
+        "name": "Хёндэ Инжиниринг",
+        "href": "https://en.hdec.kr/en/main.aspx"
+      },
+      {
+        "id": "kazmunaigaz",
+        "name": "КазМунайГаз",
+        "href": "https://www.kmg.kz"
+      },
+      {
+        "id": "lukoil",
+        "name": "Лукойл",
+        "href": "https://lukoil.ru"
+      },
+      {
+        "id": "neftehimservis",
+        "name": "НефтеХимСервис",
+        "href": "https://nhs-kuzbass.ru"
+      },
+      {
+        "id": "nnk",
+        "name": "Независимая нефтяная компания",
+        "href": "http://ipc-oil.ru"
+      },
+      {
+        "id": "nznp",
+        "name": "Новошахтинский завод нефтепродуктов",
+        "href": "https://nznp.ru/"
+      },
+      {
+        "id": "orlen",
+        "name": "Орлен Литва",
+        "href": "https://www.orlenlietuva.lt"
+      },
+      {
+        "id": "rosneft",
+        "name": "Роснефть",
+        "href": "https://www.rosneft.ru"
+      },
+      {
+        "id": "schekinoazot",
+        "name": "Щёкиноазот",
+        "href": "https://n-azot.ru"
+      },
+      {
+        "id": "sibur",
+        "name": "Сибур",
+        "href": "https://www.sibur.ru/ru"
+      },
+      {
+        "id": "slavneft",
+        "name": "Славнефть",
+        "href": "https://www.slavneft.ru"
+      },
+      {
+        "id": "slavyanskeco",
+        "name": "Славянск ЭКО",
+        "href": "https://slaveco.ru"
+      },
+      {
+        "id": "socar",
+        "name": "ГНК Азербайджанской Республики",
+        "href": "https://socar.com.ru"
+      },
+      {
+        "id": "taifnk",
+        "name": "ТАИФ-НК",
+        "href": "https://taifnk.ru"
+      },
+      {
+        "id": "taneco",
+        "name": "ТАНЕКО",
+        "href": "https://www.taneco.ru"
+      },
+      {
+        "id": "tatneft",
+        "name": "ТАТНЕФТЬ",
+        "href": "https://www.tatneft.ru"
+      },
+      {
+        "id": "tngizt",
+        "name": "Туркменбашинский комплекс нефтеперерабатывающих заводов государственного концерна 'ТУРКМЕННЕБИТ'",
+        "href": "https://tngizt.gov.tm"
+      },
+      {
+        "id": "transneft",
+        "name": "Транснефть",
+        "href": "https://www.transneft.ru"
+      }
+    ]
   },
   "join": {
     "header": "Стань частью нашей команды!",
     "text": "Если Вы хотите присоединиться к нашему коллективу, принять участие в разработке и реализации новых технологий и найти воплощение своих идей в металле – ознакомьтесь с открытыми вакансиями либо присылайте Ваше резюме нам на почту!",
-    "link_btn_careers": "Вакансии",
-    "link_btn_contacts": "Контакты"
+    "link_labels": ["Вакансии", "Контакты"]
   },
   "feedback": {
     "header": "Свяжитесь с нами",

@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import Link from 'next/link';
 import { getLocale } from '@utils/getLocale';
 import { montserrat } from '@utils/fonts';
@@ -7,15 +6,16 @@ import { THomepageJSON, TPageProps } from '@/types/types';
 import srcSetTemplate from '@/utils/srcSetTemplate';
 import { Fragment } from 'react';
 import {
-  SectionDark,
   SectionIntro,
   SectionLight,
+  SectionDark,
 } from '@/components/Sections/Sections';
-import AnimatedBar from '@/components/AnimatedBar/AnimatedBar';
+import Carousel from './Carousel';
 
 const cardImgs = ['afip', 'krot'];
 const advLinks = ['products', 'about', 'implementations'];
 const offerLinks = ['solutions', 'products', 'implementations'];
+const joinLinks = ['career', 'contacts'];
 
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
@@ -78,7 +78,7 @@ export default async function Home({ params }: TPageProps) {
         </div>
       </SectionLight>
 
-      <SectionDark addClass={classes.offer} header={t.offer.header}>
+      <SectionDark header={t.offer.header} addClass={classes.offer}>
         <ul className={classes['offer__list']}>
           {t.offer.list.map((item, i) => (
             <li key={item.text}>
@@ -96,7 +96,7 @@ export default async function Home({ params }: TPageProps) {
                 />
               </picture>
               <div className={classes['text-wrapper']}>
-                <span>{item.text}</span>
+                <p>{item.text}</p>
                 <Link href={`/${lang}/${offerLinks[i]}`}>
                   {t.offer.link_label}
                 </Link>
@@ -107,11 +107,27 @@ export default async function Home({ params }: TPageProps) {
       </SectionDark>
 
       <SectionLight header={t.clients.header}>
-        <div>| ===&gt; CLIENTS</div>
+        <div className={classes.clients}>
+          <Carousel cards={t.clients.cards} />
+          <Carousel cards={t.clients.cards} />
+        </div>
       </SectionLight>
 
-      <SectionDark addClass={classes.join} header={t.join.header}>
-        <div>| ===&gt; JOIN US</div>
+      <SectionDark header={t.join.header} addClass={classes.join}>
+        <div className={classes['join__wrapper']}>
+          <p className={classes['join__text']}>{t.join.text}</p>
+          <div className={classes['btn-wrapper']}>
+            {t.join.link_labels.map((label, i) => (
+              <Link
+                className={classes['join__btn']}
+                key={label}
+                href={`/${lang}/${joinLinks[i]}`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </SectionDark>
 
       <SectionLight header={t.feedback.header}>

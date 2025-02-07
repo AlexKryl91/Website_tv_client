@@ -10,16 +10,6 @@
   -ms-user-select: none;
 }
 
-// @mixin hide {
-//   opacity: 0;
-//   visibility: hidden;
-// }
-
-// @mixin show {
-//   opacity: 1;
-//   visibility: hidden;
-// }
-
 @mixin flex-al-center {
   display: flex;
   align-items: center;
@@ -59,20 +49,6 @@
   );
 }
 
-@mixin side-space-xl($br-point) {
-  @media screen and (min-width: $br-point) {
-    padding-inline: calc((100% - var(--view-max-w)) / 2 + var(--side-spacing));
-  }
-}
-
-@mixin filter-shadow-blue {
-  filter: drop-shadow(var(--sh-blue));
-}
-
-@mixin filter-shadow-black {
-  filter: drop-shadow(var(--sh-black));
-}
-
 @mixin shaped-card {
   border-radius: var(--br-lg);
   clip-path: polygon(
@@ -83,6 +59,12 @@
     0 100%,
     0% 2rem
   );
+}
+
+@mixin side-space-xl($br-point) {
+  @media screen and (min-width: $br-point) {
+    padding-inline: calc((100% - var(--view-max-w)) / 2 + var(--side-spacing));
+  }
 }
 
 @mixin section-bg-gradient($main-color, $fade-color) {

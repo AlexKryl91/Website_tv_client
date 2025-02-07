@@ -59,12 +59,16 @@ export type THomepageJSON = {
   };
   clients: {
     header: string;
+    cards: {
+      id: string;
+      name: string;
+      href: string;
+    }[];
   };
   join: {
     header: string;
     text: string;
-    link_btn_careers: string;
-    link_btn_contacts: string;
+    link_labels: string[];
   };
   feedback: {
     header: string;

@@ -171,13 +171,15 @@
   "feedback": {
     "header": "Contact us",
     "feedback_text": "To receive more detailed information from our specialists, fill out the feedback form. If you are registered on our website, you can also fill out questionnaires and specifications of the required equipment in the User account.",
-    "input_name": "Your name",
-    "input_company": "Company name",
-    "imput_tel": "Phone number",
-    "input_email": "Enter email",
-    "input_msg": "Message",
-    "submit_btn": "Submit",
-    "callin_text": "If you need environmentally friendly systems, want to reduce emissions, energy  and resource consumption, are planning to construct new facilities or to upgrade existing ones...",
-    "callin_link": "Contact us!"
+    "feedback_form": {
+      "placeholder_name": "Your name",
+      "placeholder_company": "Company name",
+      "placeholder_tel": "Phone number",
+      "placeholder_email": "Enter email",
+      "placeholder_msg": "Message",
+      "submit_label": "Submit"
+    },
+    "call_text": "If you need environmentally friendly systems, want to reduce emissions, energy  and resource consumption, are planning to construct new facilities or to upgrade existing ones...",
+    "link_label": "Contact us!"
   }
 }

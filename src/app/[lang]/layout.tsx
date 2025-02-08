@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 import '@styles/main.scss';
 import { roboto } from '@utils/fonts';
-import Navbar from '@widgets/Navbar/Navbar';
-
 import { TLayoutProps } from '@/types/types';
-
-// const t = await getLocales(lang);
+import Navbar from '@widgets/Navbar/Navbar';
+import Footer from '@widgets/Footer/Footer';
 
 const test = 'SAMPLE';
 
@@ -25,6 +23,7 @@ export default async function RootLayout({
       <body className={roboto.className}>
         <Navbar lang={lang} />
         <main>{children}</main>
+        <Footer lang={lang}></Footer>
       </body>
     </html>
   );

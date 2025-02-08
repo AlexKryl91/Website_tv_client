@@ -1,0 +1,50 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.footer {
+  // test
+  height: rem(400);
+  //
+
+  position: relative;
+  width: 100%;
+  margin-top: rem(-40);
+  padding: rem(56) var(--side-spacing) rem(72);
+
+  background: var(--c-greyish-blue-3);
+  clip-path: polygon(
+    0% 0%,
+    calc(50% - rem(360)) 0,
+    calc(50% - rem(360)) rem(40),
+    calc(50% - rem(320)) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  @include side-space-xl(rem(1280.98));
+}
+
+.logo {
+  width: rem(265);
+  height: rem(32);
+}
+
+.stripe {
+  position: absolute;
+  top: rem(88);
+  right: calc(50% + rem(400));
+  width: rem(320);
+  height: rem(52);
+  background-image: url('../../../public/img/footer_stripe.svg');
+  filter: drop-shadow(var(--sh-black));
+}
+
+.corner {
+  position: absolute;
+  bottom: 0;
+  right: calc(50% + rem(640));
+  // width: rem(320);
+  // height: rem(52);
+  // background-image: url('../../../public/img/footer_corner.svg');
+}

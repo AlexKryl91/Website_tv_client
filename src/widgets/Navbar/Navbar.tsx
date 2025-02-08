@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Navbar.module.scss';
-import { getLocale } from '@utils/getLocale';
+import getLocale from '@utils/getLocale';
 import { TComponentProps, TNavigationJSON } from '@/types/types';
 import NavMenu from './NavMenu';
 import LangSwitcher from './LangSwitcher';

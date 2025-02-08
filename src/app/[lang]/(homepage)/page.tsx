@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getLocale } from '@utils/getLocale';
+import getLocale from '@utils/getLocale';
 import { montserrat } from '@utils/fonts';
 import classes from './homepage.module.scss';
 import { THomepageJSON, TPageProps } from '@/types/types';
@@ -11,6 +11,7 @@ import {
   SectionDark,
 } from '@/components/Sections/Sections';
 import Carousel from './Carousel';
+import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
 
 const cardImgs = ['afip', 'krot'];
 const advLinks = ['products', 'about', 'implementations'];
@@ -131,7 +132,12 @@ export default async function Home({ params }: TPageProps) {
       </SectionDark>
 
       <SectionLight header={t.feedback.header}>
-        <div>| ===&gt; CONTACT US</div>
+        <p className={classes['feedback__text']}>{t.feedback.feedback_text}</p>
+        <FeedbackForm labels={t.feedback.feedback_form}></FeedbackForm>
+        <p className={classes['call__text']}>{t.feedback.call_text}</p>
+        <Link className={classes['call__link']} href={`/${lang}/contacts`}>
+          {t.feedback.link_label}
+        </Link>
       </SectionLight>
     </>
   );

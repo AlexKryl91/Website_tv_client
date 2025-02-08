@@ -4,7 +4,7 @@ import type { Configuration } from 'webpack';
 
 export default function webpackSVGR(config: Configuration) {
   // Grab the existing rule that handles SVG imports
-  const fileLoaderRule = config.module.rules.find((rule) =>
+  const fileLoaderRule = config?.module?.rules?.find((rule) =>
     rule.test?.test?.('.svg')
   );
 

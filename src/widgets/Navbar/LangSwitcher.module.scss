@@ -4,7 +4,7 @@
 .switcher {
   position: relative;
   display: flex;
-  column-gap: rem(8);
+  column-gap: rem(10);
 
   &::before {
     $line-w: 2px;
@@ -40,7 +40,7 @@
   @media (any-hover: hover) {
     &:hover {
       background: var(--c-whitish-tr20);
-      font-size: rem(18);
+      scale: 1.2;
       color: var(--c-whitish);
     }
   }

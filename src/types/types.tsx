@@ -73,13 +73,15 @@ export type THomepageJSON = {
   feedback: {
     header: string;
     feedback_text: string;
-    input_name: string;
-    input_company: string;
-    imput_tel: string;
-    input_email: string;
-    input_msg: string;
-    submit_btn: string;
-    callin_text: string;
-    callin_link: string;
+    feedback_form: {
+      placeholder_name: string;
+      placeholder_company: string;
+      placeholder_tel: string;
+      placeholder_email: string;
+      placeholder_msg: string;
+      submit_label: string;
+    };
+    call_text: string;
+    link_label: string;
   };
 };

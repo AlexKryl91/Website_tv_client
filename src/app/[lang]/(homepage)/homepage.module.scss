@@ -370,7 +370,32 @@
 }
 
 // Light section - Feedback
-.feedback {
+.feedback__text {
+  margin-bottom: rem(32);
+}
+
+.feedback__text,
+.call__text {
+  font-size: rem(20);
+  line-height: var(--line-h-s);
+  text-align: center;
+}
+
+.call__text {
+  margin-block: rem(32);
+}
+
+.call__text,
+.call__link {
+  font-weight: 500;
+}
+
+.call__link {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  color: var(--c-blue-green-5);
+  font-size: rem(24);
 }
 
 @media screen and (min-width: rem(1599.98)) {

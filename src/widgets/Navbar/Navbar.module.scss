@@ -25,6 +25,11 @@
   @include side-space-xl(rem(1280.98));
 }
 
+.logo {
+  width: rem(265);
+  height: rem(32);
+}
+
 .actions {
   column-gap: rem(64);
 

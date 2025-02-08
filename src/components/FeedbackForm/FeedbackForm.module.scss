@@ -1,0 +1,63 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.feedback__form-container {
+  padding-block: rem(20);
+  background: var(--c-whitish-blue);
+  @include shaped-card;
+}
+
+.feedback__form {
+  max-width: rem(672);
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(20);
+}
+
+.input {
+  color: var(--c-blue-green-5);
+
+  &::placeholder {
+    color: var(--c-blue-green-2);
+  }
+
+  // &:focus {
+  //   outline: 1px solid gray;
+  //   outline-offset: rem(4);
+  // }
+
+  // &:valid {
+  //   background-color: palegreen;
+  // }
+
+  &__msg {
+    grid-column: 1 / span 2;
+    resize: none;
+    height: rem(120);
+  }
+}
+
+.input,
+.submit-btn {
+  border-radius: var(--br-sm);
+  font-size: rem(16);
+  padding: rem(14) rem(16);
+}
+
+.submit-btn {
+  grid-column: 1 / span 2;
+  margin-inline: auto;
+  width: fit-content;
+  min-width: rem(144);
+  transition: var(--transition-duration);
+  background: var(--c-blue-green-3);
+  color: var(--c-white);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: var(--c-blue-sea);
+    }
+  }
+}

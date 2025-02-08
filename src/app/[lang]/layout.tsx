@@ -4,6 +4,7 @@ import { roboto } from '@utils/fonts';
 import { TLayoutProps } from '@/types/types';
 import Navbar from '@widgets/Navbar/Navbar';
 import Footer from '@widgets/Footer/Footer';
+import UpButton from '@/widgets/UpButton/UpButton';
 
 const test = 'SAMPLE';
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
         <Navbar lang={lang} />
         <main>{children}</main>
         <Footer lang={lang}></Footer>
+        <UpButton />
       </body>
     </html>
   );

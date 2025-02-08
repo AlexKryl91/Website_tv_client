@@ -9,6 +9,8 @@ const Footer = async ({ lang }: TComponentProps) => {
 
   return (
     <footer className={classes.footer}>
+      <div className={classes.stripe}></div>
+  
       <Link href={`/${lang}`} className={classes.logo} title={t.logo.alt}>
         <Image
           src={`img/logo_large_${lang}.svg`}
@@ -18,8 +20,8 @@ const Footer = async ({ lang }: TComponentProps) => {
           priority
         />
       </Link>
-      <div className={classes.stripe}></div>
-      <div className={classes.corner}></div>
+      <div className="author">author</div>
+      <nav>navigation</nav>
     </footer>
   );
 };

@@ -14,7 +14,7 @@ html {
     width: var(--scroll-w);
 
     &-track {
-      background: transparent;
+      background: none;
     }
 
     &-thumb {
@@ -22,7 +22,7 @@ html {
       border-radius: var(--br-sm);
 
       &:hover {
-        background: var(--c-blue-green-4);
+        background: var(--c-blue-sea);
       }
     }
   }

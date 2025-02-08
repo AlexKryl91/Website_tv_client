@@ -1,0 +1,29 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.up-btn {
+  $space: rem(24);
+
+  position: fixed;
+  bottom: $space;
+  right: $space;
+  @include square(rem(48));
+
+  border-radius: var(--br-lg);
+  background: var(--c-greyish-blue-2);
+  box-shadow: var(--sh-black-dark);
+  z-index: 999;
+  transition: opacity var(--transition-duration);
+
+  pointer-events: none;
+  opacity: 0;
+}
+
+.arrow {
+  transform: rotate(-90deg);
+}
+
+.visible {
+  pointer-events: all;
+  opacity: 1;
+}

@@ -1,0 +1,10 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.solutions {
+  .test {
+    width: rem(200);
+    height: rem(200);
+    background: rebeccapurple;
+  }
+}

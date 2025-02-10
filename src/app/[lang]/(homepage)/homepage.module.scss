@@ -177,16 +177,6 @@
         margin-bottom: rem(20);
       }
 
-      &:nth-child(1) {
-        background-image: url('/icons/computer.svg');
-      }
-      &:nth-child(2) {
-        background-image: url('/icons/science.svg');
-      }
-      &:nth-child(3) {
-        background-image: url('/icons/experience.svg');
-      }
-
       & > a {
         display: flex;
         flex-direction: column;
@@ -385,6 +375,7 @@
   }
 }
 
+// Extra Wide screens
 @media screen and (min-width: rem(1599.98)) {
   section:has(.banner) {
     @include section-bg-gradient(var(--c-greyish-blue-2), #272d37);
@@ -399,6 +390,7 @@
   }
 }
 
+// Wide screens
 @media screen and (min-width: rem(1280.98)) {
   section:has(.banner) {
     background-color: var(--c-greyish-blue-2);
@@ -411,4 +403,8 @@
   section:has(.join) {
     background-color: #28292b;
   }
+}
+
+// Tablets
+@media screen and (min-width: rem(1023.98)) {
 }

@@ -15,6 +15,7 @@ import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
 import { LinkButton } from '@/components/Buttons/Buttons';
 
 const cardImgs = ['afip', 'krot'];
+const advIcons = ['computer', 'science', 'experience'];
 const advLinks = ['products', 'about', 'implementations'];
 const offerLinks = ['solutions', 'products', 'implementations'];
 const joinLinks = ['career', 'contacts'];
@@ -69,7 +70,11 @@ export default async function Home({ params }: TPageProps) {
           </div>
           <ul className={classes['adv-list']}>
             {t.advantage.adv_list.map((item, i) => (
-              <li key={item} className={classes['adv-list__item']}>
+              <li
+                key={item}
+                className={classes['adv-list__item']}
+                style={{ backgroundImage: `url('icons/${advIcons[i]}.svg')` }}
+              >
                 <Link href={`/${lang}/${advLinks[i]}`}>
                   <span>{item}</span>
                   <span>{t.advantage.link_label}</span>

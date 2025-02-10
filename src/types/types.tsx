@@ -93,3 +93,54 @@ export type THomepageJSON = {
     link_label: string;
   };
 };
+
+export type TSolutionsJSON = {
+  page_header: string;
+  header: string;
+  systems: { strong: string; text: string }[];
+  units: {
+    title: string;
+    desc: {
+      strong: string;
+      text: string;
+    };
+    slides: {
+      id: number;
+      img: string;
+      img_alt: string;
+      text: {
+        caption: string;
+        desc: {
+          block1: string[];
+          block2: string[];
+        };
+      };
+    }[];
+    operation: {
+      title: string;
+      blocks: string[];
+    }[];
+    features: {
+      title: string;
+      list: {
+        id: string;
+        item: string;
+      }[];
+    }[];
+    btn_state: {
+      open_state: string;
+      close_state: string;
+    };
+    common: {
+      summary: string[];
+      expand_btn: {
+        close_state: string;
+        open_state: string;
+      };
+      slider_btn: {
+        title_left: string;
+        title_right: string;
+      };
+    };
+  }[];
+};

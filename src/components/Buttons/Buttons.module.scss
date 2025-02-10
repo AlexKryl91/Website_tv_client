@@ -1,0 +1,26 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.btn {
+  display: block;
+  min-width: rem(144);
+  padding: rem(14) rem(16);
+  background: var(--c-blue-green-3);
+  font-size: rem(16);
+  color: var(--c-whitish);
+  border-radius: var(--br-sm);
+  text-align: center;
+  transition: var(--transition-duration);
+}
+
+.link-btn {
+  width: fit-content;
+  background: var(--c-greyish-blue-1-tr40);
+}
+
+@media (any-hover: hover) {
+  .btn:hover {
+    background: var(--c-blue-sea);
+    box-shadow: var(--sh-blue);
+  }
+}

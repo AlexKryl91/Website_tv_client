@@ -12,6 +12,7 @@ import {
 } from '@/components/Sections/Sections';
 import Carousel from './Carousel';
 import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
+import { LinkButton } from '@/components/Buttons/Buttons';
 
 const cardImgs = ['afip', 'krot'];
 const advLinks = ['products', 'about', 'implementations'];
@@ -98,12 +99,12 @@ export default async function Home({ params }: TPageProps) {
               </picture>
               <div className={classes['text-wrapper']}>
                 <p>{item.text}</p>
-                <Link
+                <LinkButton
                   href={`/${lang}/${offerLinks[i]}`}
-                  className={`${classes['link-btn']} ${classes['offer-btn']}`}
+                  addClass={classes['offer__btn']}
                 >
                   {t.offer.link_label}
-                </Link>
+                </LinkButton>
               </div>
             </li>
           ))}
@@ -122,13 +123,9 @@ export default async function Home({ params }: TPageProps) {
           <p className={classes['join__text']}>{t.join.text}</p>
           <div className={classes['btn-wrapper']}>
             {t.join.link_labels.map((label, i) => (
-              <Link
-                className={classes['link-btn']}
-                key={label}
-                href={`/${lang}/${joinLinks[i]}`}
-              >
+              <LinkButton key={label} href={`/${lang}/${joinLinks[i]}`}>
                 {label}
-              </Link>
+              </LinkButton>
             ))}
           </div>
         </div>

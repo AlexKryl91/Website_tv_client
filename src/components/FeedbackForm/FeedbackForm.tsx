@@ -2,6 +2,7 @@
 
 import React from 'react';
 import classes from './FeedbackForm.module.scss';
+import { Button } from '../Buttons/Buttons';
 
 type TLabels = {
   labels: { [key: string]: string };
@@ -121,13 +122,13 @@ const FeedbackForm = ({ labels }: TLabels) => {
           className={`${classes.input} ${classes['input__msg']}`}
           required
         ></textarea>
-        <button
+        <Button
           onClick={submitForm}
-          type="submit"
-          className={classes['submit-btn']}
+          addClass={classes['submit-btn']}
+          title={labels.submit_label}
         >
           {labels.submit_label}
-        </button>
+        </Button>
       </form>
     </div>
   );

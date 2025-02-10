@@ -226,27 +226,6 @@
   }
 }
 
-// Link button style
-.link-btn {
-  display: block;
-  min-width: rem(144);
-  padding: rem(14) rem(16);
-
-  background: var(--c-blue-green-3);
-  color: var(--c-whitish);
-  border-radius: var(--br-sm);
-  text-align: center;
-  transition: var(--transition-duration);
-}
-@mixin link-btn-parent-hover {
-  color: var(--c-blue-green-5);
-  background: var(--c-whitish-blue-tr80);
-
-  .link-btn {
-    background: var(--c-blue-sea);
-  }
-}
-
 // Dark section - Offer
 .offer {
   @include bg-image-set('/img/homepage_bg_2');
@@ -265,7 +244,7 @@
     .item-img {
       filter: drop-shadow(var(--sh-black));
 
-      & > img {
+      img {
         @include shaped-card;
         margin-block: rem(-10);
         transition: filter var(--transition-duration);
@@ -276,25 +255,38 @@
     .text-wrapper {
       width: 100%;
       max-width: rem(750);
+      padding-block: rem(24);
 
-      & > p {
-        display: block;
-        margin-block: rem(24) rem(4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
         font-size: rem(20);
         line-height: var(--line-h-s);
       }
+    }
 
-      .offer-btn {
-        width: fit-content;
-        margin-inline: auto rem(32);
+    .offer__btn {
+      margin-inline: auto rem(32);
+
+      &::after {
+        content: '';
+        @include square(rem(16));
+        display: inline-block;
+        margin: rem(-1) 0 rem(-2) rem(10);
+        background-image: url('/icons/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
 
     @media (any-hover: hover) {
-      &:has(.link-btn:hover) {
-        @include link-btn-parent-hover;
+      &:has(.offer__btn:hover) {
+        color: var(--c-blue-green-5);
+        background: var(--c-whitish-blue-tr80);
 
-        .item-img > img {
+        .item-img img {
           filter: grayscale(0);
         }
       }
@@ -345,8 +337,9 @@
   }
 
   @media (any-hover: hover) {
-    &__wrapper:has(.link-btn:hover) {
-      @include link-btn-parent-hover;
+    &__wrapper:has(.btn-wrapper:hover) {
+      color: var(--c-blue-green-5);
+      background: var(--c-whitish-blue-tr80);
     }
   }
 }

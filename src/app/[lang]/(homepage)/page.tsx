@@ -98,7 +98,10 @@ export default async function Home({ params }: TPageProps) {
               </picture>
               <div className={classes['text-wrapper']}>
                 <p>{item.text}</p>
-                <Link href={`/${lang}/${offerLinks[i]}`}>
+                <Link
+                  href={`/${lang}/${offerLinks[i]}`}
+                  className={`${classes['link-btn']} ${classes['offer-btn']}`}
+                >
                   {t.offer.link_label}
                 </Link>
               </div>
@@ -120,7 +123,7 @@ export default async function Home({ params }: TPageProps) {
           <div className={classes['btn-wrapper']}>
             {t.join.link_labels.map((label, i) => (
               <Link
-                className={classes['join__btn']}
+                className={classes['link-btn']}
                 key={label}
                 href={`/${lang}/${joinLinks[i]}`}
               >

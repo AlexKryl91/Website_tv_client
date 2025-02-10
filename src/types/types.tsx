@@ -25,11 +25,19 @@ export type TNavigationJSON = {
   login_btn: { value: string; desc: string };
   info: {
     organization: string;
+    location: StaticRangeInit;
     address: string[];
     telephone: string[];
     email: string;
   };
-  dev: string;
+  credits: {
+    text: string;
+    refs: {
+      label: string;
+      href: string;
+    }[];
+  }[];
+  up_btn_title: string;
 };
 
 export type THomepageJSON = {

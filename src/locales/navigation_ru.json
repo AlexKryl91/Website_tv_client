@@ -31,7 +31,8 @@
   "lang_titles": { "ru": "Русский", "en": "Английский" },
   "login_btn": { "value": "Вход", "desc": "Вход в личный кабинет" },
   "info": {
-    "organization": "2025. ООО ТЕХНОВАКУУМ",
+    "organization": "ООО Техновакуум",
+    "location": "https://yandex.ru/maps/org/tekhnovakuum/1134873977/?ll=37.700330%2C55.778218&mode=search&sctx=ZAAAAAgBEAAaKAoSCU9ZTdcT4UJAEWpQNA9g10tAEhIJ3LqbpzrkxD8RizbHuU24wT8iBgABAgMEBSgKOABAypIHSAFqAnJ1nQHNzMw9oAEAqAEAvQGIkZ1HwgEF%2BZqTnQSCAh3QntCe0J4g0KLQtdGF0L3QvtCy0LDQutGD0YPQvIoCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.700330%2C55.778218&sspn=0.020213%2C0.006547&text=%D0%9E%D0%9E%D0%9E%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%B2%D0%B0%D0%BA%D1%83%D1%83%D0%BC&utm_source=main_stripe_big&z=17.14",
     "address": [
       "Россия, 105082, г. Москва,",
       "ул. Большая Почтовая,",
@@ -45,5 +46,33 @@
     ],
     "email": "info@technovacuum.ru"
   },
-  "dev": "Дизайнер и разработчик: Крыловский Александр"
+  "credits": [
+    {
+      "text": "Источник фото:",
+      "refs": [
+        {
+          "label": "unsplash",
+          "href": "https://unsplash.com/"
+        },
+        {
+          "label": "freepik",
+          "href": "https://www.freepik.com/"
+        }
+      ]
+    },
+    {
+      "text": "Дизайнер и разработчик: Крыловский Александр",
+      "refs": [
+        {
+          "label": "github",
+          "href": "https://github.com/AlexKryl91"
+        },
+        {
+          "label": "telegram",
+          "href": "https://t.me/it_alex_kr"
+        }
+      ]
+    }
+  ],
+  "up_btn_title": "Наверх"
 }

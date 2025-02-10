@@ -10,26 +10,6 @@
   -ms-user-select: none;
 }
 
-@mixin flex-al-center {
-  display: flex;
-  align-items: center;
-}
-
-@mixin abs-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% 50%;
-}
-
-@mixin abs-x-center {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-inline: auto;
-}
-
 @mixin bg-image-set($url) {
   background-image: image-set(
     url($url + '.avif') type('image/avif'),
@@ -40,25 +20,12 @@
 }
 
 @mixin bg-mask {
-  mask-image: linear-gradient(
-    90deg,
-    var(--c-tr) 0%,
-    var(--c-white) 5%,
-    var(--c-white) 95%,
-    var(--c-tr) 100%
-  );
+  mask-image: var(--mask-bg);
 }
 
 @mixin shaped-card {
   border-radius: var(--br-lg);
-  clip-path: polygon(
-    2rem 0%,
-    100% 0,
-    100% calc(100% - 2rem),
-    calc(100% - 2rem) 100%,
-    0 100%,
-    0% 2rem
-  );
+  clip-path: var(--clippath-card);
 }
 
 @mixin side-space-xl($br-point) {

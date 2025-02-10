@@ -13,7 +13,7 @@
   background: var(--c-greyish-blue-2);
   box-shadow: var(--sh-black-dark);
   z-index: 999;
-  transition: opacity var(--transition-duration);
+  transition: all var(--transition-duration);
 
   pointer-events: none;
   opacity: 0;
@@ -26,4 +26,10 @@
 .visible {
   pointer-events: all;
   opacity: 1;
+
+  @media (any-hover: hover) {
+    &:hover {
+      scale: 1.1;
+    }
+  }
 }

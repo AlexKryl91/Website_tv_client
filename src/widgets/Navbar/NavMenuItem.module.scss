@@ -2,7 +2,8 @@
 @use '@styles/helpers/mixins' as *;
 
 .menubar__item {
-  @include flex-al-center;
+  display: flex;
+  align-items: center;
 
   position: relative;
   height: calc(var(--navbar-h) - rem(2));

@@ -1,0 +1,46 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.navigation {
+  padding-top: rem(18);
+
+  & > ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    gap: rem(46) rem(72);
+
+    li {
+      span {
+        margin-bottom: rem(24);
+      }
+
+      .nav-group {
+        font-weight: 300;
+        line-height: var(--line-h-m);
+
+        li:not(:last-of-type) {
+          margin-bottom: rem(16);
+        }
+      }
+    }
+
+    .login-btn {
+      padding: rem(12) rem(20);
+      border-radius: var(--br-sm);
+      background: var(--c-blue-green-4);
+      font-size: rem(16);
+      text-transform: uppercase;
+      color: var(--c-blue-green-2);
+
+      @media (any-hover: hover) {
+        transition: all var(--transition-duration);
+
+        &:hover {
+          background: var(--c-blue-green-3);
+          color: var(--c-whitish);
+        }
+      }
+    }
+  }
+}

@@ -226,6 +226,27 @@
   }
 }
 
+// Link button style
+.link-btn {
+  display: block;
+  min-width: rem(144);
+  padding: rem(14) rem(16);
+
+  background: var(--c-blue-green-3);
+  color: var(--c-whitish);
+  border-radius: var(--br-sm);
+  text-align: center;
+  transition: var(--transition-duration);
+}
+@mixin link-btn-parent-hover {
+  color: var(--c-blue-green-5);
+  background: var(--c-whitish-blue-tr80);
+
+  .link-btn {
+    background: var(--c-blue-sea);
+  }
+}
+
 // Dark section - Offer
 .offer {
   @include bg-image-set('/img/homepage_bg_2');
@@ -263,36 +284,18 @@
         line-height: var(--line-h-s);
       }
 
-      a {
-        display: block;
+      .offer-btn {
         width: fit-content;
-        min-width: rem(144);
-        padding: rem(14) rem(16);
         margin-inline: auto rem(32);
-        background: var(--c-whitish-blue-tr80);
-        color: var(--c-blue-green-5);
-        border-radius: var(--br-sm);
-        text-align: center;
-        transition: var(--transition-duration);
       }
     }
 
     @media (any-hover: hover) {
-      &:hover {
-        color: var(--c-blue-green-5);
-        background: var(--c-whitish-blue-tr80);
+      &:has(.link-btn:hover) {
+        @include link-btn-parent-hover;
 
         .item-img > img {
           filter: grayscale(0);
-        }
-
-        .text-wrapper a {
-          color: var(--c-white);
-          background: var(--c-blue-green-3);
-
-          &:hover {
-            background: var(--c-blue-sea);
-          }
         }
       }
     }
@@ -319,7 +322,8 @@
   @include bg-image-set('/img/homepage_bg_3');
 
   &__wrapper {
-    @include flex-al-center;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-top: rem(360);
     padding: rem(32) var(--side-spacing);
@@ -340,31 +344,9 @@
     margin-right: rem(32);
   }
 
-  &__btn {
-    display: block;
-    min-width: rem(144);
-    padding: rem(14) rem(16);
-
-    background: var(--c-whitish-blue-tr80);
-    color: var(--c-blue-green-5);
-    border-radius: var(--br-sm);
-    text-align: center;
-    transition: var(--transition-duration);
-  }
-
   @media (any-hover: hover) {
-    &__wrapper:hover {
-      color: var(--c-blue-green-5);
-      background: var(--c-whitish-blue-tr80);
-
-      .join__btn {
-        color: var(--c-white);
-        background: var(--c-blue-green-3);
-
-        &:hover {
-          background: var(--c-blue-sea);
-        }
-      }
+    &__wrapper:has(.link-btn:hover) {
+      @include link-btn-parent-hover;
     }
   }
 }
@@ -394,8 +376,20 @@
   display: block;
   width: fit-content;
   margin-inline: auto;
-  color: var(--c-blue-green-5);
   font-size: rem(24);
+  transition: var(--transition-duration);
+
+  &,
+  &:visited,
+  &:focus {
+    color: var(--c-blue-green-5);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--c-blue-green-2);
+    }
+  }
 }
 
 @media screen and (min-width: rem(1599.98)) {

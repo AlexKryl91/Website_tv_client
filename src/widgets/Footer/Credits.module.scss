@@ -1,0 +1,43 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: rem(16);
+
+  color: var(--c-blue-green-2);
+  font-size: rem(14);
+  font-weight: 300;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(170);
+    height: 2px;
+    background-color: var(--c-blue-green-3);
+  }
+
+  &__item {
+    span {
+      display: block;
+      max-width: rem(200);
+      margin-bottom: rem(8);
+      line-height: var(--line-h-m);
+    }
+
+    .link-wrapper {
+      a {
+        display: inline-block;
+        @include square(rem(24));
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:not(:last-of-type) {
+          margin-right: rem(16);
+        }
+      }
+    }
+  }
+}

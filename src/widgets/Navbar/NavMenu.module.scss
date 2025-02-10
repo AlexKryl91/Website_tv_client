@@ -2,5 +2,6 @@
 
 .menubar {
   @include no-select;
-  @include flex-al-center;
+  display: flex;
+  align-items: center;
 }

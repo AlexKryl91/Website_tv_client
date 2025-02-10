@@ -1,0 +1,67 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.address {
+  font-style: normal;
+  color: var(--c-blue-green-2);
+
+  &__logo {
+    display: block;
+    width: rem(265);
+    height: rem(32);
+    margin-bottom: rem(32);
+  }
+
+  &__list {
+    font-weight: 300;
+    padding-left: rem(36);
+
+    li {
+      position: relative;
+      line-height: var(--line-h-m);
+
+      &:not(:last-of-type) {
+        margin-bottom: rem(16);
+      }
+    }
+  }
+
+  .org {
+    text-transform: uppercase;
+  }
+
+  .org::before,
+  .loc::before,
+  .tel::before,
+  .email::before {
+    position: absolute;
+    display: block;
+    left: rem(-28);
+    @include square(rem(16));
+  }
+
+  .org::before {
+    content: '©';
+    top: 0;
+    text-align: center;
+  }
+
+  .loc::before,
+  .tel::before,
+  .email::before {
+    content: '';
+    top: rem(1);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .loc::before {
+    background-image: url('/icons/location.svg');
+  }
+  .tel::before {
+    background-image: url('/icons/telephone.svg');
+  }
+  .email::before {
+    background-image: url('/icons/mail.svg');
+  }
+}

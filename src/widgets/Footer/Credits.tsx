@@ -5,7 +5,7 @@ function setLinkBg(filename = '') {
   return { backgroundImage: `url(icons/${filename}.svg)` };
 }
 
-const Credits = ({ content }: TNavMenu) => {
+const Credits = ({ content }: Pick<TNavMenu, 'content'>) => {
   return (
     <ul className={classes.credits}>
       {content.credits.map((item) => (

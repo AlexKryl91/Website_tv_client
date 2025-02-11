@@ -5,7 +5,7 @@ import { TNavMenu } from '@/types/types';
 import { useState } from 'react';
 import BurgerButton from './BurgerButton';
 import Link from 'next/link';
-// import { usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const MobileBlock = ({ lang, content }: TNavMenu) => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -20,33 +20,40 @@ const MobileBlock = ({ lang, content }: TNavMenu) => {
 
   document.body.classList.toggle('scrollbar--hidden', isMenuActive);
 
-  //  const pathname = usePathname();
+  const pathname = usePathname();
 
-  // function styleItem(content: { href: string }[]) {
-  //   const routeHasPath = content.some(({ href }) => pathname.includes(href));
-  //   return `${classes['menubar__item']} ${routeHasPath ? classes.active : ''}`;
-  // }
+  function styleGroup(content: { href: string }[]) {
+    const routeHasPath = content.some(({ href }) => pathname.includes(href));
+    return `${classes.group} ${routeHasPath ? classes.active : ''}`;
+  }
 
-  // function styleLink(path: string) {
-  //   return `${classes['dropdown__link']} ${
-  //     pathname.includes(path) ? classes.current : ''
-  //   }`;
-  // }
+  function styleLink(path: string) {
+    return `${classes.link} ${pathname.includes(path) ? classes.current : ''}`;
+  }
 
   return (
     <>
       <div className={coverStyle}></div>
       <ul className={menuStyle}>
+        <li className={classes['top-item']}>
+          <Link
+            onClick={() => setIsMenuActive(false)}
+            className={classes['home-btn']}
+            href={`/${lang}`}
+            aria-label={content.logo.alt}
+            role="menuitem"
+          ></Link>
+        </li>
         {content.menu.map((item) => (
-          <li key={item.title} className={classes.group}>
+          <li key={item.title} className={styleGroup(item.content)}>
             <span>{item.title}</span>
             <ul className={classes.submenu}>
               {item.content.map((link) => (
                 <li key={link.label}>
                   <Link
                     onClick={() => setIsMenuActive(false)}
+                    className={styleLink(link.href)}
                     href={`/${lang}${link.href}`}
-                    className={classes.link}
                     role="menuitem"
                   >
                     {link.label}

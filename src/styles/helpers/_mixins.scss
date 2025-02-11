@@ -23,6 +23,12 @@
   mask-image: var(--mask-bg);
 }
 
+@mixin bg-icon($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @mixin shaped-card {
   border-radius: var(--br-lg);
   clip-path: var(--clippath-card);

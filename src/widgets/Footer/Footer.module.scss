@@ -1,5 +1,6 @@
 @use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
 
 .footer {
   position: relative;
@@ -24,12 +25,9 @@
   );
 
   background-color: var(--c-greyish-blue-3);
-  background-image: url('../../../public/img/footer_corner.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
+  @include bg-icon('/img/footer_corner.svg');
   background-position: calc(50% + rem(700));
-
-  @include side-space-xl(rem(1280.98));
+  @include side-space-xl(rem($laptop));
 
   &::before {
     content: '';

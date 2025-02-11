@@ -35,6 +35,10 @@
   padding-block: calc(var(--navbar-h) + rem(56)) rem(140);
 }
 
+.intro {
+  padding-block: var(--navbar-h) rem(140);
+}
+
 .section--light {
   padding: rem(56) var(--side-spacing) rem(140);
   color: var(--c-blue-green-5);

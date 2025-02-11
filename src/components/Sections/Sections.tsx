@@ -59,7 +59,7 @@ export const SectionIntro = ({ children, addClass, imgAlt }: TSectionIntro) => {
   return (
     <section className={`${classes.section} ${classes['section--dark']}`}>
       <div
-        className={`${classes['section--dark__body']} ${classes.top} ${addClass}`}
+        className={`${classes['section--dark__body']} ${classes.intro} ${addClass}`}
       >
         {children}
       </div>

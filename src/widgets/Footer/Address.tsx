@@ -1,14 +1,9 @@
 import classes from './Address.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
-import { TLangSet, TNavigationJSON } from '@/types/types';
+import { TNavMenu } from '@/types/types';
 
-type TAdrress = {
-  lang: TLangSet;
-  text: TNavigationJSON;
-};
-
-const Address = ({ lang, text }: TAdrress) => {
+const Address = ({ lang, content }: TNavMenu) => {
   const year = new Date().getFullYear();
 
   return (
@@ -16,11 +11,11 @@ const Address = ({ lang, text }: TAdrress) => {
       <Link
         href={`/${lang}`}
         className={classes['address__logo']}
-        title={text.logo.alt}
+        title={content.logo.alt}
       >
         <Image
           src={`img/logo_large_${lang}.svg`}
-          alt={text.logo.alt}
+          alt={content.logo.alt}
           width={265}
           height={32}
           priority
@@ -28,18 +23,20 @@ const Address = ({ lang, text }: TAdrress) => {
       </Link>
 
       <ul className={classes['address__list']}>
-        <li className={classes.org}>{`${year}. ${text.info.organization}`}</li>
+        <li
+          className={classes.org}
+        >{`${year}. ${content.info.organization}`}</li>
 
         <li className={classes.loc}>
-          <a href={`${text.info.location}`} target="_blank">
-            {text.info.address.map((item) => (
+          <a href={`${content.info.location}`} target="_blank">
+            {content.info.address.map((item) => (
               <span key={item}>{item}</span>
             ))}
           </a>
         </li>
 
         <li className={classes.tel}>
-          {text.info.telephone.map((item) => (
+          {content.info.telephone.map((item) => (
             <a key={item} href={`tel: ${item}`}>
               {item}
             </a>
@@ -48,10 +45,10 @@ const Address = ({ lang, text }: TAdrress) => {
 
         <li className={classes.email}>
           <a
-            href={`mailto: ${text.info.email}`}
+            href={`mailto: ${content.info.email}`}
             className={classes['address__email']}
           >
-            {text.info.email}
+            {content.info.email}
           </a>
         </li>
       </ul>

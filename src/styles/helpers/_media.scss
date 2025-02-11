@@ -1,15 +1,8 @@
 @use './functions' as *;
 
+// Breakpoints
+
 $laptop: 1280.98;
 $tablet: 1023.98;
 $mobile: 767.98;
 $mobile-s: 480.98;
-
-@media screen and (max-width: rem($tablet)) {
-  :root {
-    --navbar-h: 3.125rem;
-
-    // --mobile-navbar-height: 52px;
-    // --mobile-side-spacing: 36px;
-  }
-}

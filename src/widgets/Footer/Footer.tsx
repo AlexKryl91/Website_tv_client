@@ -11,10 +11,10 @@ const Footer = async ({ lang }: TComponentProps) => {
   return (
     <footer className={classes.footer}>
       <div className={classes.info}>
-        <Address lang={lang} text={t}></Address>
-        <Navigation lang={lang} text={t}></Navigation>
+        <Address lang={lang} content={t}></Address>
+        <Navigation lang={lang} content={t}></Navigation>
       </div>
-      <Credits text={t}></Credits>
+      <Credits content={t}></Credits>
     </footer>
   );
 };

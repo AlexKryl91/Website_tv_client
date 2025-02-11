@@ -2,6 +2,7 @@ import classes from './NavMenuItem.module.scss';
 import Link from 'next/link';
 import Chevron from '@icons/chevron.svg';
 import { TLangSet } from '@/types/types';
+import { usePathname } from 'next/navigation';
 
 type TMenuItem = {
   item: {
@@ -11,11 +12,12 @@ type TMenuItem = {
       href: string;
     }[];
   };
-  pathname: string;
   lang: TLangSet;
 };
 
-const NavMenuItem = ({ item, pathname, lang }: TMenuItem) => {
+const NavMenuItem = ({ item, lang }: TMenuItem) => {
+  const pathname = usePathname();
+
   function styleItem(content: { href: string }[]) {
     const routeHasPath = content.some(({ href }) => pathname.includes(href));
     return `${classes['menubar__item']} ${routeHasPath ? classes.active : ''}`;

@@ -1,14 +1,12 @@
-.scrollbar--hidden {
-  overflow: hidden;
-
-  &::-webkit-scrollbar {
-    width: 0;
-  }
-}
-
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--c-greyish-blue-2);
+  color: var(--c-whitish);
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: var(--scroll-w);
@@ -28,12 +26,12 @@ html {
   }
 }
 
-body {
-  background: var(--c-greyish-blue-2);
-  color: var(--c-whitish);
+.scrollbar--hidden {
+  overflow: hidden;
 
-  // for testing
-  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 a,

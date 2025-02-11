@@ -1,0 +1,25 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+.actions {
+  display: flex;
+  align-items: center;
+  column-gap: rem(64);
+}
+
+.login-btn {
+  padding: rem(12) rem(20);
+  border-radius: var(--br-sm);
+  background: none;
+  font-size: rem(16);
+  text-transform: uppercase;
+  color: var(--c-whitish);
+  transition: all var(--transition-duration);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: var(--c-whitish-tr20);
+      color: var(--c-orange-bright);
+    }
+  }
+}

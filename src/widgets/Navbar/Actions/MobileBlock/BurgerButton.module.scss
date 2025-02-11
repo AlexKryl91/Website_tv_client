@@ -1,0 +1,62 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+$line-h: rem(6);
+$line-w: rem(40);
+$pad-space: rem(10);
+
+$burger-h: calc($line-h * 5 + $pad-space * 2);
+$burger-w: calc($line-w + $pad-space * 2);
+
+.burger-btn {
+  width: $burger-w;
+  height: $burger-h;
+
+  position: relative;
+  background: none;
+
+  span {
+    position: absolute;
+    left: $pad-space;
+
+    display: block;
+    height: $line-h;
+    width: $line-w;
+
+    background: var(--c-whitish);
+    border-radius: $line-h;
+    opacity: 1;
+    transform: rotate(0);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: $pad-space;
+  }
+  span:nth-child(2),
+  span:nth-child(3) {
+    top: calc($line-h * 2 + $pad-space);
+  }
+  span:nth-child(4) {
+    top: calc($line-h * 4 + $pad-space);
+  }
+}
+
+.open span {
+  background: var(--c-orange-bright);
+}
+
+.open span:nth-child(1),
+.open span:nth-child(4) {
+  top: calc($line-h * 2);
+  width: 0;
+  left: 50%;
+}
+
+.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}

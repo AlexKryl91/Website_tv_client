@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 
+type TSize = number | null;
+
 const useSize = () => {
-  const [windowSize, setWindowSize] = useState([
-    window.innerHeight,
-    window.innerWidth,
-  ]);
+  const [windowSize, setWindowSize] = useState<TSize[]>([null, null]);
+
+  function windowSizeHandler() {
+    setWindowSize([window.innerWidth, window.innerHeight]);
+  }
 
   useEffect(() => {
-    const windowSizeHandler = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-    };
+    windowSizeHandler();
     window.addEventListener('resize', windowSizeHandler);
 
     return () => {

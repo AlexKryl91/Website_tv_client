@@ -1,5 +1,6 @@
 @use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
 
 .section {
   position: relative;
@@ -20,7 +21,7 @@
     max-width: var(--view-max-w);
     margin-inline: auto;
 
-    @media screen and (min-width: rem(1280.98)) {
+    @media screen and (min-width: rem($laptop)) {
       @include bg-mask;
     }
   }
@@ -31,7 +32,7 @@
 }
 
 .top {
-  padding-block: var(--navbar-h) rem(140);
+  padding-block: calc(var(--navbar-h) + rem(56)) rem(140);
 }
 
 .section--light {

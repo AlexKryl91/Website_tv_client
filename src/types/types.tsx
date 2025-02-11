@@ -40,6 +40,11 @@ export type TNavigationJSON = {
   up_btn_title: string;
 };
 
+export type TNavMenu = {
+  lang: TLangSet;
+  content: TNavigationJSON;
+};
+
 export type THomepageJSON = {
   banner: {
     header: string;

@@ -1,17 +1,12 @@
 import classes from './Navigation.module.scss';
 import Link from 'next/link';
-import { TLangSet, TNavigationJSON } from '@/types/types';
+import { TNavMenu } from '@/types/types';
 
-type TNavigation = {
-  lang: TLangSet;
-  text: TNavigationJSON;
-};
-
-const Navigation = ({ lang, text }: TNavigation) => {
+const Navigation = ({ lang, content }: TNavMenu) => {
   return (
     <nav className={classes.navigation}>
       <ul>
-        {text.menu.map((item) => (
+        {content.menu.map((item) => (
           <li key={item.title}>
             <span>{item.title}</span>
             <ul className={classes['nav-group']}>
@@ -27,9 +22,9 @@ const Navigation = ({ lang, text }: TNavigation) => {
           <button
             className={classes['login-btn']}
             type="button"
-            title={text.login_btn.desc}
+            title={content.login_btn.desc}
           >
-            {text.login_btn.value}
+            {content.login_btn.value}
           </button>
         </li>
       </ul>

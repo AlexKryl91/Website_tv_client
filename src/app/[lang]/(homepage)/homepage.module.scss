@@ -1,5 +1,6 @@
 @use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
 
 // Intro section - Banner
 .banner {
@@ -391,7 +392,7 @@
 }
 
 // Wide screens
-@media screen and (min-width: rem(1280.98)) {
+@media screen and (min-width: rem($laptop)) {
   section:has(.banner) {
     background-color: var(--c-greyish-blue-2);
   }
@@ -406,5 +407,5 @@
 }
 
 // Tablets
-@media screen and (min-width: rem(1023.98)) {
+@media screen and (min-width: rem($tablet)) {
 }

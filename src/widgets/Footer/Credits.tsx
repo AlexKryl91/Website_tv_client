@@ -1,18 +1,14 @@
 import classes from './Credits.module.scss';
-import { TNavigationJSON } from '@/types/types';
-
-type TCredits = {
-  text: TNavigationJSON;
-};
+import { TNavMenu } from '@/types/types';
 
 function setLinkBg(filename = '') {
   return { backgroundImage: `url(icons/${filename}.svg)` };
 }
 
-const Credits = ({ text }: TCredits) => {
+const Credits = ({ content }: TNavMenu) => {
   return (
     <ul className={classes.credits}>
-      {text.credits.map((item) => (
+      {content.credits.map((item) => (
         <li key={item.text} className={classes['credits__item']}>
           <span>{item.text}</span>
           <div className={classes['link-wrapper']}>

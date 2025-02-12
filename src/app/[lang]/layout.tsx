@@ -25,7 +25,7 @@ export default async function RootLayout({
         <Navbar lang={lang} />
         <main>{children}</main>
         <Footer lang={lang}></Footer>
-        <UpButton />
+        <UpButton lang={lang} />
       </body>
     </html>
   );

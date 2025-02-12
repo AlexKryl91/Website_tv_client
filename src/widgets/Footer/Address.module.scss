@@ -9,7 +9,7 @@
     display: block;
     width: rem(265);
     height: rem(32);
-    margin-bottom: rem(32);
+    margin-bottom: rem(24);
   }
 
   &__list {
@@ -28,6 +28,10 @@
 
   .org {
     text-transform: uppercase;
+  }
+
+  .tel a:not(:last-of-type) {
+    margin-bottom: rem(4);
   }
 
   .org::before,

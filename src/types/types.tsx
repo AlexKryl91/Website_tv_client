@@ -1,5 +1,12 @@
 export type TLangSet = 'ru' | 'en';
 
+export type TLangSwitchBtn = {
+  isActive: boolean;
+  title: string;
+  label: string;
+  onClick: () => void;
+};
+
 export type TLayoutProps = {
   children: React.ReactNode;
   params: Promise<{ lang: TLangSet }>;
@@ -14,18 +21,21 @@ export type TComponentProps = {
   lang: TLangSet;
 };
 
+type TLink = { label: string; href: string; aria_label: string };
+
 export type TNavigationJSON = {
-  logo: { alt: string };
+  logo: { alt: string; aria_label: string };
   menu: {
     title: string;
-    content: { label: string; href: string }[];
+    content: TLink[];
   }[];
   menu_aria_label: string;
   lang_titles: { ru: string; en: string };
   login_btn: { value: string; desc: string };
   info: {
     organization: string;
-    location: StaticRangeInit;
+    location: string;
+    loc_aria_label: string;
     address: string[];
     telephone: string[];
     email: string;
@@ -35,14 +45,26 @@ export type TNavigationJSON = {
     refs: {
       label: string;
       href: string;
+      aria_label: string;
     }[];
   }[];
-  up_btn_title: string;
 };
 
 export type TNavMenu = {
   lang: TLangSet;
   content: TNavigationJSON;
+};
+
+export type TNavMenuItem = {
+  item: {
+    title: string;
+    content: {
+      label: string;
+      href: string;
+      aria_label: string;
+    }[];
+  };
+  lang: TLangSet;
 };
 
 export type THomepageJSON = {
@@ -59,7 +81,11 @@ export type THomepageJSON = {
       number: string;
       text: string;
     }[];
-    adv_list: string[];
+    adv_list: {
+      text: string;
+      href: string;
+      aria_label: string;
+    }[];
     link_label: string;
   };
   offer: {
@@ -67,6 +93,8 @@ export type THomepageJSON = {
     list: {
       img_alt: string;
       text: string;
+      href: string;
+      aria_label: string;
     }[];
     link_label: string;
   };
@@ -81,7 +109,7 @@ export type THomepageJSON = {
   join: {
     header: string;
     text: string;
-    link_labels: string[];
+    links: TLink[];
   };
   feedback: {
     header: string;
@@ -95,7 +123,7 @@ export type THomepageJSON = {
       submit_label: string;
     };
     call_text: string;
-    link_label: string;
+    call_link: TLink;
   };
 };
 

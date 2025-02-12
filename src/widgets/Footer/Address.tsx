@@ -11,7 +11,8 @@ const Address = ({ lang, content }: TNavMenu) => {
       <Link
         href={`/${lang}`}
         className={classes['address__logo']}
-        title={content.logo.alt}
+        title={content.logo.aria_label}
+        aria-label={content.logo.aria_label}
       >
         <Image
           src={`img/logo_large_${lang}.svg`}
@@ -28,7 +29,11 @@ const Address = ({ lang, content }: TNavMenu) => {
         >{`${year}. ${content.info.organization}`}</li>
 
         <li className={classes.loc}>
-          <a href={`${content.info.location}`} target="_blank">
+          <a
+            href={`${content.info.location}`}
+            target="_blank"
+            aria-label={content.info.loc_aria_label}
+          >
             {content.info.address.map((item) => (
               <span key={item}>{item}</span>
             ))}

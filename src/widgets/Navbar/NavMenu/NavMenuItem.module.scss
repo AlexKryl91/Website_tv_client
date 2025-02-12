@@ -10,6 +10,7 @@
   padding-inline: rem(16);
   margin-block: auto;
   column-gap: rem(8);
+  white-space: nowrap;
 
   &:after {
     content: '';
@@ -30,13 +31,13 @@
     opacity: 1;
     pointer-events: all;
   }
-}
 
-.active {
-  color: var(--c-orange-dull);
+  &--active {
+    color: var(--c-orange-dull);
 
-  &:after {
-    width: 100%;
+    &:after {
+      width: 100%;
+    }
   }
 }
 
@@ -76,7 +77,7 @@
     }
 
     &:not(.current):hover,
-    &.current {
+    &--current {
       background: var(--c-whitish-blue);
       font-weight: 500;
     }

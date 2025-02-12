@@ -2,15 +2,15 @@
 
 import { TLangSet } from '@/types/types';
 import { usePathname, useRouter } from 'next/navigation';
-import classes from './LangSwitcher.module.scss';
-import LangButton from './LangButton';
+import classes from './MobileLangSwitcher.module.scss';
+import MobileLangButton from './MobileLangButton';
 
 type TSwitcher = {
   lang: TLangSet;
   titles: { [key: string]: string };
 };
 
-const LangSwitcher = ({ lang, titles }: TSwitcher) => {
+const MobileLangSwitcher = ({ lang, titles }: TSwitcher) => {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -29,7 +29,7 @@ const LangSwitcher = ({ lang, titles }: TSwitcher) => {
   return (
     <div className={classes.switcher}>
       {Object.keys(titles).map((locale) => (
-        <LangButton
+        <MobileLangButton
           key={locale}
           isActive={lang !== locale}
           label={locale}
@@ -41,4 +41,4 @@ const LangSwitcher = ({ lang, titles }: TSwitcher) => {
   );
 };
 
-export default LangSwitcher;
+export default MobileLangSwitcher;

@@ -22,13 +22,19 @@ type TLinkButton = {
   children?: React.ReactNode;
   addClass?: string;
   href: string;
+  aria_label?: string;
 };
 
-export const LinkButton = ({ children, addClass, href }: TLinkButton) => {
-  const style = `${classes.btn} ${classes['link-btn']} ${addClass}`;
+export const LinkButton = ({
+  children,
+  addClass,
+  href,
+  aria_label,
+}: TLinkButton) => {
+  const style = `${classes.btn} ${classes['link-btn']} ${addClass ?? ''}`;
 
   return (
-    <Link href={href} className={style}>
+    <Link href={href} className={style} aria-label={aria_label ?? 'link'}>
       {children}
     </Link>
   );

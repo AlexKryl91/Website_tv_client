@@ -1,0 +1,28 @@
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/mixins' as *;
+
+.lang-btn {
+  width: rem(44);
+  height: rem(40);
+  border-radius: var(--br-sm);
+  background: none;
+  font-size: rem(18);
+  text-transform: uppercase;
+  color: var(--c-whitish);
+  transition: all var(--transition-duration);
+  cursor: default;
+
+  &--active {
+    cursor: pointer;
+    font-size: rem(16);
+    color: var(--c-whitish-tr40);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: var(--c-whitish-tr20);
+        scale: 1.2;
+        color: var(--c-whitish);
+      }
+    }
+  }
+}

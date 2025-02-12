@@ -11,7 +11,11 @@ const Navbar = async ({ lang }: TComponentProps) => {
 
   return (
     <header className={classes.navbar}>
-      <Link href={`/${lang}`} title={t.logo.alt}>
+      <Link
+        href={`/${lang}`}
+        title={t.logo.aria_label}
+        aria-label={t.logo.aria_label}
+      >
         <Image
           className={classes.logo}
           src={`img/logo_large_${lang}.svg`}

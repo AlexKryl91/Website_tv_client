@@ -1,29 +1,54 @@
 {
-  "logo": { "alt": "To home page" },
+  "logo": { "alt": "Technovacuum LLC Logo", "aria_label": "To home page" },
   "menu": [
     {
       "title": "Solutions & Products",
       "content": [
-        { "label": "Solutions", "href": "/solutions" },
+        {
+          "label": "Solutions",
+          "href": "/solutions",
+          "aria_label": "Link to the page with our developments and solutions"
+        },
         {
           "label": "Products & Services",
-          "href": "/products"
+          "href": "/products",
+          "aria_label": "Link to the page with the products and services we offer"
         }
       ]
     },
     {
       "title": "About Us",
       "content": [
-        { "label": "Our Company", "href": "/about" },
-        { "label": "Implementations", "href": "/implementations" },
-        { "label": "Publications", "href": "/publications" }
+        {
+          "label": "Our Company",
+          "href": "/about",
+          "aria_label": "Link to the page with information about our company"
+        },
+        {
+          "label": "Implementations",
+          "href": "/implementations",
+          "aria_label": "Link to the page about the implementation of our technologies"
+        },
+        {
+          "label": "Publications",
+          "href": "/publications",
+          "aria_label": "Link to the page with our publications"
+        }
       ]
     },
     {
       "title": "Contacts",
       "content": [
-        { "label": "Contacts", "href": "/contacts" },
-        { "label": "Career", "href": "/career" }
+        {
+          "label": "Contacts",
+          "href": "/contacts",
+          "aria_label": "Link to our contact information page"
+        },
+        {
+          "label": "Career",
+          "href": "/career",
+          "aria_label": "Link to vacancies page"
+        }
       ]
     }
   ],
@@ -31,8 +56,9 @@
   "lang_titles": { "ru": "Russian", "en": "English" },
   "login_btn": { "value": "Login", "desc": "Login to your account" },
   "info": {
-    "organization": "technovacuum llc",
+    "organization": "Technovacuum LLC",
     "location": "https://yandex.ru/maps/org/tekhnovakuum/1134873977/?ll=37.700330%2C55.778218&mode=search&sctx=ZAAAAAgBEAAaKAoSCU9ZTdcT4UJAEWpQNA9g10tAEhIJ3LqbpzrkxD8RizbHuU24wT8iBgABAgMEBSgKOABAypIHSAFqAnJ1nQHNzMw9oAEAqAEAvQGIkZ1HwgEF%2BZqTnQSCAh3QntCe0J4g0KLQtdGF0L3QvtCy0LDQutGD0YPQvIoCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.700330%2C55.778218&sspn=0.020213%2C0.006547&text=%D0%9E%D0%9E%D0%9E%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%B2%D0%B0%D0%BA%D1%83%D1%83%D0%BC&utm_source=main_stripe_big&z=17.14",
+    "loc_aria_label": "Link to Yandex.Maps",
     "address": [
       "Russia, 105082, Moscow",
       "Bolshaya Pochtovaya St, 26В,",
@@ -52,11 +78,13 @@
       "refs": [
         {
           "label": "unsplash",
-          "href": "https://unsplash.com/"
+          "href": "https://unsplash.com/",
+          "aria_label": "Link to Unsplash - a free resource with images"
         },
         {
           "label": "freepik",
-          "href": "https://www.freepik.com/"
+          "href": "https://www.freepik.com/",
+          "aria_label": "Link to Freepik - a free resource with images"
         }
       ]
     },
@@ -65,14 +93,15 @@
       "refs": [
         {
           "label": "github",
-          "href": "https://github.com/AlexKryl91"
+          "href": "https://github.com/AlexKryl91",
+          "aria_label": "Link to the Github profile of the site developer"
         },
         {
           "label": "telegram",
-          "href": "https://t.me/it_alex_kr"
+          "href": "https://t.me/it_alex_kr",
+          "aria_label": "Link to the Telegram profile of the site developer"
         }
       ]
     }
-  ],
-  "up_btn_title": "To top"
+  ]
 }

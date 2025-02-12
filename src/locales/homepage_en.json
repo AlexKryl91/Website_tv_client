@@ -24,9 +24,21 @@
       }
     ],
     "adv_list": [
-      "Modern and advanced solutions for many different industrial problems",
-      "Solutions based on scientific research and testing",
-      "Extensive experience in implementing industrial systems and installations"
+      {
+        "text": "Modern and advanced solutions for many different industrial problems",
+        "href": "/solutions",
+        "aria_label": "Link to the page with our developments and solutions"
+      },
+      {
+        "text": "Solutions based on scientific research and testing",
+        "href": "/about",
+        "aria_label": "Link to the page with information about our company"
+      },
+      {
+        "text": "Extensive experience in implementing industrial systems and installations",
+        "href": "/implementations",
+        "aria_label": "Link to the page about the implementation of our technologies"
+      }
     ],
     "link_label": "Learn more >"
   },
@@ -35,15 +47,21 @@
     "list": [
       {
         "img_alt": "Refinery",
-        "text": "Developments and technological solutions based on vacuum-creating systems, jet compressors or jet absorption units for various industrial problems"
+        "text": "Developments and technological solutions based on vacuum-creating systems, jet compressors or jet absorption units for various industrial problems",
+        "href": "/solutions",
+        "aria_label": "Link to the page with our developments and solutions"
       },
       {
         "img_alt": "Employees inspect the installation",
-        "text": "Inspection services of production and installations, process modeling, technical and economic analysis, development of technical specifications and basic design, etc."
+        "text": "Inspection services of production and installations, process modeling, technical and economic analysis, development of technical specifications and basic design, etc.",
+        "href": "/products",
+        "aria_label": "Link to the page with the products and services we offer"
       },
       {
         "img_alt": "Piping",
-        "text": "Optimal installation of our products in modernization or reconstruction conditions installations to suit the Client’s goals with an overall increase in productivity and efficiency"
+        "text": "Optimal installation of our products in modernization or reconstruction conditions installations to suit the Client’s goals with an overall increase in productivity and efficiency",
+        "href": "/implementations",
+        "aria_label": "Link to the page about the implementation of our technologies"
       }
     ],
     "link_label": "Learn more"
@@ -166,7 +184,18 @@
   "join": {
     "header": "Join our team!",
     "text": "If you want to join our team, take a part in the development and implementation of new technologies and find the embodiment of your ideas in metal, check out the open vacancies or send your resume to our email!",
-    "link_labels": ["Careers", "Contacts"]
+    "links": [
+      {
+        "label": "Career",
+        "href": "/career",
+        "aria_label": "Link to vacancies page"
+      },
+      {
+        "label": "Contacts",
+        "href": "/contacts",
+        "aria_label": "Link to our contact information page"
+      }
+    ]
   },
   "feedback": {
     "header": "Contact us",
@@ -180,6 +209,10 @@
       "submit_label": "Submit"
     },
     "call_text": "If you need environmentally friendly systems, want to reduce emissions, energy  and resource consumption, are planning to construct new facilities or to upgrade existing ones...",
-    "link_label": "Contact us!"
+    "call_link": {
+      "label": "Contact us!",
+      "href": "/contacts",
+      "aria_label": "Link to our contact information page"
+    }
   }
 }

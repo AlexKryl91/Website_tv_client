@@ -11,11 +11,7 @@ const NavMenu = ({ lang, content }: TNavMenu) => {
 
   const navMenu = (
     <nav>
-      <ul
-        className={classes.menubar}
-        role="menubar"
-        aria-label={content.menu_aria_label}
-      >
+      <ul className={classes.menubar} aria-label={content.menu_aria_label}>
         {content.menu.map((item) => (
           <NavMenuItem key={item.title} item={item} lang={lang} />
         ))}

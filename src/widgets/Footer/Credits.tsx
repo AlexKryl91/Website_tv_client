@@ -1,11 +1,11 @@
 import classes from './Credits.module.scss';
 import { TNavMenu } from '@/types/types';
 
-function setLinkBg(filename = '') {
-  return { backgroundImage: `url(icons/${filename}.svg)` };
-}
-
 const Credits = ({ content }: Pick<TNavMenu, 'content'>) => {
+  function setLinkBg(filename = '') {
+    return { backgroundImage: `url(icons/${filename}.svg)` };
+  }
+
   return (
     <ul className={classes.credits}>
       {content.credits.map((item) => (
@@ -15,9 +15,10 @@ const Credits = ({ content }: Pick<TNavMenu, 'content'>) => {
             {item.refs.map((link) => (
               <a
                 key={link.label}
+                style={setLinkBg(link.label)}
                 href={link.href}
                 target="_blank"
-                style={setLinkBg(link.label)}
+                aria-label={link.aria_label}
               ></a>
             ))}
           </div>

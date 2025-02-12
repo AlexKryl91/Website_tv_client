@@ -6,6 +6,10 @@ import type { Configuration } from 'webpack';
 // const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
+
   webpack(config: Configuration) {
     webpackSVGR(config);
     // webpackClassNames(config);

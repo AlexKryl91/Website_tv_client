@@ -1,0 +1,67 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+
+$paddings: rem(20) rem(24);
+
+// Button "group"
+.group {
+  width: 100%;
+  padding: $paddings;
+  border-top: rem(2) solid var(--c-blue-green-1);
+  background: none;
+
+  text-align: left;
+  font-size: rem(16);
+  color: var(--c-blue-green-5);
+
+  &--current {
+    color: var(--c-orange-dull);
+  }
+}
+
+// Chevron icon - indicator
+.chevron {
+  margin-left: rem(8);
+  transition: var(--transition-duration);
+
+  &--open {
+    transform: rotate(-180deg);
+  }
+}
+
+// Submenu
+.submenu {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-duration);
+
+  &--open {
+    max-height: rem(200);
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.link {
+  position: relative;
+  display: block;
+  margin-inline: rem(24);
+  padding: $paddings;
+  border-top: rem(1) solid var(--c-blue-green-1);
+
+  &,
+  &:visited,
+  &:focus {
+    color: var(--c-blue-green-5);
+  }
+
+  &--current {
+    background: var(--c-whitish-blue);
+    &,
+    &:visited,
+    &:focus {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,29 +1,54 @@
 {
-  "logo": { "alt": "На главную страницу" },
+  "logo": { "alt": "Логотип ООО Техновакуум", "aria_label": "На главную страницу" },
   "menu": [
     {
       "title": "Разработки и решения",
       "content": [
-        { "label": "Разработки", "href": "/solutions" },
+        {
+          "label": "Разработки",
+          "href": "/solutions",
+          "aria_label": "Переход на страницу с нашими разработками и решениями"
+        },
         {
           "label": "Продукция и услуги",
-          "href": "/products"
+          "href": "/products",
+          "aria_label": "Переход на страницу с предлагаемой нами продукцией и услугами"
         }
       ]
     },
     {
       "title": "О нас",
       "content": [
-        { "label": "О компании", "href": "/about" },
-        { "label": "Внедрения", "href": "/implementations" },
-        { "label": "Публикации", "href": "/publications" }
+        {
+          "label": "О компании",
+          "href": "/about",
+          "aria_label": "Переход на страницу с информацией о нашей номпании"
+        },
+        {
+          "label": "Внедрения",
+          "href": "/implementations",
+          "aria_label": "Переход на страницу о внедрениях наших технологий"
+        },
+        {
+          "label": "Публикации",
+          "href": "/publications",
+          "aria_label": "Переход на страницу с нашими публикациями"
+        }
       ]
     },
     {
       "title": "Контакты",
       "content": [
-        { "label": "Контакты", "href": "/contacts" },
-        { "label": "Вакансии", "href": "/career" }
+        {
+          "label": "Контакты",
+          "href": "/contacts",
+          "aria_label": "Переход на страницу с нашими контактной информацией"
+        },
+        {
+          "label": "Вакансии",
+          "href": "/career",
+          "aria_label": "Переход на страницу с вакансиями"
+        }
       ]
     }
   ],
@@ -33,6 +58,7 @@
   "info": {
     "organization": "ООО Техновакуум",
     "location": "https://yandex.ru/maps/org/tekhnovakuum/1134873977/?ll=37.700330%2C55.778218&mode=search&sctx=ZAAAAAgBEAAaKAoSCU9ZTdcT4UJAEWpQNA9g10tAEhIJ3LqbpzrkxD8RizbHuU24wT8iBgABAgMEBSgKOABAypIHSAFqAnJ1nQHNzMw9oAEAqAEAvQGIkZ1HwgEF%2BZqTnQSCAh3QntCe0J4g0KLQtdGF0L3QvtCy0LDQutGD0YPQvIoCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.700330%2C55.778218&sspn=0.020213%2C0.006547&text=%D0%9E%D0%9E%D0%9E%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%B2%D0%B0%D0%BA%D1%83%D1%83%D0%BC&utm_source=main_stripe_big&z=17.14",
+    "loc_aria_label": "Переход на Яндекс.Карты",
     "address": [
       "Россия, 105082, г. Москва,",
       "ул. Большая Почтовая,",
@@ -52,11 +78,13 @@
       "refs": [
         {
           "label": "unsplash",
-          "href": "https://unsplash.com/"
+          "href": "https://unsplash.com/",
+          "aria_label": "Ссылка на Unsplash - бесплатный ресурс с изображениями"
         },
         {
           "label": "freepik",
-          "href": "https://www.freepik.com/"
+          "href": "https://www.freepik.com/",
+          "aria_label": "Ссылка на Freepik - бесплатный ресурс с изображениями"
         }
       ]
     },
@@ -65,14 +93,15 @@
       "refs": [
         {
           "label": "github",
-          "href": "https://github.com/AlexKryl91"
+          "href": "https://github.com/AlexKryl91",
+          "aria_label": "Ссылка на Github-профиль разработчика сайта"
         },
         {
           "label": "telegram",
-          "href": "https://t.me/it_alex_kr"
+          "href": "https://t.me/it_alex_kr",
+          "aria_label": "Ссылка на Telegram-профиль разработчика сайта"
         }
       ]
     }
-  ],
-  "up_btn_title": "Наверх"
+  ]
 }

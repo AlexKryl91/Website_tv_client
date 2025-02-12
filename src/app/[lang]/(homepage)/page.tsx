@@ -14,11 +14,8 @@ import Carousel from './Carousel';
 import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
 import { LinkButton } from '@/components/Buttons/Buttons';
 
-const cardImgs = ['afip', 'krot'];
-const advIcons = ['computer', 'science', 'experience'];
-const advLinks = ['products', 'about', 'implementations'];
-const offerLinks = ['solutions', 'products', 'implementations'];
-const joinLinks = ['career', 'contacts'];
+const CARD_IMGS = ['afip', 'krot'];
+const ADV_ICONS = ['computer', 'science', 'experience'];
 
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
@@ -46,7 +43,7 @@ export default async function Home({ params }: TPageProps) {
       <SectionLight header={t.advantage.header}>
         <div className={classes.advantages}>
           <div className={classes.collage}>
-            {cardImgs.map((imgName, i) => (
+            {CARD_IMGS.map((imgName, i) => (
               <Fragment key={imgName}>
                 <picture className={classes['img-card']}>
                   <source
@@ -59,6 +56,7 @@ export default async function Home({ params }: TPageProps) {
                     width="270"
                     height="200"
                     alt={t.advantage.collage[i].img_alt}
+                    loading="lazy"
                   />
                 </picture>
                 <div className={classes['text-card']}>
@@ -71,12 +69,15 @@ export default async function Home({ params }: TPageProps) {
           <ul className={classes['adv-list']}>
             {t.advantage.adv_list.map((item, i) => (
               <li
-                key={item}
+                key={item.text}
                 className={classes['adv-list__item']}
-                style={{ backgroundImage: `url('icons/${advIcons[i]}.svg')` }}
+                style={{ backgroundImage: `url('icons/${ADV_ICONS[i]}.svg')` }}
               >
-                <Link href={`/${lang}/${advLinks[i]}`}>
-                  <span>{item}</span>
+                <Link
+                  href={`/${lang}${item.href}`}
+                  aria-label={item.aria_label}
+                >
+                  <span>{item.text}</span>
                   <span>{t.advantage.link_label}</span>
                 </Link>
               </li>
@@ -100,12 +101,14 @@ export default async function Home({ params }: TPageProps) {
                   width="270"
                   height="180"
                   alt={item.img_alt}
+                  loading="lazy"
                 />
               </picture>
               <div className={classes['text-wrapper']}>
                 <p>{item.text}</p>
                 <LinkButton
-                  href={`/${lang}/${offerLinks[i]}`}
+                  href={`/${lang}${item.href}`}
+                  aria_label={item.aria_label}
                   addClass={classes['offer__btn']}
                 >
                   {t.offer.link_label}
@@ -127,9 +130,13 @@ export default async function Home({ params }: TPageProps) {
         <div className={classes['join__wrapper']}>
           <p className={classes['join__text']}>{t.join.text}</p>
           <div className={classes['btn-wrapper']}>
-            {t.join.link_labels.map((label, i) => (
-              <LinkButton key={label} href={`/${lang}/${joinLinks[i]}`}>
-                {label}
+            {t.join.links.map((link) => (
+              <LinkButton
+                key={link.label}
+                href={`/${lang}${link.href}`}
+                aria_label={link.aria_label}
+              >
+                {link.label}
               </LinkButton>
             ))}
           </div>
@@ -140,8 +147,12 @@ export default async function Home({ params }: TPageProps) {
         <p className={classes['feedback__text']}>{t.feedback.feedback_text}</p>
         <FeedbackForm labels={t.feedback.feedback_form}></FeedbackForm>
         <p className={classes['call__text']}>{t.feedback.call_text}</p>
-        <Link className={classes['call__link']} href={`/${lang}/contacts`}>
-          {t.feedback.link_label}
+        <Link
+          className={classes['call__link']}
+          href={`/${lang}${t.feedback.call_link.href}`}
+          aria-label={t.feedback.call_link.aria_label}
+        >
+          {t.feedback.call_link.label}
         </Link>
       </SectionLight>
     </>

@@ -8,6 +8,7 @@ import type { Configuration } from 'webpack';
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
 
   webpack(config: Configuration) {

@@ -84,7 +84,7 @@ const FeedbackForm = ({ labels }: TLabels) => {
       <form className={classes['feedback__form']}>
         <input
           type="text"
-          name="username"
+          name="name"
           minLength={10}
           placeholder={labels.placeholder_name}
           required

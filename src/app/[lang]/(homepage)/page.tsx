@@ -13,6 +13,7 @@ import {
 import Carousel from './Carousel';
 import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
 import { LinkButton } from '@/components/Buttons/Buttons';
+import { preloadImages } from '@/utils/preloadResources';
 
 const CARD_IMGS = ['afip', 'krot'];
 const ADV_ICONS = ['computer', 'science', 'experience'];
@@ -20,6 +21,12 @@ const ADV_ICONS = ['computer', 'science', 'experience'];
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
   const t = (await getLocale('homepage', lang)) as THomepageJSON;
+
+  preloadImages([
+    '/img/homepage_bg_1.avif',
+    '/img/steam_ejector.avif',
+    '/img/striped_bg_animated.svg',
+  ]);
 
   return (
     <>

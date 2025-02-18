@@ -1,5 +1,6 @@
-@use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/media' as *;
 
 .navigation {
   padding-top: rem(18);
@@ -39,6 +40,24 @@
         &:hover {
           background: var(--c-blue-green-3);
           color: var(--c-whitish);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .navigation {
+    & > ul {
+      gap: rem(32) rem(48);
+
+      li {
+        span {
+          margin-bottom: rem(20);
+        }
+
+        .nav-group li:not(:last-of-type) {
+          margin-bottom: rem(12);
         }
       }
     }

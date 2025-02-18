@@ -2,6 +2,7 @@
 @use '@styles/helpers/functions' as *;
 @use '@styles/helpers/media' as *;
 
+// Common style
 .section {
   position: relative;
   width: 100%;
@@ -13,6 +14,7 @@
   }
 }
 
+// Dark section
 .section--dark {
   margin-bottom: rem(-40);
 
@@ -35,42 +37,14 @@
   padding-block: calc(var(--navbar-h) + rem(56)) rem(140);
 }
 
+// addintion for first homepage section
 .intro {
   padding-block: var(--navbar-h) rem(140);
 }
 
-.section--light {
-  padding: rem(56) var(--side-spacing) rem(140);
-  color: var(--c-blue-green-5);
-  background-color: var(--c-whitish);
-
-  // ===> for desktop below 1280px
-  // clip-path: polygon(
-  //   0% 0%,
-  //   22% 0,
-  //   22% rem(40),
-  //   calc(22% + rem(40)) 0,
-  //   100% 0,
-  //   100% 100%,
-  //   0 100%
-  // );
-
-  // ===> for desktop higher 1280px
-  clip-path: polygon(
-    0% 0%,
-    calc(50% - rem(360)) 0,
-    calc(50% - rem(360)) rem(40),
-    calc(50% - rem(320)) 0,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-
-  @include side-space-xl(rem(1280.98));
-}
-
 .striped-bg {
   height: 100%;
+  width: auto;
   position: absolute;
   top: var(--navbar-h);
   left: calc(50% - rem(40));
@@ -82,4 +56,48 @@
   left: calc(50% + rem(72));
   translate: 0 calc(-50% + rem(2));
   filter: drop-shadow(0 rem(12) rem(4) var(--c-black-tr25));
+}
+
+// Light section
+.section--light {
+  padding: rem(56) var(--side-spacing) rem(140);
+  color: var(--c-blue-green-5);
+  background-color: var(--c-whitish);
+  clip-path: var(--clip-section);
+
+  @include side-space-xl(rem($laptop));
+}
+
+// Media queries
+
+@media screen and (max-width: rem(1040)) {
+  .ejector-img {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: rem(960)) {
+  .ejector-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: rem(672)) {
+  .section {
+    &__header {
+      font-size: rem(26);
+      line-height: rem(32);
+      margin-bottom: rem(40);
+      text-wrap: balance;
+    }
+  }
+
+  .middle {
+    padding-block: rem(64) rem(100);
+  }
+
+  .section--light {
+    padding-block: rem(42) rem(80);
+  }
 }

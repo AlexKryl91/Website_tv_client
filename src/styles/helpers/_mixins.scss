@@ -31,7 +31,7 @@
 
 @mixin shaped-card {
   border-radius: var(--br-lg);
-  clip-path: var(--clippath-card);
+  clip-path: var(--clip-card);
 }
 
 @mixin side-space-xl($br-point) {

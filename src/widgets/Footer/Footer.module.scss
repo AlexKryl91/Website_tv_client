@@ -5,28 +5,18 @@
 .footer {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  column-gap: rem(96);
 
   width: 100%;
   margin-top: rem(-40);
   padding: rem(56) var(--side-spacing) rem(72);
 
-  clip-path: polygon(
-    0% 0%,
-    calc(50% - rem(360)) 0,
-    calc(50% - rem(360)) rem(40),
-    calc(50% - rem(320)) 0,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
+  clip-path: var(--clip-section);
 
   background-color: var(--c-greyish-blue-3);
   @include bg-icon('/img/footer_corner.svg');
-  background-position: calc(50% + rem(700));
+  background-position: calc(50% + rem(700)) bottom;
   @include side-space-xl(rem($laptop));
 
   &::before {
@@ -44,6 +34,7 @@
 .info {
   display: flex;
   gap: rem(32) rem(64);
+  margin-inline: auto;
 
   a,
   span {
@@ -64,5 +55,31 @@
         color: var(--c-whitish);
       }
     }
+  }
+}
+
+// Media queries (except hover)
+
+@media screen and (max-width: rem(1100)) {
+  .footer {
+    flex-direction: column;
+    row-gap: rem(48);
+  }
+}
+
+@media screen and (max-width: rem($tablet)) {
+  .footer {
+    &::before {
+      top: unset;
+      right: unset;
+      bottom: 0;
+      left: rem(-52);
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+  .info {
+    flex-direction: column;
   }
 }

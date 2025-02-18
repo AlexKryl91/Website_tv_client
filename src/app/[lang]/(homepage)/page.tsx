@@ -129,7 +129,6 @@ export default async function Home({ params }: TPageProps) {
       <SectionLight header={t.clients.header}>
         <div className={classes.clients}>
           <Carousel cards={t.clients.cards} />
-          <Carousel cards={t.clients.cards} />
         </div>
       </SectionLight>
 

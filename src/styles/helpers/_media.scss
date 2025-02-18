@@ -1,8 +1,9 @@
-@use './functions' as *;
-
 // Breakpoints
 
+$desktop-xl: 1599.98;
+$desktop: 1399.98;
 $laptop: 1280.98;
 $tablet: 1024.98;
-$mobile: 767.98;
+$mobile-l: 767.98;
+$mobile-m: 566.98;
 $mobile-s: 480.98;

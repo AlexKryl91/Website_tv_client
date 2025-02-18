@@ -1,8 +1,11 @@
-@use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/media' as *;
+
+$gap: rem(20);
 
 .feedback__form-container {
-  padding-block: rem(20);
+  padding: $gap;
   background: var(--c-whitish-blue);
   @include shaped-card;
 }
@@ -13,7 +16,8 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: rem(20);
+  grid-auto-rows: auto;
+  gap: $gap;
 }
 
 .input {
@@ -36,13 +40,24 @@
   // }
 
   &__msg {
-    grid-column: 1 / span 2;
+    grid-column: span 2;
     resize: none;
     height: rem(120);
   }
 }
 
 .submit-btn {
-  grid-column: 1 / span 2;
+  grid-column: span 2;
   margin-inline: auto;
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+  .feedback__form {
+    grid-template-columns: 1fr;
+  }
+
+  .input__msg,
+  .submit-btn {
+    grid-column: span 1;
+  }
 }

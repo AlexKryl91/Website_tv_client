@@ -1,4 +1,6 @@
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/media' as *;
 
 .carousel {
   display: flex;
@@ -7,7 +9,7 @@
 
   .logo-card {
     margin-right: rem(16);
-    transition: all var(--transition-duration);
+    transition: var(--transition-duration);
     padding: rem(12);
     filter: grayscale(1);
     mix-blend-mode: multiply;
@@ -31,5 +33,23 @@
     box-shadow: var(--sh-black);
     border-radius: var(--br-lg);
     mix-blend-mode: normal;
+  }
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+  .carousel .logo-card {
+    @include square(rem(150));
+  }
+}
+
+@media screen and (max-width: rem($mobile-m)) {
+  .carousel .logo-card {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .carousel .logo-card {
+    @include square(rem(120));
   }
 }

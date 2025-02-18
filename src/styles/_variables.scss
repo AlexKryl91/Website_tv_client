@@ -57,13 +57,23 @@
   --transition-duration: 0.3s;
 
   // clip paths
-  --clippath-card: polygon(
-    2rem 0%,
+  --clip-card: polygon(
+    2rem 0,
     100% 0,
     100% calc(100% - 2rem),
     calc(100% - 2rem) 100%,
     0 100%,
-    0% 2rem
+    0 2rem
+  );
+
+  --clip-section: polygon(
+    0 0,
+    calc(50% - 22.5rem) 0,
+    calc(50% - 22.5rem) 2.5rem,
+    calc(50% - 20rem) 0,
+    100% 0,
+    100% 100%,
+    0 100%
   );
 
   // masks
@@ -79,5 +89,26 @@
 @media screen and (max-width: rem($tablet)) {
   :root {
     --navbar-h: 3.125rem;
+    --clip-section: polygon(0 2.5rem, 2.5rem 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+  :root {
+    --side-spacing: 2.25rem;
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  :root {
+    --side-spacing: 1.5rem;
+    --clip-card: polygon(
+      1.5rem 0,
+      100% 0,
+      100% calc(100% - 1.5rem),
+      calc(100% - 1.5rem) 100%,
+      0 100%,
+      0 1.5rem
+    );
   }
 }

@@ -2,14 +2,14 @@
 
 import { TNavMenu } from '@/types/types';
 import dynamic from 'next/dynamic';
-import useSize from '@/hooks/useSize';
+import useWidth from '@/hooks/useWidth';
 
 const MobileBlock = dynamic(() => import('./MobileBlock/MobileBlock'));
 const DesktopBlock = dynamic(() => import('./DesktopBlock/DesktopBlock'));
 
 const Actions = ({ lang, content }: TNavMenu) => {
-  const windowWidth = useSize()[0];
-  const isMobile = windowWidth ? windowWidth <= 1024 : false;
+  const windowWidth = useWidth();
+  const isMobile = windowWidth === 0 ? false : windowWidth <= 1024;
 
   return isMobile ? (
     <MobileBlock lang={lang} content={content} />

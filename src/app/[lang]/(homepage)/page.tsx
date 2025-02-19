@@ -1,166 +1,26 @@
-import Link from 'next/link';
 import getLocale from '@utils/getLocale';
-import { montserrat } from '@utils/fonts';
-import classes from './homepage.module.scss';
 import { THomepageJSON, TPageProps } from '@/types/types';
-import srcSetTemplate from '@/utils/srcSetTemplate';
-import { Fragment } from 'react';
-import {
-  SectionIntro,
-  SectionLight,
-  SectionDark,
-} from '@/components/Sections/Sections';
-import Carousel from './Carousel';
-import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
-import { LinkButton } from '@/components/Buttons/Buttons';
-import { preloadImages } from '@/utils/preloadResources';
 
-const CARD_IMGS = ['afip', 'krot'];
-const ADV_ICONS = ['computer', 'science', 'experience'];
+import Banner from './Banner';
+import Advantage from './Advantage';
+import Offer from './Offer';
+import Clients from './Clients';
+import Join from './Join';
+import Feedback from './Feedback';
 
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
   const t = (await getLocale('homepage', lang)) as THomepageJSON;
 
-  preloadImages([
-    '/img/homepage_bg_1.avif',
-    '/img/steam_ejector.avif',
-    '/img/striped_bg_animated.svg',
-  ]);
-
   return (
     <>
       <h1 className="sr-only">{t.banner.header}</h1>
-
-      <SectionIntro addClass={classes.banner} imgAlt={t.banner.img_alt}>
-        <div className={classes['h2-wrap']}>
-          <h2
-            className={`${montserrat.className} ${classes['banner__header']}`}
-          >
-            {t.banner.taglines.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </h2>
-        </div>
-        <div className={classes['profile-wrap']}>
-          <p className={classes.profile}>{t.banner.profile}</p>
-        </div>
-      </SectionIntro>
-
-      <SectionLight header={t.advantage.header}>
-        <div className={classes.advantages}>
-          <div className={classes.collage}>
-            {CARD_IMGS.map((imgName, i) => (
-              <Fragment key={imgName}>
-                <picture className={classes['img-card']}>
-                  <source
-                    srcSet={srcSetTemplate(imgName, 'avif')}
-                    type="image/avif"
-                  />
-                  <img
-                    src={`img/${imgName}.jpg`}
-                    srcSet={srcSetTemplate(imgName, 'jpg')}
-                    width="270"
-                    height="200"
-                    alt={t.advantage.collage[i].img_alt}
-                    loading="lazy"
-                  />
-                </picture>
-                <div className={classes['text-card']}>
-                  <span>{t.advantage.collage[i].number}</span>
-                  <span>{t.advantage.collage[i].text}</span>
-                </div>
-              </Fragment>
-            ))}
-          </div>
-          <ul className={classes['adv-list']}>
-            {t.advantage.adv_list.map((item, i) => (
-              <li
-                key={item.text}
-                className={classes['adv-list__item']}
-                style={{ backgroundImage: `url('icons/${ADV_ICONS[i]}.svg')` }}
-              >
-                <Link
-                  href={`/${lang}${item.href}`}
-                  aria-label={item.aria_label}
-                >
-                  <span>{item.text}</span>
-                  <span>{t.advantage.link_label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </SectionLight>
-
-      <SectionDark header={t.offer.header} addClass={classes.offer}>
-        <ul className={classes['offer__list']}>
-          {t.offer.list.map((item, i) => (
-            <li key={item.text}>
-              <picture className={classes['item-img']}>
-                <source
-                  srcSet={srcSetTemplate(`offer_item${i + 1}`, 'avif')}
-                  type="image/avif"
-                />
-                <img
-                  src={`img/offer_item${i + 1}.jpg`}
-                  srcSet={srcSetTemplate(`offer_item${i + 1}`, 'jpg')}
-                  width="270"
-                  height="180"
-                  alt={item.img_alt}
-                  loading="lazy"
-                />
-              </picture>
-              <div className={classes['text-wrapper']}>
-                <p>{item.text}</p>
-                <LinkButton
-                  href={`/${lang}${item.href}`}
-                  aria_label={item.aria_label}
-                  addClass={classes['offer__btn']}
-                >
-                  {t.offer.link_label}
-                </LinkButton>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </SectionDark>
-
-      <SectionLight header={t.clients.header}>
-        <div className={classes.clients}>
-          <Carousel cards={t.clients.cards} />
-        </div>
-      </SectionLight>
-
-      <SectionDark header={t.join.header} addClass={classes.join}>
-        <div className={classes['join__wrapper']}>
-          <p className={classes['join__text']}>{t.join.text}</p>
-          <div className={classes['btn-wrapper']}>
-            {t.join.links.map((link) => (
-              <LinkButton
-                key={link.label}
-                href={`/${lang}${link.href}`}
-                aria_label={link.aria_label}
-              >
-                {link.label}
-              </LinkButton>
-            ))}
-          </div>
-        </div>
-      </SectionDark>
-
-      <SectionLight header={t.feedback.header}>
-        <p className={classes['feedback__text']}>{t.feedback.feedback_text}</p>
-        <FeedbackForm labels={t.feedback.feedback_form}></FeedbackForm>
-        <p className={classes['call__text']}>{t.feedback.call_text}</p>
-        <Link
-          className={classes['call__link']}
-          href={`/${lang}${t.feedback.call_link.href}`}
-          aria-label={t.feedback.call_link.aria_label}
-        >
-          {t.feedback.call_link.label}
-        </Link>
-      </SectionLight>
+      <Banner content={t.banner} />
+      <Advantage content={t.advantage} lang={lang} />
+      <Offer content={t.offer} lang={lang} />
+      <Clients content={t.clients} />
+      <Join content={t.join} lang={lang} />
+      <Feedback content={t.feedback} lang={lang} />
     </>
   );
 }

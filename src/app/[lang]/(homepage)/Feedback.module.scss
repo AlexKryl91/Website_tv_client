@@ -1,0 +1,62 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.feedback__text {
+  margin-bottom: rem(32);
+}
+
+.feedback__text,
+.call__text {
+  font-size: rem(20);
+  line-height: var(--line-h-s);
+  text-align: center;
+}
+
+.call__text {
+  margin-block: rem(32);
+}
+
+.call__text,
+.call__link {
+  font-weight: 500;
+}
+
+.call__link {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  font-size: rem(24);
+  transition: var(--transition-duration);
+
+  &,
+  &:visited,
+  &:focus {
+    color: var(--c-blue-green-5);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--c-blue-green-2);
+    }
+  }
+}
+
+@media screen and (max-width: rem(624)) {
+  .feedback__text,
+  .call__text {
+    text-wrap: balance;
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .feedback__text,
+  .call__text {
+    font-size: rem(16);
+    line-height: var(--line-h-m);
+  }
+
+  .call__link {
+    font-size: rem(20);
+  }
+}

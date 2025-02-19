@@ -1,0 +1,189 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.banner {
+  width: 100%;
+  height: calc(var(--navbar-h) + rem(800));
+  padding-inline: var(--side-spacing);
+  @include bg-image-set('/img/homepage_bg_1');
+
+  .h2-wrap {
+    margin-top: rem(160);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: rem(540);
+      height: rem(4);
+      margin-top: rem(36);
+      background: var(--c-orange-bright);
+      animation: line-width 1.4s 0.9s forwards;
+    }
+  }
+
+  &__header {
+    font-size: rem(36);
+    text-align: left;
+    text-transform: uppercase;
+    line-height: rem(56);
+
+    span {
+      display: block;
+
+      &:nth-child(1) {
+        transform: translate3d(0, calc(300% + rem(40)), 0);
+        animation: showTopText1 2.1s 0.2s forwards;
+      }
+      &:nth-child(2) {
+        transform: translate3d(0, calc(200% + rem(40)), 0);
+        animation: showTopText2 1.4s 0.9s forwards;
+      }
+      &:nth-child(3) {
+        transform: translate3d(0, calc(100% + rem(40)), 0);
+        animation: showTopText3 0.7s 1.6s forwards;
+      }
+    }
+  }
+
+  $padding-top: rem(50);
+
+  .profile-wrap {
+    width: 50%;
+    max-width: rem(550);
+    padding-top: $padding-top;
+    overflow: hidden;
+  }
+
+  .profile {
+    font-size: rem(24);
+    font-weight: 300;
+    line-height: var(--line-h-m);
+    text-wrap: balance;
+    transform: translate3d(0, calc(-100% - $padding-top), 0);
+    animation: showBottomText 0.8s 1.6s forwards;
+  }
+}
+
+@keyframes line-width {
+  30%,
+  50% {
+    width: rem(475);
+  }
+  100% {
+    width: rem(410);
+  }
+}
+@keyframes showTopText1 {
+  23%,
+  33% {
+    transform: translate3d(0, 200%, 0);
+  }
+  56%,
+  66% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showTopText2 {
+  30%,
+  50% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showTopText3 {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showBottomText {
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media screen and (min-width: rem($desktop-xl)) {
+  section:has(.banner) {
+    @include section-bg-gradient(var(--c-greyish-blue-2), #272d37);
+  }
+}
+
+@media screen and (min-width: rem($laptop)) {
+  section:has(.banner) {
+    background-color: var(--c-greyish-blue-2);
+  }
+}
+
+@media screen and (max-width: rem(960)) {
+  .banner .profile-wrap {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: rem(624)) {
+  .banner {
+    height: calc(var(--navbar-h) + rem(650));
+
+    .h2-wrap {
+      margin-top: rem(120);
+
+      &::after {
+        width: rem(360);
+      }
+    }
+
+    &__header {
+      font-size: rem(24);
+      line-height: rem(40);
+    }
+
+    .profile {
+      font-size: rem(20);
+    }
+
+    @keyframes line-width {
+      30%,
+      50% {
+        width: rem(280);
+      }
+      100% {
+        width: rem(240);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .banner {
+    .h2-wrap::after {
+      width: rem(300);
+    }
+
+    &__header {
+      font-size: rem(20);
+    }
+
+    .profile {
+      font-size: rem(16);
+      line-height: rem(22);
+    }
+
+    @keyframes line-width {
+      30%,
+      50% {
+        width: rem(240);
+      }
+      100% {
+        width: rem(200);
+      }
+    }
+  }
+}

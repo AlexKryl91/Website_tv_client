@@ -3,10 +3,10 @@
 import classes from './NavMenu.module.scss';
 import { TNavMenu } from '@/types/types';
 import NavMenuItem from './NavMenuItem';
-import useSize from '@/hooks/useSize';
+import useWidth from '@/hooks/useWidth';
 
 const NavMenu = ({ lang, content }: TNavMenu) => {
-  const windowWidth = useSize()[0];
+  const windowWidth = useWidth();
   const isDesktop = windowWidth ? windowWidth > 1024 : true;
 
   const navMenu = (

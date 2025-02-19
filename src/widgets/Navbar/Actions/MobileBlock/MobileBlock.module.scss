@@ -74,6 +74,10 @@
 }
 
 @media screen and (max-width: rem($mobile-s)) {
+  .blur-cover {
+    display: none;
+  }
+
   .side-menu {
     max-width: 100%;
   }

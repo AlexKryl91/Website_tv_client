@@ -6,7 +6,6 @@ html {
 body {
   background: var(--c-greyish-blue-2);
   color: var(--c-whitish);
-  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: var(--scroll-w);
@@ -24,6 +23,10 @@ body {
       }
     }
   }
+}
+
+main {
+  overflow-x: hidden;
 }
 
 .scrollbar--hidden {
@@ -56,6 +59,3 @@ ul {
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
-
-
-

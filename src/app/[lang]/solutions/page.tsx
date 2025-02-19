@@ -16,8 +16,20 @@ export default async function Solutions({ params }: TPageProps) {
         addClass={classes.solutions}
         isOnTop={true}
       >
-        | ======&gt;
-        <div className={classes.test}></div>
+        <ul>
+          {t.systems.map((system) => (
+            <li key={system.title}>
+              <h3 className="sr-only">{system.title}</h3>
+              <details>
+                <summary>
+                  <strong>{system.title}</strong>
+                  {system.text}
+                </summary>
+                СКРЫТО
+              </details>
+            </li>
+          ))}
+        </ul>
       </SectionDark>
     </>
   );

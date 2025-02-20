@@ -4,12 +4,171 @@
 
 .solutions {
   @include bg-image-set('/img/solutions_bg');
+}
 
-  .test {
-    width: rem(200);
-    height: rem(200);
-    background: rebeccapurple;
+.details {
+  width: 100%;
+  padding-top: rem(10);
+  overflow: hidden;
+
+  &:not(:last-of-type) {
+    margin-bottom: rem(10);
   }
+}
+
+.details::details-content {
+  height: 0;
+  margin-top: rem(20);
+  transition: all 0.5s;
+  transition-behavior: allow-discrete;
+}
+
+.details[open]::details-content {
+  height: auto;
+  height: calc-size(auto, size);
+}
+
+.details[open] > .summary {
+  color: var(--c-blue-green-5);
+  background: var(--c-whitish-blue-tr80);
+
+  .text-wrapper {
+    p strong {
+      color: var(--c-blue-green-5);
+    }
+
+    .flag {
+      width: rem(264);
+      background-position: 0;
+      background-color: #0000;
+      color: var(--c-whitish);
+
+      &.ru::before {
+        content: 'Cвернуть';
+      }
+      &.en::before {
+        content: 'Minimize';
+      }
+
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+.summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(10) rem(80);
+  padding-inline: var(--side-spacing);
+  background: var(--c-black-tr40);
+  transition: var(--transition-duration);
+
+  .img-card,
+  .text-wrapper {
+    margin-inline: auto;
+  }
+
+  .img-card {
+    filter: drop-shadow(var(--sh-black-dark));
+
+    img {
+      @include shaped-card;
+      background: var(--c-whitish);
+      margin-block: rem(-10);
+    }
+  }
+
+  .text-wrapper {
+    width: 100%;
+    max-width: rem(860);
+    padding-block: rem(24) rem(20);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      font-size: rem(20);
+      line-height: var(--line-h-s);
+
+      strong {
+        color: var(--c-orange-bright);
+        font-weight: 500;
+      }
+    }
+
+    .flag {
+      margin-left: auto;
+      width: rem(182);
+      height: rem(36);
+      padding: rem(10) 0 rem(10) rem(40);
+      color: var(--c-blue-green-1);
+      clip-path: polygon(2.25rem 0, 100% 0, calc(100% - 2.25rem) 100%, 0 100%);
+      background-color: var(--c-greyish-blue-1-tr40);
+      background-image: url('/img/solutions_stripe.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: rem(264);
+      transition: var(--transition-duration);
+
+      &.ru::before {
+        content: 'Подробнее';
+      }
+      &.en::before {
+        content: 'Learn more';
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: rem(14);
+        height: rem(8);
+        margin: 0 0 rem(1) rem(8);
+        @include bg-icon('/icons/chevron.svg');
+        transition: var(--transition-duration);
+      }
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .text-wrapper .flag {
+        width: rem(264);
+        color: var(--c-whitish);
+        background-color: #0000;
+        background-position: 0;
+      }
+    }
+  }
+}
+
+.subsection {
+  position: relative;
+  width: 100%;
+  padding: rem(56) var(--side-spacing) rem(140);
+  font-size: rem(20);
+  color: var(--c-blue-green-5);
+  background-color: var(--c-whitish);
+  clip-path: var(--clip-section);
+
+  @include side-space-xl(rem($laptop));
+
+  &__header {
+    font-size: rem(36);
+    text-align: center;
+    margin-bottom: rem(56);
+    padding-left: rem(110);
+  }
+}
+
+.prefooter {
+  background: var(--c-whitish);
+  width: 100%;
+  height: rem(90);
 }
 
 @media screen and (min-width: rem($desktop-xl)) {
@@ -23,125 +182,3 @@
     background-color: var(--c-greyish-blue-2);
   }
 }
-
-// .offer {
-//   @include bg-image-set('/img/homepage_bg_2');
-
-//   &__list li {
-//     padding-inline: var(--side-spacing);
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: rem(10) rem(80);
-//     background: var(--c-black-tr40);
-//     transition: var(--transition-duration);
-
-//     &:not(:last-of-type) {
-//       margin-bottom: rem(40);
-//     }
-
-//     .item-img,
-//     .text-wrapper {
-//       margin-inline: auto;
-//     }
-
-//     .item-img {
-//       filter: drop-shadow(var(--sh-black));
-
-//       img {
-//         @include shaped-card;
-//         margin-block: rem(-10);
-//         transition: filter var(--transition-duration);
-//         filter: grayscale(1);
-//       }
-//     }
-
-//     .text-wrapper {
-//       width: 100%;
-//       max-width: rem(750);
-//       padding-block: rem(24);
-
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: space-between;
-
-//       p {
-//         font-size: rem(20);
-//         line-height: var(--line-h-s);
-//       }
-//     }
-
-//     .offer__btn {
-//       margin-inline: auto rem(32);
-
-//       &::after {
-//         content: '';
-//         @include square(rem(16));
-//         display: inline-block;
-//         margin: rem(-1) 0 rem(-2) rem(10);
-//         background-image: url('/icons/arrow.svg');
-//         background-size: contain;
-//         background-repeat: no-repeat;
-//       }
-//     }
-
-//     @media (any-hover: hover) {
-//       &:has(.offer__btn:hover) {
-//         color: var(--c-blue-green-5);
-//         background: var(--c-whitish-blue-tr80);
-
-//         .item-img img {
-//           filter: grayscale(0);
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (min-width: rem($desktop-xl)) {
-//   section:has(.offer) {
-//     @include section-bg-gradient(#645643, #383531);
-//   }
-// }
-
-// @media screen and (min-width: rem($laptop)) {
-//   section:has(.offer) {
-//     background-color: #645643;
-//   }
-// }
-
-// @media screen and (max-width: rem(1249.98)) {
-//   .offer {
-//     &__list li {
-//       .item-img {
-//         img {
-//           margin-bottom: 0;
-//         }
-//       }
-
-//       .text-wrapper {
-//         row-gap: rem(20);
-
-//         p {
-//           text-align: center;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: rem($mobile-s)) {
-//   .offer {
-//     &__list li {
-//       .text-wrapper {
-//         p {
-//           font-size: rem(16);
-//           line-height: var(--line-h-m);
-//         }
-//       }
-
-//       .offer__btn {
-//         margin-inline: auto;
-//       }
-//     }
-//   }
-// }

@@ -162,7 +162,6 @@ export type TSolutionsJSON = {
   }[];
   common: {
     summary: string[];
-    expand_btn: { open: string; close: string };
     slider_btn: {
       prev: string;
       next: string;

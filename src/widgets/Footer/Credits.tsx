@@ -3,7 +3,7 @@ import { TNavMenu } from '@/types/types';
 
 const Credits = ({ content }: Pick<TNavMenu, 'content'>) => {
   function setLinkBg(filename = '') {
-    return { backgroundImage: `url(icons/${filename}.svg)` };
+    return { backgroundImage: `url(/icons/${filename}.svg)` };
   }
 
   return (

@@ -18,7 +18,7 @@ const Navbar = async ({ lang }: TComponentProps) => {
       >
         <Image
           className={classes.logo}
-          src={`img/logo_large_${lang}.svg`}
+          src={`/img/logo_large_${lang}.svg`}
           alt={t.logo.alt}
           width={265}
           height={32}

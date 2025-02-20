@@ -15,7 +15,7 @@ const Address = ({ lang, content }: TNavMenu) => {
         aria-label={content.logo.aria_label}
       >
         <Image
-          src={`img/logo_large_${lang}.svg`}
+          src={`/img/logo_large_${lang}.svg`}
           alt={content.logo.alt}
           width={265}
           height={32}

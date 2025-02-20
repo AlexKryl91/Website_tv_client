@@ -1,6 +1,6 @@
 import classes from './Clients.module.scss';
 import { SectionLight } from '@/components/Sections/Sections';
-import Carousel from '@/components/Carousel/Carousel';
+import Carousel from '@/app/[lang]/(homepage)/Carousel';
 import { THomepageJSON } from '@/types/types';
 
 type TClients = {

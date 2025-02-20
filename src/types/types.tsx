@@ -128,28 +128,30 @@ export type THomepageJSON = {
 };
 
 export type TUnitJSON = {
+  img: string;
+  img_alt: string;
   title: string;
   description: {
     strong: string;
     text: string;
     endline?: string;
     endline_strong?: string;
-    slides: {
-      img_alt: string;
-      caption: string;
-      list_1: string[];
-      list_2: string[];
-    }[];
-    operation: {
-      header: string;
-      paragraphs: string[];
-    }[];
-    features: {
-      title: string;
-      list: string[];
-    }[];
-    state_btn: { open: string; close: string };
   };
+  slides: {
+    img_alt: string;
+    caption: string;
+    list_1: string[];
+    list_2: string[];
+  }[];
+  operation: {
+    header: string;
+    paragraphs: string[];
+  }[];
+  features: {
+    title: string;
+    list: string[];
+  }[];
+  state_btn: { open: string; close: string };
 };
 
 export type TSolutionsJSON = {

@@ -4,7 +4,7 @@ import { TSolutionsJSON, TPageProps } from '@/types/types';
 import { SectionDark } from '@/components/Sections/Sections';
 import { Fragment } from 'react';
 import Image from 'next/image';
-import { montserrat } from '@utils/fonts';
+import Subsection from './Subsection';
 
 const SYSTEMS_IMGS = ['vacuum.svg', 'compress.svg', 'absorb.svg'];
 
@@ -44,25 +44,15 @@ export default async function Solutions({ params }: TPageProps) {
                   <div className={styleFlag}></div>
                 </div>
               </summary>
-              <article className={classes.subsection}>
-                <h4
-                  className={`${montserrat.className} ${classes['subsection__header']}`}
-                >
-                  {system.units[0].title}
-                </h4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                recusandae, voluptatum necessitatibus voluptatibus eveniet,
-                quaerat dignissimos voluptate eos provident at ducimus
-                consequuntur tempora. Natus quas possimus laudantium cumque
-                aliquam ad? Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Aspernatur optio illo sint vel doloremque doloribus iusto,
-                nesciunt eius magni quae odit excepturi cupiditate odio dolorum
-                earum id impedit reiciendis corrupti! Lorem ipsum dolor sit,
-                amet consectetur adipisicing elit. Neque, dolores, laudantium
-                molestiae distinctio sit ducimus ad nostrum officiis aut
-                reiciendis repellat recusandae dolorem quae magnam accusantium
-                nisi, aliquid dignissimos consequuntur.
-              </article>
+              {system.units.length === 1 ? (
+                <Subsection
+                  content={system.units[0]}
+                  common={t.common}
+                  lang={lang}
+                />
+              ) : (
+                <div>НЕСКОЛЬКО УСТАНОВОК</div>
+              )}
             </details>
           </Fragment>
         ))}

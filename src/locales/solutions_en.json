@@ -7,6 +7,8 @@
       "text": " (VCU) are designed for pumping gases, vapors and vapor-liquid mixtures in order to create a vacuum in different devices and vessels (various columns, desorbers, evaporators, deaerators, reactors and others).",
       "units": [
         {
+          "img": "vhc",
+          "img_alt": "Logo of systems based on VHC",
           "title": "VCU based on VHC devices",
           "description": {
             "strong": "Vacuum hydrocirculating (VHC)",
@@ -168,6 +170,8 @@
           "state_btn": { "open": "Based on VHC devices", "close": "Minimize" }
         },
         {
+          "img": "steam",
+          "img_alt": "Logo of systems based on steam ejectors",
           "title": "VCU based on steam ejectors",
           "description": {
             "strong": "Steam ejectors",
@@ -259,6 +263,8 @@
       "text": " (JC) are designed for compression low pressure gases generated in technological processes at various enterprises (for example, refinery, petrochemical and during oil and gas production).",
       "units": [
         {
+          "img": "jc",
+          "img_alt": "Logo of jet compressors",
           "title": "Jet compressors",
           "description": {
             "strong": "Jet compressors (JC)",
@@ -339,6 +345,8 @@
       "text": " (JAU) are designed for purification outlet gases (abgases) from hydrocarbons and recovery of oil and petroleum product vapors at loading racks, terminals and tank parks.",
       "units": [
         {
+          "img": "jau",
+          "img_alt": "Logo of jet absorption units",
           "title": "Jet absorption units",
           "description": {
             "strong": "",

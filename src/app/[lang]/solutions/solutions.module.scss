@@ -3,7 +3,14 @@
 @use '@styles/helpers/media' as *;
 
 .solutions {
-  @include bg-image-set('/img/solutions_bg');
+  // @include bg-image-set('/img/solutions_bg');
+
+  background-image: image-set(
+    url('/img/solutions_bg.avif') type('image/avif'),
+    url('/img/solutions_bg.jpg') type('image/jpeg')
+  );
+  background-repeat: repeat-y;
+  background-size: 100% auto;
 }
 
 .details {
@@ -24,6 +31,7 @@
 }
 
 .details[open]::details-content {
+  margin-block: rem(50) rem(30);
   height: auto;
   height: calc-size(auto, size);
 }
@@ -143,25 +151,6 @@
         background-position: 0;
       }
     }
-  }
-}
-
-.subsection {
-  position: relative;
-  width: 100%;
-  padding: rem(56) var(--side-spacing) rem(140);
-  font-size: rem(20);
-  color: var(--c-blue-green-5);
-  background-color: var(--c-whitish);
-  clip-path: var(--clip-section);
-
-  @include side-space-xl(rem($laptop));
-
-  &__header {
-    font-size: rem(36);
-    text-align: center;
-    margin-bottom: rem(56);
-    padding-left: rem(110);
   }
 }
 

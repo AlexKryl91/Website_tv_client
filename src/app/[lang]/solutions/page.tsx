@@ -1,10 +1,11 @@
 import classes from './solutions.module.scss';
 import getLocale from '@utils/getLocale';
 import { TSolutionsJSON, TPageProps } from '@/types/types';
-import { SectionDark } from '@/components/Sections/Sections';
+// import { SectionDark } from '@/components/Sections/Sections';
 import { Fragment } from 'react';
 import Image from 'next/image';
 import Subsection from './Subsection';
+import { montserrat } from '@utils/fonts';
 
 const SYSTEMS_IMGS = ['vacuum.svg', 'compress.svg', 'absorb.svg'];
 
@@ -18,11 +19,13 @@ export default async function Solutions({ params }: TPageProps) {
     <>
       <h1 className="sr-only">{t.page_header}</h1>
 
-      <SectionDark
-        header={t.header}
-        addClass={classes.solutions}
-        isOnTop={true}
-      >
+      <section className={classes.solutions}>
+        <h2
+          className={`${montserrat.className} ${classes['solutions__header']}`}
+        >
+          {t.header}
+        </h2>
+
         {t.systems.map((system, i) => (
           <Fragment key={system.title}>
             <h3 className="sr-only">{system.title}</h3>
@@ -51,12 +54,12 @@ export default async function Solutions({ params }: TPageProps) {
                   lang={lang}
                 />
               ) : (
-                <div>НЕСКОЛЬКО УСТАНОВОК</div>
+                <div className={classes.testing}>НЕСКОЛЬКО УСТАНОВОК</div>
               )}
             </details>
           </Fragment>
         ))}
-      </SectionDark>
+      </section>
 
       <div className={classes.prefooter}></div>
     </>

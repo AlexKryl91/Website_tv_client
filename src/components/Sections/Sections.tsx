@@ -41,9 +41,12 @@ type TSectionLight = {
 export const SectionLight = ({ children, header }: TSectionLight) => {
   return (
     <section className={`${classes.section} ${classes['section--light']}`}>
-      <h2 className={`${montserrat.className} ${classes['section__header']}`}>
-        {header}
-      </h2>
+      {header && (
+        <h2 className={`${montserrat.className} ${classes['section__header']}`}>
+          {header}
+        </h2>
+      )}
+
       {children}
     </section>
   );

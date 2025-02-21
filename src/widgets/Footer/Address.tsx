@@ -3,6 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { TNavMenu } from '@/types/types';
 
+function phoneNumFilter(num: string) {
+  return num
+    .split('')
+    .filter((char) => /\+|\d/.test(char))
+    .join('');
+}
+
 const Address = ({ lang, content }: TNavMenu) => {
   const year = new Date().getFullYear();
 
@@ -41,16 +48,18 @@ const Address = ({ lang, content }: TNavMenu) => {
         </li>
 
         <li className={classes.tel}>
-          {content.info.telephone.map((item) => (
-            <a key={item} href={`tel: ${item}`}>
-              {item}
-            </a>
-          ))}
+          {content.info.telephone.map((item) => {
+            return (
+              <a key={item} href={`tel:${phoneNumFilter(item)}`}>
+                {item}
+              </a>
+            );
+          })}
         </li>
 
         <li className={classes.email}>
           <a
-            href={`mailto: ${content.info.email}`}
+            href={`mailto:${content.info.email}`}
             className={classes['address__email']}
           >
             {content.info.email}

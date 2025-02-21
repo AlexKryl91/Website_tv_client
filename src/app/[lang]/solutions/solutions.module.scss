@@ -2,8 +2,22 @@
 @use '@styles/helpers/functions' as *;
 @use '@styles/helpers/media' as *;
 
-.solutions {
+.solutions,
+.solutions__header,
+.summary,
+.text-wrapper,
+.testing,
+.prefooter {
   position: relative;
+}
+
+.summary,
+.img-card,
+.text-wrapper {
+  margin-inline: auto;
+}
+
+.solutions {
   width: 100%;
   padding-block: calc(var(--navbar-h) + rem(56)) rem(140);
 
@@ -20,6 +34,8 @@
       url('/img/solutions_bg.avif') type('image/avif'),
       url('/img/solutions_bg.jpg') type('image/jpeg')
     );
+
+    // reconsider when mobile layout is in processing
     background-repeat: repeat-y;
     background-size: 100% auto;
 
@@ -29,7 +45,6 @@
   }
 
   &__header {
-    position: relative;
     font-size: rem(36);
     text-align: center;
     margin-bottom: rem(56);
@@ -44,63 +59,99 @@
   &:not(:last-of-type) {
     margin-bottom: rem(10);
   }
-}
 
-.details::details-content {
-  height: 0;
-  margin-top: rem(20);
-  transition: all 0.5s;
-  transition-behavior: allow-discrete;
-}
-
-.details[open]::details-content {
-  margin-block: rem(50) rem(30);
-  height: auto;
-  height: calc-size(auto, size);
-}
-
-.details[open] > .summary {
-  color: var(--c-blue-green-5);
-
-  &::before {
-    background: var(--c-whitish-blue-tr80);
+  &::details-content {
+    height: 0;
+    margin-top: rem(20);
+    transition: all 0.5s;
+    transition-behavior: allow-discrete;
   }
 
-  .text-wrapper {
-    p strong {
-      color: var(--c-blue-green-5);
+  &[open]::details-content {
+    margin-block: rem(50) rem(30);
+    height: auto;
+    height: calc-size(auto, size);
+  }
+
+  &[open] > .summary {
+    color: var(--c-blue-green-5);
+
+    &::before {
+      background: var(--c-whitish-blue-tr80);
     }
 
-    .flag {
-      width: rem(264);
-      background-position: 0;
-      background-color: #0000;
-      color: var(--c-whitish);
-
-      &.ru::before {
-        content: 'Cвернуть';
-      }
-      &.en::before {
-        content: 'Minimize';
+    .text-wrapper {
+      .text strong {
+        color: var(--c-blue-green-5);
       }
 
-      &::after {
-        transform: rotate(-180deg);
+      .flag {
+        width: rem(264);
+        background-position: 0;
+        background-color: #0000;
+        color: var(--c-whitish);
+
+        &.ru::before {
+          content: 'Cвернуть';
+        }
+        &.en::before {
+          content: 'Minimize';
+        }
+
+        &::after {
+          transform: rotate(-180deg);
+        }
       }
     }
   }
 }
+
+// .details[open]::details-content {
+//   margin-block: rem(50) rem(30);
+//   height: auto;
+//   height: calc-size(auto, size);
+// }
+
+// .details[open] > .summary {
+//   color: var(--c-blue-green-5);
+
+//   &::before {
+//     background: var(--c-whitish-blue-tr80);
+//   }
+
+//   .text-wrapper {
+//     p strong {
+//       color: var(--c-blue-green-5);
+//     }
+
+//     .flag {
+//       width: rem(264);
+//       background-position: 0;
+//       background-color: #0000;
+//       color: var(--c-whitish);
+
+//       &.ru::before {
+//         content: 'Cвернуть';
+//       }
+//       &.en::before {
+//         content: 'Minimize';
+//       }
+
+//       &::after {
+//         transform: rotate(-180deg);
+//       }
+//     }
+//   }
+// }
 
 .summary {
   cursor: pointer;
   list-style: none;
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: rem(10) rem(80);
   padding-inline: var(--side-spacing);
   max-width: var(--view-max-w);
-  margin-inline: auto;
 
   &::before {
     content: '';
@@ -117,12 +168,8 @@
     }
   }
 
-  .img-card,
-  .text-wrapper {
-    margin-inline: auto;
-  }
-
   .img-card {
+    display: block;
     filter: drop-shadow(var(--sh-black-dark));
 
     img {
@@ -133,7 +180,6 @@
   }
 
   .text-wrapper {
-    position: relative;
     width: 100%;
     max-width: rem(860);
     padding-block: rem(24) rem(20);
@@ -142,7 +188,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    p {
+    .text {
       font-size: rem(20);
       line-height: var(--line-h-s);
 
@@ -153,6 +199,7 @@
     }
 
     .flag {
+      display: block;
       margin-left: auto;
       width: rem(182);
       height: rem(36);
@@ -187,22 +234,17 @@
 
   @media (any-hover: hover) {
     &:hover {
-      .text-wrapper .flag {
+      .text-wrapper > .flag {
         width: rem(264);
         color: var(--c-whitish);
         background-color: #0000;
-        background-position: 0;
+        background-position: left;
       }
     }
   }
 }
 
-.testing {
-  position: relative;
-}
-
 .prefooter {
-  position: relative;
   width: 100%;
   height: rem(50);
   background-color: var(--c-whitish);

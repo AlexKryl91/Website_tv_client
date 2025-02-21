@@ -3,6 +3,7 @@ import classes from './Subsection.module.scss';
 import { montserrat } from '@utils/fonts';
 import Image from 'next/image';
 import { Fragment } from 'react';
+// import AnimatedBar from '@/components/AnimatedBar/AnimatedBar';
 
 type TSubsection = {
   content: TUnitJSON;
@@ -78,6 +79,7 @@ const Subsection = ({ content, common, lang }: TSubsection) => {
         <span>{common.summary[2]}</span>
         <a href="">{common.summary[3]}</a>
       </p>
+      {/* <AnimatedBar /> */}
     </article>
   );
 };

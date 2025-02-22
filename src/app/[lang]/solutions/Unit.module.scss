@@ -2,39 +2,28 @@
 @use '@styles/helpers/functions' as *;
 @use '@styles/helpers/media' as *;
 
-.subsection {
-  position: relative;
-
-  width: 100%;
-  padding: rem(56) var(--side-spacing) rem(140);
-  font-size: rem(20);
-  color: var(--c-blue-green-5);
-  background-color: var(--c-whitish);
-  clip-path: var(--clip-section);
-
-  @include side-space-xl(rem($laptop));
-
+.unit {
   font-size: rem(20);
   line-height: var(--line-h-s);
-}
 
-.header-wrapper {
-  display: flex;
-  align-items: center;
-  gap: rem(32) rem(52);
-  margin-bottom: rem(56);
-}
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    gap: rem(32) rem(52);
+    margin-bottom: rem(56);
+  }
 
-.subsection__header {
-  margin-inline: auto;
-  font-size: rem(36);
-}
+  &__header {
+    margin-inline: auto;
+    font-size: rem(36);
+  }
 
-// .unit-logo {
-//   //   position: absolute;
-//   //   top: 0;
-//   //   left: 0;
-// }
+  // &__logo {
+  //   //   position: absolute;
+  //   //   top: 0;
+  //   //   left: 0;
+  // }
+}
 
 .subheader {
   font-weight: 500;

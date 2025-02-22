@@ -1,7 +1,7 @@
 import classes from './Sections.module.scss';
 import { montserrat } from '@utils/fonts';
 import StripedBg from '@img/striped_bg_animated.svg';
-import AnimatedBar from '../AnimatedBar/AnimatedBar';
+import { AnimatedBar } from '../AnimatedBar/AnimatedBar';
 
 type TSectionDark = {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export const SectionDark = ({
   children,
   isOnTop = false,
   header,
-  addClass,
+  addClass = '',
 }: TSectionDark) => {
   const bodyStyle = `${classes['section--dark__body']} ${
     isOnTop ? classes.top : classes.middle
@@ -80,3 +80,20 @@ export const SectionIntro = ({ children, addClass, imgAlt }: TSectionIntro) => {
     </section>
   );
 };
+
+type TSubSection = {
+  children: React.ReactNode;
+  addClass: string;
+};
+
+export const Subsection = ({ children, addClass }: TSubSection) => {
+  return (
+    <article
+      className={`${classes.section} ${classes['section--light']} ${classes.subsection} ${addClass}`}
+    >
+      {children}
+    </article>
+  );
+};
+
+export default Subsection;

@@ -1,19 +1,81 @@
 @use '@styles/helpers/functions' as *;
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/media' as *;
 
 $bar-h: rem(52);
+
+.bar,
+.bar-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: $bar-h;
+
+  filter: drop-shadow(var(--sh-black-dark));
+}
 
 .bar {
   position: absolute;
   top: rem(-20);
   right: 0;
   z-index: 3;
-  width: 100%;
-  height: $bar-h;
+}
 
-  display: flex;
-  justify-content: flex-end;
+.bar-btn {
+  position: relative;
+  margin-top: rem(-20);
+}
 
-  filter: drop-shadow(var(--sh-black-dark));
+.spacer {
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: rem(20);
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--c-whitish);
+    transition: height var(--transition-duration) ease-in;
+    transform-origin: left bottom;
+  }
+
+  @media (any-hover: hover) {
+    &:has(.button:hover) {
+      &::before {
+        height: rem(12);
+      }
+    }
+  }
+
+  &:has(.open) {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.button {
+  height: 100%;
+  padding-inline: rem(64);
+  font-size: rem(20);
+  color: var(--c-whitish);
+  background: none;
+  transition: var(--transition-duration);
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: rem(14);
+    height: rem(8);
+    margin: 0 0 rem(1) rem(8);
+    @include bg-icon('/icons/chevron.svg');
+  }
+}
+
+.open {
+  &::after {
+    transform: rotate(-180deg);
+  }
 }
 
 $width-l: rem(82);

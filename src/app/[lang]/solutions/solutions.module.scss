@@ -6,7 +6,6 @@
 .solutions__header,
 .summary,
 .text-wrapper,
-.testing,
 .prefooter {
   position: relative;
 }
@@ -23,7 +22,7 @@
 
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -34,9 +33,6 @@
       url('/img/solutions_bg.avif') type('image/avif'),
       url('/img/solutions_bg.jpg') type('image/jpeg')
     );
-
-    // reconsider when mobile layout is in processing
-    background-repeat: repeat-y;
     background-size: 100% auto;
 
     @media screen and (min-width: rem($laptop)) {
@@ -51,98 +47,37 @@
   }
 }
 
-.details {
-  width: 100%;
-  padding-top: rem(10);
-  overflow: hidden;
+.solutions details[open] > .summary {
+  color: var(--c-blue-green-5);
 
-  &:not(:last-of-type) {
-    margin-bottom: rem(10);
+  &::before {
+    background: var(--c-whitish-blue-tr80);
   }
 
-  &::details-content {
-    height: 0;
-    margin-top: rem(20);
-    transition: all 0.5s;
-    transition-behavior: allow-discrete;
-  }
-
-  &[open]::details-content {
-    margin-block: rem(50) rem(30);
-    height: auto;
-    height: calc-size(auto, size);
-  }
-
-  &[open] > .summary {
-    color: var(--c-blue-green-5);
-
-    &::before {
-      background: var(--c-whitish-blue-tr80);
+  .text-wrapper {
+    .text strong {
+      color: var(--c-blue-green-5);
     }
 
-    .text-wrapper {
-      .text strong {
-        color: var(--c-blue-green-5);
+    .flag {
+      width: rem(264);
+      background-position: 0;
+      background-color: #0000;
+      color: var(--c-whitish);
+
+      &.ru::before {
+        content: 'Cвернуть';
+      }
+      &.en::before {
+        content: 'Minimize';
       }
 
-      .flag {
-        width: rem(264);
-        background-position: 0;
-        background-color: #0000;
-        color: var(--c-whitish);
-
-        &.ru::before {
-          content: 'Cвернуть';
-        }
-        &.en::before {
-          content: 'Minimize';
-        }
-
-        &::after {
-          transform: rotate(-180deg);
-        }
+      &::after {
+        transform: rotate(-180deg);
       }
     }
   }
 }
-
-// .details[open]::details-content {
-//   margin-block: rem(50) rem(30);
-//   height: auto;
-//   height: calc-size(auto, size);
-// }
-
-// .details[open] > .summary {
-//   color: var(--c-blue-green-5);
-
-//   &::before {
-//     background: var(--c-whitish-blue-tr80);
-//   }
-
-//   .text-wrapper {
-//     p strong {
-//       color: var(--c-blue-green-5);
-//     }
-
-//     .flag {
-//       width: rem(264);
-//       background-position: 0;
-//       background-color: #0000;
-//       color: var(--c-whitish);
-
-//       &.ru::before {
-//         content: 'Cвернуть';
-//       }
-//       &.en::before {
-//         content: 'Minimize';
-//       }
-
-//       &::after {
-//         transform: rotate(-180deg);
-//       }
-//     }
-//   }
-// }
 
 .summary {
   cursor: pointer;

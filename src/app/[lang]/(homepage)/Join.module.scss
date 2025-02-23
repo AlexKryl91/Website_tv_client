@@ -3,7 +3,7 @@
 @use '@styles/helpers/media' as *;
 
 .join {
-  @include bg-image-set('/img/homepage_bg_3');
+  @include bg-image-set('/img/backgrounds/homepage_bg_3');
 
   &__wrapper {
     display: flex;

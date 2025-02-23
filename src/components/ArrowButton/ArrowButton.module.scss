@@ -1,0 +1,33 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.arrow-btn {
+  @include square(rem(32));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--br-sm);
+  background: var(--c-whitish-blue);
+  transition: var(--transition-duration);
+}
+
+.arrow-icon path {
+  fill: var(--c-blue-green-2);
+  transition: var(--transition-duration);
+}
+
+.prev {
+  transform: rotate(180deg);
+}
+
+@media (any-hover: hover) {
+  .arrow-btn:hover {
+    scale: 1.1;
+    background: var(--c-blue-green-2);
+
+    .arrow-icon path {
+      fill: var(--c-blue-sea);
+    }
+  }
+}

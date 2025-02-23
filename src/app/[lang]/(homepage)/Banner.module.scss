@@ -6,7 +6,7 @@
   width: 100%;
   height: calc(var(--navbar-h) + rem(800));
   padding-inline: var(--side-spacing);
-  @include bg-image-set('/img/homepage_bg_1');
+  @include bg-image-set('/img/backgrounds/homepage_bg_1');
 
   .h2-wrap {
     margin-top: rem(160);

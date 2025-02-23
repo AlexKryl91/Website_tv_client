@@ -138,6 +138,7 @@ export type TUnitJSON = {
     endline_strong?: string;
   };
   slides: {
+    filename: string;
     img_alt: string;
     caption: string;
     list_1: string[];

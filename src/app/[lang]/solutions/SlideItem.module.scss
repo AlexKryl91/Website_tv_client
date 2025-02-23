@@ -1,0 +1,45 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.slide {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  padding: rem(20);
+  gap: rem(20);
+
+  &__header {
+    grid-column: span 2;
+    text-align: center;
+    font-size: rem(20);
+    font-weight: 500;
+  }
+
+  .diagram {
+    position: relative;
+    grid-row: span 2;
+
+    // &::after {
+    //   content: 'FUCK';
+    //   position: absolute;
+    //   display: block;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
+    // }
+  }
+
+  .equip-list {
+    margin-top: auto;
+  }
+  .equip-list,
+  .flow-list {
+    font-size: rem(16);
+    line-height: var(--line-h-m);
+  }
+}
+
+@media (any-hover: hover) {
+}

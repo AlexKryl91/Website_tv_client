@@ -4,6 +4,7 @@ import { montserrat } from '@utils/fonts';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import Subsection from '@/components/Sections/Sections';
+import DiagramSlider from './DiagramSlider';
 
 type TSubsection = {
   content: TUnitJSON;
@@ -41,7 +42,10 @@ const Unit = ({ content, common, lang }: TSubsection) => {
         </p>
 
         {/* Sliderwith Diagrams  */}
-        <div>SLIDES</div>
+        <DiagramSlider
+          slides={content.slides}
+          labels={common.slider_btn}
+        ></DiagramSlider>
 
         {/* Description of Operational principles */}
         {content.operation.map((oper) => (

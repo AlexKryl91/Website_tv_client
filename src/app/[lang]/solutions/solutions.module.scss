@@ -30,8 +30,8 @@
     width: min(100%, var(--view-max-w));
     height: 100%;
     background-image: image-set(
-      url('/img/solutions_bg.avif') type('image/avif'),
-      url('/img/solutions_bg.jpg') type('image/jpeg')
+      url('/img/backgrounds/solutions_bg.avif') type('image/avif'),
+      url('/img/backgrounds/solutions_bg.jpg') type('image/jpeg')
     );
     background-size: 100% auto;
 

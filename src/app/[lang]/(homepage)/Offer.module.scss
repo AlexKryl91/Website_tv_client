@@ -3,7 +3,7 @@
 @use '@styles/helpers/media' as *;
 
 .offer {
-  @include bg-image-set('/img/homepage_bg_2');
+  @include bg-image-set('/img/backgrounds/homepage_bg_2');
 
   &__list li {
     padding-inline: var(--side-spacing);

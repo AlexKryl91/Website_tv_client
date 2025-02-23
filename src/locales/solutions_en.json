@@ -16,6 +16,7 @@
           },
           "slides": [
             {
+              "filename": "vcu_vhc_1st",
               "img_alt": "Single-stage VCU with VHC device",
               "caption": "Diagram of a single-stage VCU with VHC device",
               "list_1": [
@@ -32,6 +33,7 @@
               ]
             },
             {
+              "filename": "vcu_vhc_2st",
               "img_alt": "Two-stage VCU with VHC devices",
               "caption": "Diagram of a two-stage VCU",
               "list_1": [
@@ -48,6 +50,7 @@
               ]
             },
             {
+              "filename": "vcu_vhc_2st_abs",
               "img_alt": "Two-stage VCU with VHC devices and compressed gas purification",
               "caption": "Diagram of a two-stage VCU with compressed gas purification",
               "list_1": [
@@ -68,6 +71,7 @@
               ]
             },
             {
+              "filename": "vcu_vhc_regen",
               "img_alt": "Two-stage VCU with VHC devices and work fluid regeneration and compressed gas purification",
               "caption": "Diagram of two-stage VCU with work fluid regeneration and compressed gas purification",
               "list_1": [
@@ -91,6 +95,7 @@
               ]
             },
             {
+              "filename": "vcu_vhc_chiller",
               "img_alt": "Single-stage VCU with VHC device and chiller",
               "caption": "Diagram of a single-stage VCU with chiller",
               "list_1": [
@@ -115,6 +120,7 @@
               ]
             },
             {
+              "filename": "vcu_vhc_hybrid",
               "img_alt": "Two-stage VCU with steam ejector and VHC device",
               "caption": "Diagram of a two-stage VCU with steam ejector and VHC device",
               "list_1": [
@@ -179,6 +185,7 @@
           },
           "slides": [
             {
+              "filename": "vcu_steam_3st",
               "img_alt": "Three-stage steam VCU",
               "caption": "Diagram of a three-stage VCU with steam ejectors",
               "list_1": [
@@ -194,9 +201,10 @@
               ]
             },
             {
+              "filename": "vcu_vhc_hybrid",
               "img_alt": "Two-stage VCU with steam ejector and VHC device",
               "caption": "Diagram of a two-stage VCU with steam ejector and VHC device",
-              "block1": [
+              "list_1": [
                 "1 – Atmospheric column",
                 "2 – Vacuum column",
                 "3 – Steam generator",
@@ -207,7 +215,7 @@
                 "9 – VHC device",
                 "11 – Heat exchanger"
               ],
-              "block2": [
+              "list_2": [
                 "I – Pumped-out gas-vapor mixture",
                 "II, III – Hot streams inlets",
                 "IV – Hot streams outlets",
@@ -272,6 +280,7 @@
           },
           "slides": [
             {
+              "filename": "jc_1st",
               "img_alt": "Unit based on liquid jet compressor",
               "caption": "Diagram of a unit based on liquid JC",
               "list_1": [
@@ -288,6 +297,7 @@
               ]
             },
             {
+              "filename": "jc_ejector",
               "img_alt": "Schematic diagram of a steam-gas JC",
               "caption": "Schematic diagram of a steam-gas JC",
               "list_1": ["1 – Nozzle", "2 – Mixing chamber", "3 – Diffuser"],
@@ -356,6 +366,7 @@
           },
           "slides": [
             {
+              "filename": "jau_benzine",
               "img_alt": "Diagram of a jet absorption unit",
               "caption": "Diagram of a JAU",
               "list_1": [
@@ -374,6 +385,7 @@
               ]
             },
             {
+              "filename": "jau_oil",
               "img_alt": "Diagram of a jet absorption unit for oil vapor recovery",
               "caption": "Diagram of a JAU for oil vapor recovery",
               "list_1": [

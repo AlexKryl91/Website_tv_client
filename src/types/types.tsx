@@ -127,6 +127,14 @@ export type THomepageJSON = {
   };
 };
 
+export type TDiagramSlide = {
+  filename: string;
+  img_alt: string;
+  caption: string;
+  list_1: string[];
+  list_2: string[];
+};
+
 export type TUnitJSON = {
   img: string;
   img_alt: string;
@@ -137,13 +145,7 @@ export type TUnitJSON = {
     endline?: string;
     endline_strong?: string;
   };
-  slides: {
-    filename: string;
-    img_alt: string;
-    caption: string;
-    list_1: string[];
-    list_2: string[];
-  }[];
+  slides: TDiagramSlide[];
   operation: {
     header: string;
     paragraphs: string[];

@@ -1,25 +1,29 @@
 import classes from './SlideItem.module.scss';
-// import { MouseEvent } from 'react';
-import { TUnitJSON } from '@/types/types';
+import { TDiagramSlide } from '@/types/types';
 import Image from 'next/image';
+import { useRef, RefObject } from 'react';
 
 type TSlideItem = {
-  slide: TUnitJSON['slides'][0];
+  slide: TDiagramSlide;
   number: number;
+  value: number;
+  clickHandler: (ref: RefObject<HTMLLIElement | null>) => void;
 };
 
-const SlideItem = ({ slide, number }: TSlideItem) => {
+const SlideItem = ({ slide, number, value, clickHandler }: TSlideItem) => {
   const inlineStyleCard = { width: `${100 / number}%` };
-
-  function enlargeHandler() {
-    console.log('ZOOM');
-  }
+  const ref = useRef(null);
 
   return (
-    <li key={slide.caption} className={classes.slide} style={inlineStyleCard}>
+    <li
+      ref={ref}
+      onClick={() => clickHandler(ref)}
+      value={value}
+      className={classes.slide}
+      style={inlineStyleCard}
+    >
       <h5 className={classes['slide__header']}>{slide.caption}</h5>
       <Image
-        onClick={enlargeHandler}
         className={classes.diagram}
         src={`/img/diagrams/${slide.filename}.svg`}
         width={600}

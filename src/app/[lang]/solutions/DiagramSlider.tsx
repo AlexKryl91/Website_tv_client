@@ -1,6 +1,6 @@
 'use client';
 
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, RefObject, useState, useRef, useEffect } from 'react';
 import classes from './DiagramSlider.module.scss';
 import { TUnitJSON } from '@/types/types';
 import SlideItem from './SlideItem';
@@ -17,6 +17,7 @@ type TDiagramSlider = {
 const DiagramSlider = ({ slides, labels }: TDiagramSlider) => {
   const [slideIndex, setSlideIndex] = useState<number>(0);
   const maxIndex = slides.length - 1;
+  // const ref = useRef<HTMLDivElement | null>(null);
 
   function prevHandler() {
     setSlideIndex((index) => (index === 0 ? maxIndex : index - 1));
@@ -34,13 +35,37 @@ const DiagramSlider = ({ slides, labels }: TDiagramSlider) => {
     }`;
   }
 
+  function zoomHandler(ref: RefObject<HTMLLIElement | null>) {
+    const item = ref.current as HTMLLIElement;
+    console.log(slides[item.value]);
+  }
+
+  function test(e: KeyboardEvent) {
+    console.log(e.key);
+    // const block = ref.current as HTMLDivElement;
+    // if (e.key === 'ArrowLeft') {
+    //   prevHandler();
+    // }
+    // if (e.key === 'ArrowRight') {
+    //   nextHandler();
+    // }
+  }
+
+  // useEffect(() => {
+  //   window.addEventListener('keydown', test);
+
+  //   return () => {
+  //     window.removeEventListener('keydown', test);
+  //   };
+  // }, []);
+
   const inlineStyleSlider = {
     width: `${slides.length * 100}%`,
     transform: `translateX(${slideIndex * (-100 / slides.length)}%)`,
   };
 
   return (
-    <div className={classes['diagram-slider']}>
+    <div ref={ref} className={classes['diagram-slider']}>
       <ArrowButton
         onClick={prevHandler}
         addClass={classes['slider-btn']}
@@ -49,11 +74,13 @@ const DiagramSlider = ({ slides, labels }: TDiagramSlider) => {
       />
       <div className={classes['slider-frame']}>
         <ul className={classes.slider} style={inlineStyleSlider}>
-          {slides.map((slide) => (
+          {slides.map((slide, i) => (
             <SlideItem
               key={slide.caption}
               slide={slide}
               number={slides.length}
+              value={i}
+              clickHandler={zoomHandler}
             ></SlideItem>
           ))}
         </ul>

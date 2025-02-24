@@ -19,16 +19,8 @@
   .diagram {
     position: relative;
     grid-row: span 2;
-
-    // &::after {
-    //   content: 'FUCK';
-    //   position: absolute;
-    //   display: block;
-    //   top: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   right: 0;
-    // }
+    align-self: center;
+    justify-self: center;
   }
 
   .equip-list {

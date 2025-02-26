@@ -1,10 +1,12 @@
 'use client';
 
-import { MouseEvent, RefObject, useState, useRef, useEffect } from 'react';
+import { MouseEvent, useState, RefObject } from 'react';
 import classes from './DiagramSlider.module.scss';
 import { TUnitJSON } from '@/types/types';
-import SlideItem from './SlideItem';
+import { SlideItem } from './SlideItem';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
+import { useAppDispatch } from '@/store/hooks';
+import { openModal } from '@/store/features/modal/modalSlice';
 
 type TDiagramSlider = {
   slides: TUnitJSON['slides'];
@@ -17,7 +19,8 @@ type TDiagramSlider = {
 const DiagramSlider = ({ slides, labels }: TDiagramSlider) => {
   const [slideIndex, setSlideIndex] = useState<number>(0);
   const maxIndex = slides.length - 1;
-  // const ref = useRef<HTMLDivElement | null>(null);
+
+  const dispatch = useAppDispatch();
 
   function prevHandler() {
     setSlideIndex((index) => (index === 0 ? maxIndex : index - 1));
@@ -34,30 +37,16 @@ const DiagramSlider = ({ slides, labels }: TDiagramSlider) => {
       index === slideIndex ? classes.selected : ''
     }`;
   }
-
   function zoomHandler(ref: RefObject<HTMLLIElement | null>) {
-    const item = ref.current as HTMLLIElement;
-    console.log(slides[item.value]);
+    const slide = ref.current as HTMLLIElement;
+
+    dispatch(
+      openModal({
+        componentName: 'ModalSlideItem',
+        componentProps: { slide: slides[slide.value] },
+      })
+    );
   }
-
-  function test(e: KeyboardEvent) {
-    console.log(e.key);
-    // const block = ref.current as HTMLDivElement;
-    // if (e.key === 'ArrowLeft') {
-    //   prevHandler();
-    // }
-    // if (e.key === 'ArrowRight') {
-    //   nextHandler();
-    // }
-  }
-
-  // useEffect(() => {
-  //   window.addEventListener('keydown', test);
-
-  //   return () => {
-  //     window.removeEventListener('keydown', test);
-  //   };
-  // }, []);
 
   const inlineStyleSlider = {
     width: `${slides.length * 100}%`,
@@ -65,7 +54,7 @@ const DiagramSlider = ({ slides, labels }: TDiagramSlider) => {
   };
 
   return (
-    <div ref={ref} className={classes['diagram-slider']}>
+    <div className={classes['diagram-slider']}>
       <ArrowButton
         onClick={prevHandler}
         addClass={classes['slider-btn']}

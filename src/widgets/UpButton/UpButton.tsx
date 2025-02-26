@@ -3,10 +3,15 @@
 import { useEffect, useState } from 'react';
 import classes from './UpButton.module.scss';
 import Arrow from '@icons/arrow.svg';
-import { TComponentProps } from '@/types/types';
+import { useAppSelector } from '@store/hooks';
 
-const UpButton = ({ lang }: TComponentProps) => {
+const LOCALES = { ru: 'В начало страницы', en: 'To the top of the page' };
+
+const UpButton = () => {
   const [isVisible, setVisible] = useState<boolean>(false);
+
+  const lang = useAppSelector((state) => state.lang.lang);
+
   const scrollHandler = () => setVisible(window.scrollY >= 800);
 
   useEffect(() => {
@@ -18,8 +23,6 @@ const UpButton = ({ lang }: TComponentProps) => {
   }, []);
 
   const style = `${classes['up-btn']} ${isVisible ? classes.visible : ''}`;
-
-  const LOCALES = { ru: 'В начало страницы', en: 'To the top of the page' };
 
   return (
     <button

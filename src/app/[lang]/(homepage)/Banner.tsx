@@ -10,7 +10,7 @@ type TBanner = {
 
 const Banner = ({ content }: TBanner) => {
   preloadImages([
-    '/img/homepage_bg_1.avif',
+    '/img/backgrounds/homepage_bg_1.avif',
     '/img/steam_ejector.avif',
     '/img/striped_bg_animated.svg',
   ]);

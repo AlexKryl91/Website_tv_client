@@ -1,0 +1,52 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include square(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(16);
+
+  background: #17181db3;
+  opacity: 0;
+  transition: var(--transition-duration);
+  pointer-events: none;
+  backdrop-filter: blur(rem(6));
+  z-index: 999;
+}
+
+.modal__content {
+  position: relative;
+  min-width: rem(64);
+  min-height: rem(64);
+  padding: rem(16);
+  border-radius: var(--br-lg);
+  background: var(--c-whitish);
+  box-shadow: var(--sh-black);
+  color: var(--c-blue-green-5);
+  transition: var(--transition-duration);
+  scale: 0.6;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+
+  .modal__content {
+    scale: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: rem(16);
+  right: rem(16);
+  background: none;
+  @include square(rem(20));
+  @include bg-icon('/icons/close.svg');
+}

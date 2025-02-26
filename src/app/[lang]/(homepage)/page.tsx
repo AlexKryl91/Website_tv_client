@@ -1,4 +1,4 @@
-import getLocale from '@utils/getLocale';
+import getTranslation from '@/utils/getTranslation';
 import { THomepageJSON, TPageProps } from '@/types/types';
 
 import Banner from './Banner';
@@ -10,7 +10,7 @@ import Feedback from './Feedback';
 
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
-  const t = (await getLocale('homepage', lang)) as THomepageJSON;
+  const t = (await getTranslation('homepage', lang)) as THomepageJSON;
 
   return (
     <>

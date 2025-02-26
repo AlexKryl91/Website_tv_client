@@ -1,6 +1,30 @@
 @use '@styles/helpers/functions' as *;
 @use '@styles/helpers/mixins' as *;
 
+.switcher {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  column-gap: rem(40);
+
+  $pad-block: rem(12);
+  padding: $pad-block rem(24);
+  border-block: rem(2) solid var(--c-blue-green-1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: rem(16);
+    height: calc(100% - (2 * $pad-block));
+    background: var(--c-whitish-blue);
+  }
+}
+
 .lang-btn {
   width: rem(80);
   height: rem(40);

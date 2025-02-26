@@ -1,5 +1,5 @@
 import classes from './solutions.module.scss';
-import getLocale from '@utils/getLocale';
+import getTranslation from '@/utils/getTranslation';
 import { TSolutionsJSON, TPageProps } from '@/types/types';
 import Image from 'next/image';
 import Unit from './Unit';
@@ -10,7 +10,7 @@ const SYSTEMS_IMGS = ['vacuum.svg', 'compress.svg', 'absorb.svg'];
 
 export default async function Solutions({ params }: TPageProps) {
   const { lang } = await params;
-  const t = (await getLocale('solutions', lang)) as TSolutionsJSON;
+  const t = (await getTranslation('solutions', lang)) as TSolutionsJSON;
 
   const styleHeader = `${montserrat.className} ${classes['solutions__header']}`;
   const styleFlag = `${classes.flag} ${classes[lang]}`;

@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './Navbar.module.scss';
-import getLocale from '@utils/getLocale';
+import getTranslation from '@/utils/getTranslation';
 import { TComponentProps, TNavigationJSON } from '@/types/types';
-import NavMenu from './NavMenu/NavMenu';
-import Actions from './Actions/Actions';
+import NavContent from './NavContent';
 
 const Navbar = async ({ lang }: TComponentProps) => {
-  const t = (await getLocale('navigation', lang)) as TNavigationJSON;
+  const t = (await getTranslation('navigation', lang)) as TNavigationJSON;
 
   return (
     <header className={classes.navbar}>
@@ -25,8 +24,7 @@ const Navbar = async ({ lang }: TComponentProps) => {
           priority
         />
       </Link>
-      <NavMenu lang={lang} content={t} />
-      <Actions lang={lang} content={t} />
+      <NavContent lang={lang} content={t} />
     </header>
   );
 };

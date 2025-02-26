@@ -1,13 +1,13 @@
 import classes from './Clients.module.scss';
 import { SectionLight } from '@/components/Sections/Sections';
-import Carousel from '@/app/[lang]/(homepage)/Carousel';
+import Carousel from './Carousel';
 import { THomepageJSON } from '@/types/types';
 
 type TClients = {
   content: THomepageJSON['clients'];
 };
 
-const Offer = ({ content }: TClients) => {
+const Clients = ({ content }: TClients) => {
   return (
     <SectionLight header={content.header}>
       <div className={classes.clients}>
@@ -17,4 +17,4 @@ const Offer = ({ content }: TClients) => {
   );
 };
 
-export default Offer;
+export default Clients;

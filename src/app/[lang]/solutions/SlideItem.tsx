@@ -10,7 +10,12 @@ type TSlideItem = {
   clickHandler: (ref: RefObject<HTMLLIElement | null>) => void;
 };
 
-const SlideItem = ({ slide, number, value, clickHandler }: TSlideItem) => {
+export const SlideItem = ({
+  slide,
+  number,
+  value,
+  clickHandler,
+}: TSlideItem) => {
   const inlineStyleCard = { width: `${100 / number}%` };
   const ref = useRef(null);
 
@@ -44,4 +49,27 @@ const SlideItem = ({ slide, number, value, clickHandler }: TSlideItem) => {
   );
 };
 
-export default SlideItem;
+export const ModalSlideItem = ({ slide }: { slide: TDiagramSlide }) => {
+  return (
+    <div className={classes['modal-slide']}>
+      <h5 className={classes['slide__header']}>{slide.caption}</h5>
+      <Image
+        className={classes.diagram}
+        src={`/img/diagrams/${slide.filename}.svg`}
+        width={600}
+        height={415}
+        alt={slide.img_alt}
+      />
+      <ul className={classes['equip-list']}>
+        {slide.list_1.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <ul className={classes['flow-list']}>
+        {slide.list_2.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};

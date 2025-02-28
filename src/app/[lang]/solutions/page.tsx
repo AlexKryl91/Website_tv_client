@@ -5,12 +5,15 @@ import Image from 'next/image';
 import Unit from './Unit';
 import { montserrat } from '@utils/fonts';
 import { Details, SubDetails } from './Details';
+import { preloadImages } from '@/utils/preloadResources';
 
 const SYSTEMS_IMGS = ['vacuum.svg', 'compress.svg', 'absorb.svg'];
 
 export default async function Solutions({ params }: TPageProps) {
   const { lang } = await params;
   const t = (await getTranslation('solutions', lang)) as TSolutionsJSON;
+
+  preloadImages(['/img/backgrounds/solutions_bg.avif']);
 
   const styleHeader = `${montserrat.className} ${classes['solutions__header']}`;
   const styleFlag = `${classes.flag} ${classes[lang]}`;

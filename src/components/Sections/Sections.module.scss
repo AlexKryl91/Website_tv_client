@@ -106,3 +106,9 @@
     padding-block: rem(42) rem(80);
   }
 }
+
+@media screen and (max-width: rem($mobile-m)) {
+  .subsection {
+    padding-bottom: rem(64);
+  }
+}

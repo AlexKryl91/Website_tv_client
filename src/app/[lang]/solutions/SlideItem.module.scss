@@ -8,30 +8,263 @@
   grid-template-rows: repeat(3, auto);
   padding: rem(20);
   gap: rem(20);
+}
 
-  &__header {
+.slide__header,
+.modal-slide__header {
+  grid-column: span 2;
+  text-align: center;
+  font-size: rem(20);
+  font-weight: 500;
+  text-wrap: balance;
+  align-self: center;
+}
+
+.diagram,
+.modal-slide__diagram {
+  align-self: center;
+  justify-self: center;
+}
+
+.diagram {
+  grid-row: span 2;
+}
+
+.equip-list {
+  margin-top: auto;
+}
+
+.equip-list,
+.flow-list,
+.modal-slide__equip-list,
+.modal-slide__flow-list {
+  font-size: rem(16);
+  line-height: var(--line-h-m);
+}
+
+.modal-slide {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  padding: rem(24);
+  //
+  width: 82dvw;
+  max-width: rem(1440);
+  max-height: 90dvh;
+  gap: rem(20) rem(32);
+
+  &__diagram {
     grid-column: span 2;
-    text-align: center;
+    background: var(--c-whitish-blue);
+    padding: rem(20);
+    @include shaped-card;
+    //
+    width: 100%;
+    height: auto;
+    max-height: 52dvh;
+  }
+
+  &__equip-list,
+  &__flow-list {
     font-size: rem(20);
-    font-weight: 500;
   }
 
-  .diagram {
-    position: relative;
-    grid-row: span 2;
-    align-self: center;
-    justify-self: center;
+  &__equip-list {
+    margin-left: auto;
   }
 
-  .equip-list {
-    margin-top: auto;
-  }
-  .equip-list,
-  .flow-list {
-    font-size: rem(16);
-    line-height: var(--line-h-m);
+  &__flow-list {
+    margin-right: auto;
   }
 }
 
-@media (any-hover: hover) {
+@media screen and (max-width: rem($laptop)) {
+  .modal-slide {
+    padding: rem(24) rem(48);
+    width: 100dvw;
+    height: 100dvh;
+    max-height: 100dvh;
+
+    &__header {
+      padding-inline: rem(20);
+    }
+
+    &__diagram {
+      max-height: 58dvh;
+    }
+  }
+}
+
+@media screen and (max-width: rem(1250)) {
+  .diagram {
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+
+  .equip-list {
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  .flow-list {
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: rem(900)) {
+  .diagram {
+    width: auto;
+    height: rem(300);
+  }
+
+  .equip-list,
+  .flow-list {
+    font-size: rem(14);
+  }
+
+  .modal-slide {
+    &__equip-list {
+      margin-inline: auto;
+    }
+
+    &__equip-list,
+    &__flow-list {
+      font-size: rem(16);
+    }
+  }
+}
+
+@media screen and (max-width: rem(850)) {
+  .modal-slide {
+    &__equip-list {
+      margin-inline: auto;
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+  .slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    padding: rem(20);
+    gap: rem(16) 0;
+  }
+
+  .slide__header {
+    grid-column: span 1;
+    align-self: center;
+  }
+
+  .diagram {
+    grid-row: span 1;
+    grid-column: span 1;
+    padding: rem(8);
+    background: var(--c-whitish-blue);
+    @include shaped-card;
+  }
+
+  .equip-list,
+  .flow-list {
+    display: none;
+  }
+
+  .modal-slide {
+    padding: rem(20);
+
+    &__equip-list {
+      margin-inline: rem(20) 0;
+    }
+
+    &__flow-list {
+      margin-inline: 0 rem(20);
+    }
+  }
+}
+
+@media screen and (max-width: rem(654)) {
+  .slide__header {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .diagram {
+    width: auto;
+    height: rem(200);
+  }
+}
+
+@media screen and (max-width: rem($mobile-m)) {
+  .slide__header,
+  .modal-slide__header {
+    font-size: rem(16);
+  }
+
+  .modal-slide__header {
+    line-height: var(--line-h-m);
+  }
+
+  .modal-slide {
+    gap: rem(20);
+
+    &__equip-list,
+    &__flow-list {
+      font-size: rem(14);
+    }
+    &__equip-list {
+      margin-inline: 0;
+    }
+
+    &__flow-list {
+      margin-inline: 0;
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .slide {
+    padding: rem(10);
+    gap: rem(10) 0;
+  }
+
+  .slide__header {
+    font-size: rem(14);
+  }
+
+  .diagram {
+    height: rem(150);
+  }
+
+  .modal-slide {
+    &__diagram {
+      padding: rem(10);
+    }
+
+    &__equip-list,
+    &__flow-list {
+      font-size: rem(12);
+    }
+  }
+}
+
+@media screen and (max-width: rem(380)) {
+  .modal-slide {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, min-content);
+    padding: rem(16) rem(12) rem(12);
+
+    gap: rem(14) 0;
+
+    &__header,
+    &__diagram {
+      grid-column: span 1;
+    }
+
+    &__equip-list,
+    &__flow-list {
+      margin-inline: rem(50) 0;
+    }
+  }
 }

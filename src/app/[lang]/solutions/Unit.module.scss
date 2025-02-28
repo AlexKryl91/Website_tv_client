@@ -16,19 +16,15 @@
   &__header {
     margin-inline: auto;
     font-size: rem(36);
+    text-align: center;
   }
-
-  // &__logo {
-  //   //   position: absolute;
-  //   //   top: 0;
-  //   //   left: 0;
-  // }
 }
 
 .subheader {
   font-weight: 500;
   font-size: rem(20);
   margin-block: rem(32) rem(20);
+  text-wrap: balance;
 }
 
 .paragraph {
@@ -53,20 +49,21 @@
 }
 
 .feat-list li {
-  $pad-left: rem(40);
-
   position: relative;
-  padding-left: $pad-left;
+  padding-left: rem(40);
 
   &:not(:last-of-type) {
     margin-bottom: rem(10);
   }
 
   &::before {
-    content: url('/icons/arrow_orange.svg');
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    @include bg-icon('/icons/arrow_orange.svg');
+    width: rem(20);
+    height: rem(19);
     margin-top: rem(2);
   }
 }
@@ -90,5 +87,71 @@
   a:focus {
     color: var(--c-blue-green-5);
     font-weight: 500;
+  }
+}
+
+@media screen and (max-width: rem(672)) {
+  .unit {
+    .header-wrapper {
+      gap: rem(32) rem(36);
+      margin-bottom: rem(36);
+    }
+
+    &__header {
+      font-size: rem(26);
+      line-height: rem(32);
+      text-wrap: balance;
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-m)) {
+  .unit {
+    font-size: rem(16);
+    line-height: var(--line-h-m);
+
+    &__logo {
+      width: rem(96);
+      height: auto;
+    }
+  }
+
+  .subheader {
+    font-size: rem(16);
+    margin-block: rem(26) rem(16);
+  }
+
+  .paragraph {
+    &:first-of-type {
+      margin-bottom: rem(32);
+    }
+  }
+
+  .feat-list li {
+    padding-left: rem(24);
+
+    &::before {
+      @include square(rem(16));
+    }
+  }
+
+  .ending {
+    &::before {
+      height: rem(2);
+      margin: rem(40) auto;
+    }
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .unit {
+    font-size: rem(14);
+
+    .header-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: rem(16) rem(52);
+      margin-bottom: rem(26);
+    }
   }
 }

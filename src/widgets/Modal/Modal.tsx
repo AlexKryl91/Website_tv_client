@@ -30,7 +30,7 @@ const Modal = () => {
   }
   function escHandler(e: KeyboardEvent) {
     if (e.key === 'Escape' && isOpen) {
-      dispatch(closeModal());
+      exitModal();
     }
   }
   useEffect(() => {

@@ -19,7 +19,7 @@ const Carousel = ({ cards }: TCarouselProps) => {
           {cards.map((client) => (
             <a key={client.id} href={client.href} target="_blank">
               <Image
-                src={`img/companies/${client.id}.svg`}
+                src={`/img/companies/${client.id}.svg`}
                 alt={client.name}
                 width={180}
                 height={180}

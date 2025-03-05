@@ -26,7 +26,7 @@ const Advantage = ({ content, lang }: TAdvantage) => {
                   type="image/avif"
                 />
                 <img
-                  src={`img/${imgName}.jpg`}
+                  src={`/img/${imgName}.jpg`}
                   srcSet={srcSetTemplate(imgName, 'jpg')}
                   width="270"
                   height="200"
@@ -46,7 +46,7 @@ const Advantage = ({ content, lang }: TAdvantage) => {
             <li
               key={item.text}
               className={classes['adv-list__item']}
-              style={{ backgroundImage: `url('icons/${ADV_ICONS[i]}.svg')` }}
+              style={{ backgroundImage: `url('/icons/${ADV_ICONS[i]}.svg')` }}
             >
               <Link href={`/${lang}${item.href}`} aria-label={item.aria_label}>
                 <span>{item.text}</span>

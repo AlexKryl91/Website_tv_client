@@ -19,7 +19,7 @@ function setDefaultLocale(request: NextRequest) {
 export function middleware(request: NextRequest) {
   // console.log('| ================> Middleware ================>');
   // const { device } = userAgent(request);
-  // console.log(device.type);
+  // console.log(device);
 
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;

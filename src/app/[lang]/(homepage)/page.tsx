@@ -1,5 +1,7 @@
 import getTranslation from '@/utils/getTranslation';
 import { THomepageJSON, TPageProps } from '@/types/types';
+import detectIsMobile from '@/utils/detectIsMobile';
+import { preloadImages } from '@/utils/preloadResources';
 
 import Banner from './Banner';
 import Advantage from './Advantage';
@@ -11,6 +13,13 @@ import Feedback from './Feedback';
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
   const t = (await getTranslation('homepage', lang)) as THomepageJSON;
+  const isMobile = await detectIsMobile();
+
+  const IMG_PRELOAD_LIST = ['/img/backgrounds/homepage_bg_1.avif'];
+  if (!isMobile) {
+    IMG_PRELOAD_LIST.push('/img/steam_ejector.avif');
+  }
+  preloadImages(IMG_PRELOAD_LIST);
 
   return (
     <>

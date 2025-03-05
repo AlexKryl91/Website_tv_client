@@ -32,9 +32,9 @@
   text-transform: uppercase;
   transition: var(--transition-duration);
 
-  background: var(--c-greyish-blue-1-tr40);
+  background: var(--c-greyish-blue-1-tr20);
   font-size: rem(16);
-  color: var(--c-whitish);
+  color: var(--c-greyish-blue-2);
   cursor: default;
 
   &--active {

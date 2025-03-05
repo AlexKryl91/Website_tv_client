@@ -37,25 +37,9 @@
   padding-block: calc(var(--navbar-h) + rem(56)) rem(140);
 }
 
-// addintion for first homepage section
+// addition for first homepage section
 .intro {
   padding-block: var(--navbar-h) rem(140);
-}
-
-.striped-bg {
-  height: 100%;
-  width: auto;
-  position: absolute;
-  top: var(--navbar-h);
-  left: calc(50% - rem(40));
-}
-
-.ejector-img {
-  position: absolute;
-  top: 50%;
-  left: calc(50% + rem(72));
-  translate: 0 calc(-50% + rem(2));
-  filter: drop-shadow(0 rem(12) rem(4) var(--c-black-tr25));
 }
 
 // Light section
@@ -74,19 +58,6 @@
 }
 
 // Media queries
-
-@media screen and (max-width: rem(1040)) {
-  .ejector-img {
-    width: 50%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: rem(960)) {
-  .ejector-img {
-    display: none;
-  }
-}
 
 @media screen and (max-width: rem(672)) {
   .section {

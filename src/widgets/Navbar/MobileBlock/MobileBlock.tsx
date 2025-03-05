@@ -9,33 +9,34 @@ import ItemGroup from './ItemGroup';
 import MobileLangSwitcher from './MobileLangSwitcher';
 
 const MobileBlock = ({ lang, content }: TNavMenu) => {
-  const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
-  const menuStyle = `${classes['side-menu']} ${
-    isMenuActive ? classes.show : ''
-  }`;
+  const menuStyle = `${classes['side-menu']} ${isActive ? classes.show : ''}`;
 
   const coverStyle = `${classes['blur-cover']} ${
-    isMenuActive ? classes.appear : ''
+    isActive ? classes.appear : ''
   }`;
 
-  document.body.classList.toggle('scrollbar--hidden', isMenuActive);
+  if (typeof window !== 'undefined') {
+    document.body.classList.toggle('scrollbar--hidden', isActive);
+  }
 
-  const burgerClick = () => setIsMenuActive(!isMenuActive);
-  const linkClick = () => setIsMenuActive(false);
+  const burgerClick = () => setIsActive(!isActive);
+  const linkClick = () => setIsActive(false);
 
   return (
     <>
       <div className={coverStyle}></div>
-      <ul className={menuStyle}>
-        <li className={classes['top-item']}>
+      <div className={menuStyle}>
+        <div className={classes['top-item']}>
           <Link
             onClick={linkClick}
             className={classes['home-btn']}
             href={`/${lang}`}
             aria-label={content.logo.aria_label}
           ></Link>
-        </li>
+        </div>
+
         {content.menu.map((item) => (
           <ItemGroup
             key={item.title}
@@ -44,23 +45,22 @@ const MobileBlock = ({ lang, content }: TNavMenu) => {
             item={item}
           />
         ))}
-        <li className={classes['lang-item']}>
-          <MobileLangSwitcher lang={lang} titles={content.lang_titles} />
-        </li>
-        <li className={classes['login-item']}>
-          <button
-            className={classes['login-btn']}
-            type="button"
-            title={content.login_btn.desc}
-          >
-            {content.login_btn.value}
-          </button>
-        </li>
-      </ul>
+
+        <MobileLangSwitcher lang={lang} titles={content.lang_titles} />
+
+        <button
+          className={classes['login-btn']}
+          type="button"
+          title={content.login_btn.desc}
+        >
+          {content.login_btn.value}
+        </button>
+      </div>
+
       <BurgerButton
         onClick={burgerClick}
         title={content.menu_aria_label}
-        isOpen={isMenuActive}
+        isOpen={isActive}
       />
     </>
   );

@@ -5,26 +5,13 @@ import classes from './ItemGroup.module.scss';
 import Chevron from '@icons/chevron.svg';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 
 type TSideMenuItem = {
   onClick: () => void;
 };
 
 const ItemGroup = ({ lang, item, onClick }: TNavMenuItem & TSideMenuItem) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
-
-  function openSubmenu() {
-    setIsOpen(!isOpen);
-  }
-
-  const styleChevron = `${classes.chevron} ${
-    isOpen ? classes['chevron--open'] : ''
-  }`;
-  const styleSubmenu = `${classes.submenu} ${
-    isOpen ? classes['submenu--open'] : ''
-  }`;
 
   function styleGroup(content: { href: string }[]) {
     const routeHasPath = content.some(({ href }) => pathname.includes(href));
@@ -38,16 +25,12 @@ const ItemGroup = ({ lang, item, onClick }: TNavMenuItem & TSideMenuItem) => {
   }
 
   return (
-    <li key={item.title}>
-      <button
-        onClick={openSubmenu}
-        type="button"
-        className={styleGroup(item.content)}
-      >
+    <details name="menu-group" className={classes['menu-details']}>
+      <summary className={styleGroup(item.content)}>
         {item.title}
-        <Chevron className={styleChevron} />
-      </button>
-      <ul className={styleSubmenu}>
+        <Chevron className={classes.chevron} />
+      </summary>
+      <ul>
         {item.content.map((link) => (
           <li key={link.label}>
             <Link
@@ -61,7 +44,7 @@ const ItemGroup = ({ lang, item, onClick }: TNavMenuItem & TSideMenuItem) => {
           </li>
         ))}
       </ul>
-    </li>
+    </details>
   );
 };
 

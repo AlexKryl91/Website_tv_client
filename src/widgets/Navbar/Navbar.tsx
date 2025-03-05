@@ -4,9 +4,12 @@ import classes from './Navbar.module.scss';
 import getTranslation from '@/utils/getTranslation';
 import { TComponentProps, TNavigationJSON } from '@/types/types';
 import NavContent from './NavContent';
+import detectIsMobile from '@/utils/detectIsMobile';
 
 const Navbar = async ({ lang }: TComponentProps) => {
   const t = (await getTranslation('navigation', lang)) as TNavigationJSON;
+
+  const isMobile = await detectIsMobile();
 
   return (
     <header className={classes.navbar}>
@@ -24,7 +27,7 @@ const Navbar = async ({ lang }: TComponentProps) => {
           priority
         />
       </Link>
-      <NavContent lang={lang} content={t} />
+      <NavContent lang={lang} content={t} isTouch={isMobile} />
     </header>
   );
 };

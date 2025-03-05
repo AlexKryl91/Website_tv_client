@@ -1,0 +1,76 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.uc {
+  position: relative;
+  width: 100%;
+  margin-top: var(--navbar-h);
+}
+
+.uc__body {
+  width: 100%;
+  max-width: var(--view-max-w);
+  margin-inline: auto;
+  padding-block: rem(50) rem(96);
+  background-color: #476274;
+  background-image: radial-gradient(closest-side, #aadceb 0%, #0000 100%);
+  background-size: rem(480) rem(480);
+  background-position: center rem(32);
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: rem($laptop)) {
+    @include bg-mask;
+  }
+}
+
+.uc__img {
+  display: block;
+  margin-inline: auto;
+  filter: drop-shadow(var(--sh-black-dark));
+}
+
+.crossed-lines {
+  margin-block: rem(-160) rem(-112);
+}
+
+.uc__header {
+  font-size: rem(36);
+  margin-bottom: rem(20);
+  color: var(--c-orange-dull);
+}
+
+.uc__text {
+  font-size: rem(26);
+  font-weight: 300;
+}
+
+.uc__header,
+.uc__text {
+  text-align: center;
+  text-wrap: balance;
+}
+
+.uc-prefooter {
+  height: rem(70);
+  background-color: var(--c-whitish);
+  background-image: url('/img/danger_stripe_long.svg');
+  background-repeat: repeat-x;
+}
+
+@media screen and (min-width: rem($desktop-xl)) {
+  .uc {
+    @include section-bg-gradient(
+      var(--c-greyish-blue-2),
+      var(--c-blue-green-5)
+    );
+  }
+}
+
+@media screen and (min-width: rem($laptop)) {
+  .uc {
+    // background-color: var(--c-blue-green-5);
+    // background-color: var(--c-blue-green-4);
+    background-color: #375467;
+  }
+}

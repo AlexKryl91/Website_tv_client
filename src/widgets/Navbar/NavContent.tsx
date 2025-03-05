@@ -8,9 +8,20 @@ const MobileBlock = dynamic(() => import('./MobileBlock/MobileBlock'));
 const DesktopBlock = dynamic(() => import('./DesktopBlock/DesktopBlock'));
 const NavMenu = dynamic(() => import('./NavMenu/NavMenu'));
 
-const NavContent = ({ lang, content }: TNavMenu) => {
+type TDeviceType = {
+  isTouch: boolean;
+};
+
+const NavContent = ({ lang, content, isTouch }: TNavMenu & TDeviceType) => {
   const windowWidth = useWidth();
-  const isMobile = windowWidth ? windowWidth <= 1024 : false;
+
+  let isMobile = false;
+
+  if (isTouch) {
+    isMobile = isTouch;
+  } else {
+    isMobile = windowWidth ? windowWidth <= 1024 : isTouch;
+  }
 
   return (
     <>

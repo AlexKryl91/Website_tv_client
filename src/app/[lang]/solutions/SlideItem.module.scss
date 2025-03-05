@@ -78,10 +78,11 @@
   }
 }
 
-@media screen and (max-width: rem($laptop)) {
+@media screen and (max-width: rem($laptop)), screen and (max-height: rem(900)) {
   .modal-slide {
     padding: rem(24) rem(48);
     width: 100dvw;
+    max-width: 100dvw;
     height: 100dvh;
     max-height: 100dvh;
 

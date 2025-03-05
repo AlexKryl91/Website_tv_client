@@ -1,0 +1,26 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.striped-bg {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: var(--navbar-h);
+  left: calc(50% - rem(40));
+}
+
+.ejector-img {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + rem(72));
+  translate: 0 calc(-50% + rem(2));
+  filter: drop-shadow(0 rem(12) rem(4) var(--c-black-tr25));
+}
+
+@media screen and (max-width: rem(1040)) {
+  .ejector-img {
+    width: 50%;
+    height: auto;
+  }
+}

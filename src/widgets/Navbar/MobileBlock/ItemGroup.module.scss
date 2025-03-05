@@ -1,10 +1,32 @@
 @use '@styles/helpers/mixins' as *;
 @use '@styles/helpers/functions' as *;
 
+.menu-details {
+  overflow: hidden;
+
+  &::details-content {
+    height: 0;
+    transition: all var(--transition-duration);
+    transition-behavior: allow-discrete;
+  }
+
+  &[open]::details-content {
+    height: auto;
+    height: calc-size(auto, size);
+  }
+
+  &[open] .chevron {
+    transform: rotate(-180deg);
+  }
+}
+
 $paddings: rem(20) rem(24);
 
-// Button "group"
+// Summary "group"
 .group {
+  cursor: pointer;
+  list-style: none;
+
   width: 100%;
   padding: $paddings;
   border-top: rem(2) solid var(--c-blue-green-1);
@@ -23,24 +45,6 @@ $paddings: rem(20) rem(24);
 .chevron {
   margin-left: rem(8);
   transition: var(--transition-duration);
-
-  &--open {
-    transform: rotate(-180deg);
-  }
-}
-
-// Submenu
-.submenu {
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition-duration);
-
-  &--open {
-    max-height: rem(200);
-    opacity: 1;
-    pointer-events: all;
-  }
 }
 
 .link {

@@ -1,7 +1,7 @@
 import classes from './Sections.module.scss';
 import { montserrat } from '@utils/fonts';
-import StripedBg from '@img/striped_bg_animated.svg';
 import { AnimatedBar } from '../AnimatedBar/AnimatedBar';
+import Decoration from './Decoration';
 
 type TSectionDark = {
   children: React.ReactNode;
@@ -66,17 +66,7 @@ export const SectionIntro = ({ children, addClass, imgAlt }: TSectionIntro) => {
       >
         {children}
       </div>
-      <StripedBg className={classes['striped-bg']} />
-      <picture>
-        <source srcSet="img/steam_ejector.avif" type="image/avif" />
-        <img
-          className={classes['ejector-img']}
-          src="img/steam_ejector.png"
-          width="520"
-          height="412"
-          alt={imgAlt}
-        />
-      </picture>
+      <Decoration imgAlt={imgAlt} />
     </section>
   );
 };

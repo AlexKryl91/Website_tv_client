@@ -56,9 +56,15 @@ type TSectionIntro = {
   children: React.ReactNode;
   addClass: string;
   imgAlt: string;
+  isMobile: boolean;
 };
 
-export const SectionIntro = ({ children, addClass, imgAlt }: TSectionIntro) => {
+export const SectionIntro = ({
+  children,
+  addClass,
+  imgAlt,
+  isMobile,
+}: TSectionIntro) => {
   return (
     <section className={`${classes.section} ${classes['section--dark']}`}>
       <div
@@ -66,7 +72,7 @@ export const SectionIntro = ({ children, addClass, imgAlt }: TSectionIntro) => {
       >
         {children}
       </div>
-      <Decoration imgAlt={imgAlt} />
+      <Decoration imgAlt={imgAlt} isMobile={isMobile} />
     </section>
   );
 };

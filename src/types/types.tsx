@@ -21,6 +21,12 @@ export type TComponentProps = {
   lang: TLangSet;
 };
 
+export type TMetadataJSON = {
+  titles: {
+    [key: string]: string;
+  };
+};
+
 type TLink = { label: string; href: string; aria_label: string };
 
 export type TNavigationJSON = {

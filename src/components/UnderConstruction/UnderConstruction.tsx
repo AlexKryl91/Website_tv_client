@@ -25,7 +25,7 @@ type TUcPage = {
 const UnderConstruction = ({ lang }: TUcPage) => {
   return (
     <>
-      <h1 className="sr-only">{PAGE_TEXT[lang].header}hiuhuh</h1>
+      <h1 className="sr-only">{PAGE_TEXT[lang].header}</h1>
       <section className={classes.uc}>
         <div className={classes['uc__body']}>
           <Image

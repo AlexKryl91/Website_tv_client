@@ -24,7 +24,7 @@ export default async function Home({ params }: TPageProps) {
   return (
     <>
       <h1 className="sr-only">{t.banner.header}</h1>
-      <Banner content={t.banner} />
+      <Banner content={t.banner} isMobile={isMobile} />
       <Advantage content={t.advantage} lang={lang} />
       <Offer content={t.offer} lang={lang} />
       <Clients content={t.clients} />

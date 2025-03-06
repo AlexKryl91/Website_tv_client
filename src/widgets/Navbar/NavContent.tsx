@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { TNavMenu } from '@/types/types';
 import useWidth from '@/hooks/useWidth';
+import { usePathname } from 'next/navigation';
 
 const MobileBlock = dynamic(() => import('./MobileBlock/MobileBlock'));
 const DesktopBlock = dynamic(() => import('./DesktopBlock/DesktopBlock'));
@@ -14,6 +15,7 @@ type TDeviceType = {
 
 const NavContent = ({ lang, content, isTouch }: TNavMenu & TDeviceType) => {
   const windowWidth = useWidth();
+  const pathname = usePathname();
 
   let isMobile = false;
 
@@ -27,7 +29,7 @@ const NavContent = ({ lang, content, isTouch }: TNavMenu & TDeviceType) => {
     <>
       {!isMobile && <NavMenu lang={lang} content={content} />}
       {isMobile ? (
-        <MobileBlock lang={lang} content={content} />
+        <MobileBlock key={pathname} lang={lang} content={content} />
       ) : (
         <DesktopBlock lang={lang} content={content} />
       )}

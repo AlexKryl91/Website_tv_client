@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 60px;
+  row-gap: rem(60);
 
   background-image: url('/img/backgrounds/service_bg.svg');
   background-repeat: no-repeat;

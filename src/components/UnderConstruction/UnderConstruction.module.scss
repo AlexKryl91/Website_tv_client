@@ -31,7 +31,9 @@
 }
 
 .crossed-lines {
-  margin-block: rem(-160) rem(-112);
+  margin-block: -12.5% -8.75%;
+  width: 100%;
+  height: auto;
 }
 
 .uc__header {
@@ -43,12 +45,14 @@
 .uc__text {
   font-size: rem(26);
   font-weight: 300;
+  line-height: var(--line-h-s);
 }
 
 .uc__header,
 .uc__text {
   text-align: center;
   text-wrap: balance;
+  padding-inline: var(--side-spacing);
 }
 
 .uc-prefooter {
@@ -60,17 +64,59 @@
 
 @media screen and (min-width: rem($desktop-xl)) {
   .uc {
-    @include section-bg-gradient(
-      var(--c-greyish-blue-2),
-      var(--c-blue-green-5)
-    );
+    @include section-bg-gradient(#375467, var(--c-blue-green-5));
   }
 }
 
 @media screen and (min-width: rem($laptop)) {
   .uc {
-    // background-color: var(--c-blue-green-5);
-    // background-color: var(--c-blue-green-4);
     background-color: #375467;
+  }
+}
+
+@media screen and (max-width: rem($tablet)) {
+  .crossed-lines {
+    margin-bottom: -6.25%;
+  }
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+  .uc__header {
+    font-size: rem(24);
+    margin-bottom: rem(10);
+  }
+
+  .uc__body {
+    padding-bottom: rem(64);
+  }
+
+  .uc__text {
+    font-size: rem(20);
+  }
+}
+
+@media screen and (max-width: rem($mobile-m)) {
+  .crossed-lines {
+    margin-bottom: -4%;
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .uc__body {
+    padding-block: rem(32) rem(48);
+    background-position: center rem(16);
+  }
+
+  .crossed-lines {
+    margin-bottom: 0;
+  }
+
+  .uc__header {
+    font-size: rem(20);
+    margin-bottom: rem(10);
+  }
+
+  .uc__text {
+    font-size: rem(16);
   }
 }

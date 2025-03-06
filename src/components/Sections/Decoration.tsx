@@ -4,10 +4,15 @@ import useWidth from '@/hooks/useWidth';
 import classes from './Decoration.module.scss';
 import StripedBg from '@img/striped_bg_animated.svg';
 
-const Decoration = ({ imgAlt }: { imgAlt: string }) => {
+type TDecoration = {
+  imgAlt: string;
+  isMobile: boolean;
+};
+
+const Decoration = ({ imgAlt, isMobile }: TDecoration) => {
   const windowWidth = useWidth();
-  const showBG = windowWidth ? windowWidth > 624 : true;
-  const showEjector = windowWidth ? windowWidth >= 960 : true;
+  const showBG = windowWidth ? windowWidth > 624 : !isMobile;
+  const showEjector = windowWidth ? windowWidth >= 960 : !isMobile;
 
   return (
     <>

@@ -1,0 +1,12 @@
+{
+  "titles": {
+    "/": "Homepage",
+    "/solutions": "Solutions",
+    "/products": "Products & Services",
+    "/about": "Our Company",
+    "/implementations": "Implementations",
+    "/publications": "Publications",
+    "/contacts": "Contacts",
+    "/career": "Career"
+  }
+}

@@ -5,11 +5,16 @@ import { THomepageJSON } from '@/types/types';
 
 type TBanner = {
   content: THomepageJSON['banner'];
+  isMobile: boolean;
 };
 
-const Banner = ({ content }: TBanner) => {
+const Banner = ({ content, isMobile }: TBanner) => {
   return (
-    <SectionIntro addClass={classes.banner} imgAlt={content.img_alt}>
+    <SectionIntro
+      addClass={classes.banner}
+      imgAlt={content.img_alt}
+      isMobile={isMobile}
+    >
       <div className={classes['h2-wrap']}>
         <h2 className={`${montserrat.className} ${classes['banner__header']}`}>
           {content.taglines.map((line) => (

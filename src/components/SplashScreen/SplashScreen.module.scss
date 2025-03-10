@@ -23,7 +23,9 @@
 }
 
 .logo {
-  @include square(rem(150));
+  // @include square(rem(150));
+  // width: 150px;
+  // height: 150px;
   filter: drop-shadow(var(--sh-black));
 }
 

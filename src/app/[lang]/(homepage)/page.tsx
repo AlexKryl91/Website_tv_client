@@ -10,6 +10,20 @@ import Clients from './Clients';
 import Join from './Join';
 import Feedback from './Feedback';
 
+export async function generateMetadata({ params }: TPageProps) {
+  const { lang } = await params;
+  const { metadata } = (await getTranslation(
+    'homepage',
+    lang
+  )) as THomepageJSON;
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    keywords: metadata.keywords,
+  };
+}
+
 export default async function Home({ params }: TPageProps) {
   const { lang } = await params;
   const t = (await getTranslation('homepage', lang)) as THomepageJSON;
@@ -23,7 +37,7 @@ export default async function Home({ params }: TPageProps) {
 
   return (
     <>
-      <h1 className="sr-only">{t.banner.header}</h1>
+      <h1 className="sr-only">{t.page_header}</h1>
       <Banner content={t.banner} isMobile={isMobile} />
       <Advantage content={t.advantage} lang={lang} />
       <Offer content={t.offer} lang={lang} />

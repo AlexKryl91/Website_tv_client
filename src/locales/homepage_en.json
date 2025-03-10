@@ -1,6 +1,11 @@
 {
+  "metadata": {
+    "title": "Technovacuum LLC | Homepage",
+    "description": "Technovacuum LLC has been developing and implementing environmentally friendly and resource-saving technologies based on its jet devices – vacuum ejectors, jet compressors, pumps and mixers – for over 30 years.",
+    "keywords": "Development, implementation, experience, jet devices, vacuum ejectors, compressors"
+  },
+  "page_header": "Technovacuum LLC. Jet devices",
   "banner": {
-    "header": "Technovacuum LLC. Jet devices",
     "img_alt": "Steam ejector",
     "taglines": [
       "Modern technologies",

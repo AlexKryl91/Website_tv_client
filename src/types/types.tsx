@@ -21,12 +21,6 @@ export type TComponentProps = {
   lang: TLangSet;
 };
 
-export type TMetadataJSON = {
-  titles: {
-    [key: string]: string;
-  };
-};
-
 type TLink = { label: string; href: string; aria_label: string };
 
 export type TNavigationJSON = {
@@ -73,9 +67,16 @@ export type TNavMenuItem = {
   lang: TLangSet;
 };
 
+export type TMetadata = {
+  title: string;
+  description: string;
+  keywords: string;
+};
+
 export type THomepageJSON = {
+  metadata: TMetadata;
+  page_header: string;
   banner: {
-    header: string;
     img_alt: string;
     taglines: string[];
     profile: string;
@@ -164,6 +165,7 @@ export type TUnitJSON = {
 };
 
 export type TSolutionsJSON = {
+  metadata: TMetadata;
   page_header: string;
   header: string;
   systems: {

@@ -7,6 +7,19 @@ import { montserrat } from '@utils/fonts';
 import { Details, SubDetails } from './Details';
 import { preloadImages } from '@/utils/preloadResources';
 
+export async function generateMetadata({ params }: TPageProps) {
+  const { lang } = await params;
+  const { metadata } = (await getTranslation(
+    'solutions', lang
+  )) as TSolutionsJSON;
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    keywords: metadata.keywords,
+  };
+}
+
 const SYSTEMS_IMGS = ['vacuum.svg', 'compress.svg', 'absorb.svg'];
 
 export default async function Solutions({ params }: TPageProps) {

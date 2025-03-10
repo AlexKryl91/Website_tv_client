@@ -1,5 +1,10 @@
 {
-  "page-header": "Systems and solutions we have developed",
+  "metadata": {
+    "title": "Technovacuum LLC | Solutions",
+    "description": "Technovacuum LLC offers reliable and modern solutions in the form of its own vacuum-creating systems, jet compressors and jet-absorption units, which allow for a significant reduction in emissions, energy and resource costs.",
+    "keywords": "Oil, gasoline, vapors, gases, jet device, vacuum ejector, VHC-device, steam ejector, absorption units"
+  },
+  "page_header": "Our systems and modern solutions",
   "header": "Solutions",
   "systems": [
     {

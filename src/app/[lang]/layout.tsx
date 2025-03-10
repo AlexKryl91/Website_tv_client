@@ -6,23 +6,25 @@ import Footer from '@widgets/Footer/Footer';
 import UpButton from '@/widgets/UpButton/UpButton';
 import StoreProvider from '../StoreProvider';
 import Modal from '@/widgets/Modal/Modal';
-// import getTranslation from '@/utils/getTranslation';
-// import { usePathname } from 'next/navigation';
+import { Suspense } from 'react';
+import Loading from './loading';
 
-// TESTING DYNAMIC METADATA
-export async function generateMetadata({ params }: Readonly<TLayoutProps>) {
-  const { lang } = await params;
-  // const tMeta = (await getTranslation('metadata', lang)) as TMetadataJSON;
+// export async function generateMetadata() {
+//   // const { lang } = await params;
+//   // const { metadata } = (await getTranslation(
+//   //   'implementation', lang
+//   // )) as TImplementationJSON;
 
-  const TITLE_LIST = {
-    ru: 'ООО Техновакуум',
-    en: 'Technovacuum LLC',
-  };
-
-  return {
-    title: TITLE_LIST[lang],
-  };
-}
+//   return {
+//     // title: metadata.title,
+//     // description: metadata.description,
+//     // keywords: metadata.keywords,
+//     openGraph: {
+//       title: 'Acme',
+//       description: 'Acme is a...',
+//     },
+//   };
+// }
 
 export default async function RootLayout({
   children,
@@ -34,11 +36,13 @@ export default async function RootLayout({
     <StoreProvider lang={lang}>
       <html lang={lang}>
         <body className={roboto.className}>
-          <Navbar lang={lang} />
-          <main>{children}</main>
-          <Footer lang={lang}></Footer>
-          <UpButton />
-          <Modal />
+          <Suspense fallback={<Loading />}>
+            <Navbar lang={lang} />
+            <main>{children}</main>
+            <Footer lang={lang}></Footer>
+            <UpButton />
+            <Modal />
+          </Suspense>
         </body>
       </html>
     </StoreProvider>

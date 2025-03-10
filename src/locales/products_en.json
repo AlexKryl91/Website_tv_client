@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Technovacuum LLC | Products & Services",
+    "description": "Technovacuum LLC develops and manufactures jet devices, separators and filters. We also conduct examinations, process modeling and technical and economic analysis for optimal implementation of technologies. Reliability and quality are our priority!",
+    "keywords": "Production, jet devices, separators, tanks, special filters, examinations, consultations"
+  },
+  "page_header": "Equipment production and services provision",
+  "products": {
+    "header": "Products",
+    "main": {
+      "title": "Jet devices",
+      "img_alt": {
+        "vhc": "Photo of VHC-device",
+        "staem": "Photo of steam ejector"
+      },
+      "text": [
+        "We specialize in the development and production of jet devices of various designs and purposes - ejectors, jet pumps and compressors, injectors and mixers, - which are used in many industries: in petrochemistry, refinery, oil and gas production, metallurgy, paper industry, textile, food, thermal and nuclear energy, space and deep-sea technology and others.",
+        "The development of the devices is carried out in accordance with the Customer's Technical Requirements using modern calculation methods developed and experimentally confirmed by our specialists.",
+        "We neccessary provide the Customer with preliminary calculations of jet devices in order to determine the effectiveness of their implementation."
+      ]
+    },
+    "additional": [
+      {
+        "title": "Separators and barometric tanks",
+        "img_alt": "Photo of the ASTA-50 apparatus",
+        "text": [
+          "We develop and manufacture non-standard equipment that is part of our systems, which includes special vessels of various configurations – absorption and separation three-phase apparatus (ASTA), separators and barometric tanks.",
+          "This equipment is supplied both as a complete set, as part of the systems supplied to the Customer, and individually – for the purpose of upgrading installations or replacing according to their service life."
+        ]
+      },
+      {
+        "title": "Special filters",
+        "img_alt": "Photo of a special filter for working fluid",
+        "text": [
+          "In an effort to increase the reliability and trouble-free operation of the installations, we provide additional passive protection measures. Thus, the delivery set of our systems includes special filters for the working fluid that protect the process equipment.",
+          "Such solutions allow us to guarantee compliance with the design parameters of the developed systems and equipment."
+        ]
+      }
+    ]
+  },
+  "services": {
+    "header": "Services",
+    "text": [
+      "We provide a wide range of services - from analyzing the customer's needs and subsequent presentation of a technical proposal to delivery and implementation of our systems.",
+      "We provide technological and mechanical guarantees for all supplied systems and take responsibility for the proper work execution."
+    ],
+    "list_title": "Types of work and list of services:",
+    "list": [
+      "Survey of existing production facilities and process modeling",
+      "Technical and economic analysis",
+      "Determination of the required degree of installations reconstruction for the tasks and goals of the Customer",
+      "Development of technical specifications and initial design data (base project development)",
+      "Consultations during project development and in matters of piping the implemented equipment",
+      "Consultations on the selection of primary and auxiliary equipment, devices and control systems",
+      "Installation supervision, adjustment and commissioning",
+      "Staff training",
+      "Inspections and maintenance of equipment",
+      "Other engineering works"
+    ]
+  },
+  "advert": {
+    "text": "If you need environmentally friendly systems, want to reduce emissions, energy  and resource consumption, are planning to construct new facilities or to upgrade existing ones...",
+    "link": {
+      "label": "Contact us!",
+      "href": "/contacts",
+      "aria_label": "Link to our contact information page"
+    }
+  }
+}

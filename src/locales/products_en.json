@@ -9,10 +9,8 @@
     "header": "Products",
     "main": {
       "title": "Jet devices",
-      "img_alt": {
-        "vhc": "Photo of VHC-device",
-        "staem": "Photo of steam ejector"
-      },
+      "img_alt": ["Photo of VHC-device", "Photo of steam ejector"],
+
       "text": [
         "We specialize in the development and production of jet devices of various designs and purposes - ejectors, jet pumps and compressors, injectors and mixers, - which are used in many industries: in petrochemistry, refinery, oil and gas production, metallurgy, paper industry, textile, food, thermal and nuclear energy, space and deep-sea technology and others.",
         "The development of the devices is carried out in accordance with the Customer's Technical Requirements using modern calculation methods developed and experimentally confirmed by our specialists.",

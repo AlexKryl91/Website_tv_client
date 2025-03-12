@@ -181,3 +181,35 @@ export type TSolutionsJSON = {
     };
   };
 };
+
+export type TProductsJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  products: {
+    header: string;
+    main: {
+      title: string;
+      img_alt: string[];
+      text: string[];
+    };
+    additional: {
+      title: string;
+      img_alt: string;
+      text: string[];
+    }[];
+  };
+  services: {
+    header: string;
+    text: string[];
+    list_title: string;
+    list: string[];
+  };
+  advert: {
+    text: string;
+    link: {
+      label: string;
+      href: string;
+      aria_label: string;
+    };
+  };
+};

@@ -9,23 +9,6 @@ import Modal from '@/widgets/Modal/Modal';
 import { Suspense } from 'react';
 import Loading from './loading';
 
-// export async function generateMetadata() {
-//   // const { lang } = await params;
-//   // const { metadata } = (await getTranslation(
-//   //   'implementation', lang
-//   // )) as TImplementationJSON;
-
-//   return {
-//     // title: metadata.title,
-//     // description: metadata.description,
-//     // keywords: metadata.keywords,
-//     openGraph: {
-//       title: 'Acme',
-//       description: 'Acme is a...',
-//     },
-//   };
-// }
-
 export default async function RootLayout({
   children,
   params,

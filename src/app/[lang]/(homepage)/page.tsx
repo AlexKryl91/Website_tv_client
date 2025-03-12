@@ -9,6 +9,7 @@ import Offer from './Offer';
 import Clients from './Clients';
 import Join from './Join';
 import Feedback from './Feedback';
+import { copyright, openGraphShared } from '@/app/shared-metadata';
 
 export async function generateMetadata({ params }: TPageProps) {
   const { lang } = await params;
@@ -21,6 +22,14 @@ export async function generateMetadata({ params }: TPageProps) {
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
+    other: { copyright: copyright[lang] },
+    openGraph: {
+      title: metadata.title,
+      decsription: metadata.description,
+      locale: lang,
+      url: 'https://website-tv-client.vercel.app/',
+      ...openGraphShared[lang],
+    },
   };
 }
 

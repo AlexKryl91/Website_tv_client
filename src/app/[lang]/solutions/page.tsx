@@ -6,17 +6,27 @@ import Unit from './Unit';
 import { montserrat } from '@utils/fonts';
 import { Details, SubDetails } from './Details';
 import { preloadImages } from '@/utils/preloadResources';
+import { copyright, openGraphShared } from '@/app/shared-metadata';
 
 export async function generateMetadata({ params }: TPageProps) {
   const { lang } = await params;
   const { metadata } = (await getTranslation(
-    'solutions', lang
+    'solutions',
+    lang
   )) as TSolutionsJSON;
 
   return {
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
+    other: { copyright: copyright[lang] },
+    openGraph: {
+      title: metadata.title,
+      decsription: metadata.description,
+      locale: lang,
+      url: 'https://website-tv-client.vercel.app/solutions',
+      ...openGraphShared[lang],
+    },
   };
 }
 

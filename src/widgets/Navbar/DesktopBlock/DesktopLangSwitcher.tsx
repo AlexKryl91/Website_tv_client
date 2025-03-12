@@ -1,5 +1,3 @@
-'use client';
-
 import { TLangSet } from '@/types/types';
 import classes from './DesktopLangSwitcher.module.scss';
 import LangSwitcher from '../LangSwitcher';

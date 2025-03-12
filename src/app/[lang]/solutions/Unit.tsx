@@ -3,7 +3,7 @@ import classes from './Unit.module.scss';
 import { montserrat } from '@utils/fonts';
 import Image from 'next/image';
 import { Fragment } from 'react';
-import Subsection from '@/components/Sections/Sections';
+import SubSection from '@/components/Sections/SubSection';
 import DiagramSlider from './DiagramSlider';
 
 type TSubsection = {
@@ -17,7 +17,7 @@ const Unit = ({ content, common, lang }: TSubsection) => {
 
   return (
     <>
-      <Subsection addClass={classes.unit}>
+      <SubSection addClass={classes.unit}>
         <div className={classes['header-wrapper']}>
           <Image
             className={classes['unit__logo']}
@@ -84,7 +84,7 @@ const Unit = ({ content, common, lang }: TSubsection) => {
           <span>{common.summary[2]}</span>
           <a href="">{common.summary[3]}</a>
         </p>
-      </Subsection>
+      </SubSection>
     </>
   );
 };

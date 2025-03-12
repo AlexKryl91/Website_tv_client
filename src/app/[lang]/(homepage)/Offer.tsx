@@ -1,5 +1,5 @@
 import classes from './Offer.module.scss';
-import { SectionDark } from '@/components/Sections/Sections';
+import SectionDark from '@/components/Sections/SectionDark';
 import { THomepageJSON, TLangSet } from '@/types/types';
 import srcSetTemplate from '@/utils/srcSetTemplate';
 import { LinkButton } from '@/components/Buttons/Buttons';

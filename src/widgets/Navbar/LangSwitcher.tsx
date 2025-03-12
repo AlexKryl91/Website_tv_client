@@ -1,5 +1,3 @@
-'use client';
-
 import { TLangSet } from '@/types/types';
 import useSwitchLocale from '@/hooks/useSwitchLocale';
 

@@ -1,5 +1,3 @@
-'use client';
-
 import classes from './DesktopBlock.module.scss';
 import { TNavMenu } from '@/types/types';
 import DesktopLangSwitcher from './DesktopLangSwitcher';

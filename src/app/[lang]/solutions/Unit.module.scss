@@ -154,4 +154,10 @@
       margin-bottom: rem(26);
     }
   }
+
+  .feat-list li {
+    &::before {
+      margin-top: 0;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import classes from './Join.module.scss';
 import { THomepageJSON, TLangSet } from '@/types/types';
-import { SectionDark } from '@/components/Sections/Sections';
+import SectionDark from '@/components/Sections/SectionDark';
 import { LinkButton } from '@/components/Buttons/Buttons';
 
 type TJoin = {

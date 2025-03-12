@@ -1,0 +1,59 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.container {
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: var(--side-spacing);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: rem(20);
+
+  text-align: center;
+
+  background-image: url('/img/backgrounds/service_bg_dark.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.code {
+  color: var(--c-orange-bright);
+  font-size: rem(192);
+  font-weight: bold;
+  text-shadow: var(--sh-black-dark);
+}
+
+.msg {
+  font-size: rem(36);
+  font-weight: 500;
+}
+
+.text {
+  font-size: rem(24);
+  color: var(--c-blue-green-1);
+  line-height: var(--line-h-m);
+  text-wrap: balance;
+}
+
+@media screen and (max-width: rem($mobile-m)) {
+  .code {
+    font-size: rem(120);
+  }
+}
+@media screen and (max-width: rem($mobile-s)) {
+  .msg {
+    font-size: rem(24);
+  }
+  .text {
+    font-size: rem(16);
+  }
+}

@@ -1,5 +1,5 @@
 import classes from './Advantage.module.scss';
-import { SectionLight } from '@/components/Sections/Sections';
+import SectionLight from '@/components/Sections/SectionLight';
 import { THomepageJSON, TLangSet } from '@/types/types';
 import { Fragment } from 'react';
 import srcSetTemplate from '@/utils/srcSetTemplate';

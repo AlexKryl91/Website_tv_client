@@ -1,5 +1,5 @@
 import classes from './Banner.module.scss';
-import { SectionIntro } from '@/components/Sections/Sections';
+import SectionIntro from '@/components/Sections/SectionIntro';
 import { montserrat } from '@utils/fonts';
 import { THomepageJSON } from '@/types/types';
 

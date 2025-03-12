@@ -17,11 +17,9 @@ const NavContent = ({ lang, content, isTouch }: TNavMenu & TDeviceType) => {
   const windowWidth = useWidth();
   const pathname = usePathname();
 
-  let isMobile = false;
+  let isMobile = isTouch;
 
-  if (isTouch) {
-    isMobile = isTouch;
-  } else {
+  if (!isTouch) {
     isMobile = windowWidth ? windowWidth <= 1024 : isTouch;
   }
 

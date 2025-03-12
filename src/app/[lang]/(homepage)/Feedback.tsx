@@ -1,6 +1,6 @@
 import classes from './Feedback.module.scss';
 import { THomepageJSON, TLangSet } from '@/types/types';
-import { SectionLight } from '@/components/Sections/Sections';
+import SectionLight from '@/components/Sections/SectionLight';
 import FeedbackForm from '@/components/FeedbackForm/FeedbackForm';
 import Link from 'next/link';
 

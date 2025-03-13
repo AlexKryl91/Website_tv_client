@@ -195,7 +195,16 @@ export type TProductsJSON = {
     additional: {
       title: string;
       img_alt: string;
-      text: string[];
+      pargraph_and_link: {
+        start: string;
+        end: string;
+        link: {
+          label: string;
+          href: string;
+          aria_label: string;
+        };
+      };
+      paragraph: string;
     }[];
   };
   services: {
@@ -212,4 +221,44 @@ export type TProductsJSON = {
       aria_label: string;
     };
   };
+};
+
+export type TAboutJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  header: string;
+  general: {
+    annotation: string;
+    paragraph: string;
+    pargraph_and_link: {
+      start: string;
+      end: string;
+      link: {
+        label: string;
+        href: string;
+        aria_label: string;
+      };
+    };
+  };
+  mstu: {
+    img_alt: string;
+    pargraph_and_link: {
+      start: string;
+      end: string;
+      link: {
+        label: string;
+        href: string;
+        aria_label: string;
+      };
+    };
+    paragraph: string;
+  };
+  founder: {
+    img_alt: string;
+    title: string;
+    name: string;
+    position: string;
+    desc: string;
+  };
+  guarantee: string;
 };

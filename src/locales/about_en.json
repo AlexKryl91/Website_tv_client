@@ -1,7 +1,46 @@
 {
   "metadata": {
     "title": "Technovacuum LLC | Our Company",
-    "description": "",
-    "keywords": ""
-  }
+    "description": "Based on research and development and design experience in the creation of jet devices, Technovacuum LLC has been successfully developing and implementing environmentally friendly and resource-saving technologies for the oil, gas, petrochemical and other industries for over 30 years.",
+    "keywords": "Experience, 1992, implementations, Bauman Moscow State Technical University, patents"
+  },
+  "page_header": "About our company",
+  "header": "About us",
+  "general": {
+    "annotation": "Our history begins in 1992, when the research and development enterprise Technovacuum LLC was created.",
+
+    "paragraph": "In the same year, the company's first development was released - a vacuum-creating system based on a vacuum hydrocirculation device, which successfully passed all industrial tests. And since 1993, it has already been put into operation as part of the vacuum distillation unit at the Moscow Refinery.",
+
+    "pargraph_and_link": {
+      "start": "To date, we have ",
+      "end": " of our own design at the largest petrochemical and oil and gas refining plants in eleven countries around the world.",
+      "link": {
+        "label": "implemented more than sixty systems",
+        "href": "/implementations",
+        "aria_label": "Link to the page with our implementations"
+      }
+    }
+  },
+  "mstu": {
+    "img_alt": "Emblem Bauman Moscow State Technical University",
+    "pargraph_and_link": {
+      "start": "Our developments are based on many years of experience in research and development and design work on the creation of jet devices, accumulated by a team of employees under the leadership of Doctor of Technical Sciences Valery Grigorievich Tsegelsky, who worked within the walls of the ",
+      "end": ".",
+      "link": {
+        "label": "Bauman Moscow State Technical University",
+        "href": "https://mirror.bmstu.ru/",
+        "aria_label": "Link to the page of Bauman Moscow State Technical University"
+      }
+    },
+    "paragraph": "We have highly qualified engineering personnel, modern software and an accumulated research base, which allows us to ensure a high scientific and technical level of our developments, constantly improve equipment and modernize systems."
+  },
+  "founder": {
+    "img_alt": "photo of Tsegelsky Valery Grigorievich",
+    "title": "Founder and head",
+    "name": "Tsegelsky Valery Grigorievich",
+    "position": "CEO",
+    "desc": "Graduated with honors in 1972 from Bauman Moscow High Technical School. In 1976, he received the academic degree of candidate of technical sciences, in 1990 – doctor of technical sciences and continues his scientific activity as chief researcher at the Research Institute of Power Engineering of Bauman Moscow State Technical University. Author of over 150 scientific papers, including three monographs. Has over 100 author's certificates and patents in a number of countries (Russia, USA, China, Canada, Germany, France and others). Some of these implementations in industry in 11 countries."
+  },
+  "patent_alt": "Photo of patent",
+  "guarantee": "We, - Technovacuum LLC, - as a developer and supplier, guarantee “patent purity”, quality of manufacture and operational safety of all our products!"
 }

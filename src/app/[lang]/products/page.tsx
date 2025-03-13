@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: TPageProps) {
       title: metadata.title,
       decsription: metadata.description,
       locale: lang,
-      url: 'https://website-tv-client.vercel.app/solutions',
+      url: 'https://website-tv-client.vercel.app/products',
       ...openGraphShared[lang],
     },
   };
@@ -106,11 +106,19 @@ export default async function Products({ params }: TPageProps) {
               <div className={classes['text-wrapper']}>
                 <h3 className={classes.subheader}>{equip.title}</h3>
                 <p className={classes.paragraph}>
-                  {equip.text.map((part) => (
-                    <span key={part} className={classes.part}>
-                      {part}
-                    </span>
-                  ))}
+                  <span className={classes.part}>
+                    {equip.pargraph_and_link.start}
+                    <Link
+                      className={classes.link}
+                      href={`/${lang}${equip.pargraph_and_link.link.href}`}
+                      aria-label={equip.pargraph_and_link.link.aria_label}
+                    >
+                      {equip.pargraph_and_link.link.label}
+                    </Link>
+                    {equip.pargraph_and_link.end}
+                  </span>
+
+                  <span className={classes.part}>{equip.paragraph}</span>
                 </p>
               </div>
             </li>

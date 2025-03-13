@@ -69,6 +69,10 @@
     }
   }
 
+  .top {
+    padding-block: calc(var(--navbar-h) + rem(40)) rem(100);
+  }
+
   .middle {
     padding-block: rem(64) rem(100);
   }

@@ -1,0 +1,34 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.modal-patent > img {
+  width: auto;
+  height: 90dvh;
+  max-width: rem(630);
+  border-radius: var(--br-lg);
+}
+
+@media screen and (max-width: rem(620)) {
+  .modal-patent > img {
+    width: 90dvw;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .modal-patent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(10);
+
+    & > img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+    }
+  }
+}

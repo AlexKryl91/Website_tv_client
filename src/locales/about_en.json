@@ -41,6 +41,23 @@
     "position": "CEO",
     "desc": "Graduated with honors in 1972 from Bauman Moscow High Technical School. In 1976, he received the academic degree of candidate of technical sciences, in 1990 – doctor of technical sciences and continues his scientific activity as chief researcher at the Research Institute of Power Engineering of Bauman Moscow State Technical University. Author of over 150 scientific papers, including three monographs. Has over 100 author's certificates and patents in a number of countries (Russia, USA, China, Canada, Germany, France and others). Some of these implementations in industry in 11 countries."
   },
-  "patent_alt": "Photo of patent",
+  "patents": [
+    {
+      "img": "cert1",
+      "img_alt": "Photo of Russian patent"
+    },
+    {
+      "img": "cert2",
+      "img_alt": "US patent photo"
+    },
+    {
+      "img": "cert3",
+      "img_alt": "Canada patent photo"
+    },
+    {
+      "img": "cert4",
+      "img_alt": "Greek patent photo"
+    }
+  ],
   "guarantee": "We, - Technovacuum LLC, - as a developer and supplier, guarantee “patent purity”, quality of manufacture and operational safety of all our products!"
 }

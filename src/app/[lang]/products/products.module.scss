@@ -262,19 +262,7 @@
   }
 
   .main-subheader,
-  .subheader,
-  .paragraph {
-    font-size: rem(14);
-    line-height: var(--line-h-m);
-  }
-
-  .main-subheader,
   .subheader {
     margin-bottom: rem(10);
-  }
-
-  .services-list li {
-    line-height: var(--line-h-m);
-    font-size: rem(14);
   }
 }

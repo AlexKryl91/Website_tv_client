@@ -260,5 +260,9 @@ export type TAboutJSON = {
     position: string;
     desc: string;
   };
+  patents: {
+    img: string;
+    img_alt: string;
+  }[];
   guarantee: string;
 };

@@ -7,6 +7,7 @@ import SectionDark from '@/components/Sections/SectionDark';
 import SubSection from '@/components/Sections/SubSection';
 import srcSetTemplate from '@/utils/srcSetTemplate';
 import Link from 'next/link';
+import PatentCard from './PatentCard';
 
 export async function generateMetadata({ params }: TPageProps) {
   const { lang } = await params;
@@ -26,8 +27,6 @@ export async function generateMetadata({ params }: TPageProps) {
     },
   };
 }
-
-const CERTIFICATE_LIST = ['cert1', 'cert2', 'cert3', 'cert4'];
 
 export default async function About({ params }: TPageProps) {
   const { lang } = await params;
@@ -76,34 +75,32 @@ export default async function About({ params }: TPageProps) {
         </div>
       </SectionDark>
 
-      <SubSection>
-        <div className={classes.mstu}>
-          <picture className={classes['mstu__logo']}>
-            <source srcSet={srcSetTemplate('mstu', 'avif')} type="image/avif" />
-            <img
-              src={`/img/mstu.png`}
-              srcSet={srcSetTemplate('mstu', 'png')}
-              width="186"
-              height="220"
-              alt={t.mstu.img_alt}
-            />
-          </picture>
-          <p className={classes['mstu__text']}>
-            <span className={classes.part}>
-              {t.mstu.pargraph_and_link.start}
-              <a
-                className={classes['mstu__link']}
-                href={t.mstu.pargraph_and_link.link.href}
-                aria-label={t.mstu.pargraph_and_link.link.label}
-                target="_blank"
-              >
-                {t.mstu.pargraph_and_link.link.label}
-              </a>
-              {t.mstu.pargraph_and_link.end}
-            </span>
-            <span className={classes.part}>{t.mstu.paragraph}</span>
-          </p>
-        </div>
+      <SubSection addClass={classes.mstu}>
+        <picture className={classes['mstu__logo']}>
+          <source srcSet={srcSetTemplate('mstu', 'avif')} type="image/avif" />
+          <img
+            src={`/img/mstu.png`}
+            srcSet={srcSetTemplate('mstu', 'png')}
+            width="186"
+            height="220"
+            alt={t.mstu.img_alt}
+          />
+        </picture>
+        <p className={classes['mstu__text']}>
+          <span className={classes.part}>
+            {t.mstu.pargraph_and_link.start}
+            <a
+              className={classes['mstu__link']}
+              href={t.mstu.pargraph_and_link.link.href}
+              aria-label={t.mstu.pargraph_and_link.link.label}
+              target="_blank"
+            >
+              {t.mstu.pargraph_and_link.link.label}
+            </a>
+            {t.mstu.pargraph_and_link.end}
+          </span>
+          <span className={classes.part}>{t.mstu.paragraph}</span>
+        </p>
       </SubSection>
 
       <SectionDark addClass={classes.founder}>
@@ -132,17 +129,10 @@ export default async function About({ params }: TPageProps) {
             </div>
           </div>
         </div>
-        <div className={classes['certif-wrapper']}>
-          {CERTIFICATE_LIST.map((img) => (
-            <picture key={img} className={classes.certif}>
-              <source srcSet={srcSetTemplate(img, 'avif')} type="image/avif" />
-              <img
-                src={`/img/${img}.jpg`}
-                srcSet={srcSetTemplate(img, 'jpeg')}
-                width="210"
-                alt=""
-              />
-            </picture>
+
+        <div className={classes['patent-wrapper']}>
+          {t.patents.map((patent) => (
+            <PatentCard key={patent.img} patent={patent} />
           ))}
         </div>
       </SectionDark>

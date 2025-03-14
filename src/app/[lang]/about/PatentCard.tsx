@@ -1,15 +1,11 @@
 'use client';
 
-import { TAboutJSON } from '@/types/types';
+import { TPatentCard } from '@/types/types';
 import classes from './PatentCard.module.scss';
 import srcSetTemplate from '@/utils/srcSetTemplate';
 
 import { useAppDispatch } from '@/store/hooks';
 import { openModal } from '@/store/features/modal/modalSlice';
-
-type TPatentCard = {
-  patent: TAboutJSON['patents'][number];
-};
 
 const PatentCard = ({ patent }: TPatentCard) => {
   const dispatch = useAppDispatch();
@@ -18,7 +14,7 @@ const PatentCard = ({ patent }: TPatentCard) => {
     dispatch(
       openModal({
         componentName: 'ModalPatentCard',
-        componentProps: { patent: patent },
+        componentProps: { patent },
       })
     );
   }

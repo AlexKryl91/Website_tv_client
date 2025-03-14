@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from '@store/hooks';
 import { closeModal } from '@/store/features/modal/modalSlice';
 import { useEffect, useRef } from 'react';
 import components from './ComponentsList';
+import { TModalCompProps } from '@/types/types';
 
 const CLOSE_BTN_TITLES = {
   ru: 'Закрыть',
@@ -51,7 +52,7 @@ const Modal = () => {
   if (!isVisible) return null;
 
   const Component = components[componentName as keyof typeof components];
-  const props = componentProps as Parameters<typeof Component>[0];
+  const props = componentProps as TModalCompProps;
 
   return (
     <div ref={ref} onClick={exitModal} className={classes.modal}>

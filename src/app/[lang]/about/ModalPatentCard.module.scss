@@ -4,8 +4,8 @@
 
 .modal-patent > img {
   width: auto;
-  height: 90dvh;
   max-width: rem(630);
+  max-height: 90dvh;
   border-radius: var(--br-lg);
 }
 
@@ -13,6 +13,7 @@
   .modal-patent > img {
     width: 90dvw;
     height: auto;
+    max-height: 100dvh;
   }
 }
 

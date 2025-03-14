@@ -1,3 +1,5 @@
+// Language types
+
 export type TLangSet = 'ru' | 'en';
 
 export type TLangSwitchBtn = {
@@ -6,6 +8,8 @@ export type TLangSwitchBtn = {
   label: string;
   onClick: () => void;
 };
+
+// Common types
 
 export type TLayoutProps = {
   children: React.ReactNode;
@@ -20,6 +24,8 @@ export type TComponentProps = {
   children?: React.ReactNode;
   lang: TLangSet;
 };
+
+// JSON Pages Content types
 
 type TLink = { label: string; href: string; aria_label: string };
 
@@ -132,14 +138,6 @@ export type THomepageJSON = {
     call_text: string;
     call_link: TLink;
   };
-};
-
-export type TDiagramSlide = {
-  filename: string;
-  img_alt: string;
-  caption: string;
-  list_1: string[];
-  list_2: string[];
 };
 
 export type TUnitJSON = {
@@ -266,3 +264,25 @@ export type TAboutJSON = {
   }[];
   guarantee: string;
 };
+
+// Components types
+
+export type TDiagramSlide = {
+  filename: string;
+  img_alt: string;
+  caption: string;
+  list_1: string[];
+  list_2: string[];
+};
+
+// Modal components types
+
+export type TPatentCard = {
+  patent: TAboutJSON['patents'][number];
+};
+
+export type TSlideItem = {
+  slide: TDiagramSlide;
+};
+
+export type TModalCompProps = TPatentCard & TSlideItem;

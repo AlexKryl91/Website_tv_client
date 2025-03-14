@@ -1,8 +1,8 @@
 import classes from './SlideItem.module.scss';
-import { TDiagramSlide } from '@/types/types';
+import { TSlideItem } from '@/types/types';
 import Image from 'next/image';
 
-export const ModalSlideItem = ({ slide }: { slide: TDiagramSlide }) => {
+export const ModalSlideItem = ({ slide }: TSlideItem) => {
   return (
     <div className={classes['modal-slide']}>
       <h5 className={classes['modal-slide__header']}>{slide.caption}</h5>

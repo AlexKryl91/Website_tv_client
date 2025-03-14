@@ -1,11 +1,7 @@
 'use client';
 
 import classes from './ModalPatentCard.module.scss';
-import { TAboutJSON } from '@/types/types';
-
-type TPatentCard = {
-  patent: TAboutJSON['patents'][number];
-};
+import { TPatentCard } from '@/types/types';
 
 const ModalPatent = ({ patent }: TPatentCard) => {
   return (

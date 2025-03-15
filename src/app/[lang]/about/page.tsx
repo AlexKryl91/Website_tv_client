@@ -14,6 +14,14 @@ export async function generateMetadata({ params }: TPageProps) {
   const { metadata } = (await getTranslation('about', lang)) as TAboutJSON;
 
   return {
+    metadataBase: new URL('https://website-tv-client.vercel.app/'),
+    alternates: {
+      canonical: '/about',
+      languages: {
+        'ru-RU': '/ru',
+        'en-US': '/en',
+      },
+    },
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
@@ -22,7 +30,6 @@ export async function generateMetadata({ params }: TPageProps) {
       title: metadata.title,
       decsription: metadata.description,
       locale: lang,
-      url: 'https://website-tv-client.vercel.app/about',
       ...openGraphShared[lang],
     },
   };

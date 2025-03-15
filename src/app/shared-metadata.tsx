@@ -1,5 +1,5 @@
 const ogImgOpt = {
-  url: 'https://website-tv-client.vercel.app/img/og_1200x630.jpeg',
+  url: '/img/og_1200x630.jpeg',
   width: 1200,
   height: 630,
   type: 'image/jpeg',

@@ -265,6 +265,50 @@ export type TAboutJSON = {
   guarantee: string;
 };
 
+export type TImplementationsJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  implementations: {
+    header: string;
+    vhc: {
+      logo: string;
+      logo_alt: string;
+      title: string;
+      intro: string;
+      desc: string[];
+      img_alt: string;
+    };
+    jc: {
+      logo: string;
+      logo_alt: string;
+      title: string;
+      intro: string;
+      desc: string[];
+      params_list: string[];
+      img_alt: string;
+    };
+    jau: {
+      logo: string;
+      logo_alt: string;
+      title: string;
+      intro: string;
+      text: string[];
+      img_alt: string[];
+    };
+  };
+  geography: {
+    header: string;
+  };
+  advert: {
+    text: string;
+    link: {
+      label: string;
+      href: string;
+      aria_label: string;
+    };
+  };
+};
+
 // Components types
 
 export type TDiagramSlide = {

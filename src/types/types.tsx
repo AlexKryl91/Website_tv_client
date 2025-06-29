@@ -309,6 +309,19 @@ export type TImplementationsJSON = {
   };
 };
 
+export type TPublicationsJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  header: string;
+  intro: string[];
+  public_list: {
+    filter: {
+      search: string;
+      sort: string;
+    };
+  };
+};
+
 // Components types
 
 export type TDiagramSlide = {

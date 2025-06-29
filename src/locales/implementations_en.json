@@ -1,7 +1,61 @@
 {
   "metadata": {
     "title": "Technovacuum LLC | Implementations",
-    "description": "",
-    "keywords": ""
+    "description": "For more than 30 years of its existence, Technovaсuum LLC has successfully implemented more than 60 systems and units at enterprises in the oil, gas, petrochemical and other industries",
+    "keywords": "60 implementations, VCS, VHC, jet compressor, jet-absorption unit, geography"
+  },
+  "page_header": "History and geography of implementations of our systems",
+  "implementations": {
+    "header": "Implementations",
+    "vhc": {
+      "logo": "vhc_orange",
+      "logo_alt": "Logo of systems based on VHC",
+      "title": "First implementation of VHC based system",
+      "text": [
+        "In 1993, for the first time in world practice, a vacuum-creating system (VCS) based on a VHC device was put into operation for the VC-1 rectification column of the AVT-3 unit of the Moscow Refinery.",
+        "To date, more than 50 VCS based on VHC devices have been implemented in vacuum columns of oil refining, chemical and petrochemical plants in Russia and other countries.",
+        "The implementation of these systems has allowed to significantly reduce energy consumption, reduce the costs of cleaning polluted wastewater and increase the product yield. Based on the experience of operating such systems, the increase reaches 1.5%. The payback period for the reconstruction of the VCS is from 4 to 18 months, depending on the prices of energy resources and oil products."
+      ],
+      "img_alt": "VC-1 vacuum column of the AVT-3 unit of the Moscow Refinery"
+    },
+    "jc": {
+      "logo": "jc_orange",
+      "logo_alt": "Logo of jet compressors",
+      "title": "First implementation of jet compressors",
+      "text": [
+        "The first jet compressor (JC) was developed for the flare gas utilization unit of the Turkmenbashi Oil Refinery and was put into operation in 2000. The unit demonstrated its design parameters and is currently in operation.",
+        "The maximum capacity of the unit is 6000 nm3/h of flare gas compressed to a pressure of 0.5 MPa. Light coke gas oil, a feedstock for catalytic cracking, is used as the working fluid for the JC. The hydrocarbon fractions C3+ absorbed from the flare gas are removed from the JC unit together with the balance excess of the working fluid and are fed to the catalytic cracking unit, where they are separated.",
+        "Main technical characteristics of the JC at the Turkmenbashi Oil Refinery:"
+      ],
+      "params_list": [
+        "gas pressure in the flare manifold (at the inlet of the JC) – 0.10-0.15 MPa (abs.)",
+        "gas pressure in the fuel line (at the outlet of the JC) – 0.5 MPa",
+        "gas consumption – from 1000 to 6000 nm3/h (several JCs in operation)"
+      ],
+      "img_alt": "Flare gas utilization unit at the Turkmenbashi Oil Refinery"
+    },
+    "jau": {
+      "logo": "jau_orange",
+      "logo_alt": "Logo of jet absorption units",
+      "title": "First implementation of jet absorption unit",
+      "text": [
+        "In autumn 2015, a jet absorption unit (JAU) was put into operation at one of the Russian oil loading racks for railway tanks. Since the Customer did not put forward requirements for an increased degree of purification of breathing gases (off-gases), the JAU consists of two compression stages. In this conditions the degree of purification for hydrocarbons is 85-90%."
+      ],
+      "img_alt": [
+        "Loading oil into railway tanks",
+        "Jet absorption unit for oil loading rack"
+      ]
+    }
+  },
+  "geography": {
+    "header": "Our geography"
+  },
+  "advert": {
+    "text": "If you need environmentally friendly systems, want to reduce emissions, energy  and resource consumption, are planning to construct new facilities or to upgrade existing ones...",
+    "link": {
+      "label": "Contact us!",
+      "href": "/contacts",
+      "aria_label": "Link to our contact information page"
+    }
   }
 }

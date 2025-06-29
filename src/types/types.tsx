@@ -1,3 +1,5 @@
+// Language types
+
 export type TLangSet = 'ru' | 'en';
 
 export type TLangSwitchBtn = {
@@ -6,6 +8,8 @@ export type TLangSwitchBtn = {
   label: string;
   onClick: () => void;
 };
+
+// Common types
 
 export type TLayoutProps = {
   children: React.ReactNode;
@@ -20,6 +24,8 @@ export type TComponentProps = {
   children?: React.ReactNode;
   lang: TLangSet;
 };
+
+// JSON Pages Content types
 
 type TLink = { label: string; href: string; aria_label: string };
 
@@ -134,14 +140,6 @@ export type THomepageJSON = {
   };
 };
 
-export type TDiagramSlide = {
-  filename: string;
-  img_alt: string;
-  caption: string;
-  list_1: string[];
-  list_2: string[];
-};
-
 export type TUnitJSON = {
   img: string;
   img_alt: string;
@@ -181,3 +179,167 @@ export type TSolutionsJSON = {
     };
   };
 };
+
+export type TProductsJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  products: {
+    header: string;
+    main: {
+      title: string;
+      img_alt: string[];
+      text: string[];
+    };
+    additional: {
+      title: string;
+      img_alt: string;
+      pargraph_and_link: {
+        start: string;
+        end: string;
+        link: {
+          label: string;
+          href: string;
+          aria_label: string;
+        };
+      };
+      paragraph: string;
+    }[];
+  };
+  services: {
+    header: string;
+    text: string[];
+    list_title: string;
+    list: string[];
+  };
+  advert: {
+    text: string;
+    link: {
+      label: string;
+      href: string;
+      aria_label: string;
+    };
+  };
+};
+
+export type TAboutJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  header: string;
+  general: {
+    annotation: string;
+    paragraph: string;
+    pargraph_and_link: {
+      start: string;
+      end: string;
+      link: {
+        label: string;
+        href: string;
+        aria_label: string;
+      };
+    };
+  };
+  mstu: {
+    img_alt: string;
+    pargraph_and_link: {
+      start: string;
+      end: string;
+      link: {
+        label: string;
+        href: string;
+        aria_label: string;
+      };
+    };
+    paragraph: string;
+  };
+  founder: {
+    img_alt: string;
+    title: string;
+    name: string;
+    position: string;
+    desc: string;
+  };
+  patents: {
+    img: string;
+    img_alt: string;
+  }[];
+  guarantee: string;
+};
+
+export type TImplementationsJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  implementations: {
+    header: string;
+    vhc: {
+      logo: string;
+      logo_alt: string;
+      title: string;
+      intro: string;
+      desc: string[];
+      img_alt: string;
+    };
+    jc: {
+      logo: string;
+      logo_alt: string;
+      title: string;
+      intro: string;
+      desc: string[];
+      params_list: string[];
+      img_alt: string;
+    };
+    jau: {
+      logo: string;
+      logo_alt: string;
+      title: string;
+      intro: string;
+      text: string[];
+      img_alt: string[];
+    };
+  };
+  geography: {
+    header: string;
+  };
+  advert: {
+    text: string;
+    link: {
+      label: string;
+      href: string;
+      aria_label: string;
+    };
+  };
+};
+
+export type TPublicationsJSON = {
+  metadata: TMetadata;
+  page_header: string;
+  header: string;
+  intro: string[];
+  public_list: {
+    filter: {
+      search: string;
+      sort: string;
+    };
+  };
+};
+
+// Components types
+
+export type TDiagramSlide = {
+  filename: string;
+  img_alt: string;
+  caption: string;
+  list_1: string[];
+  list_2: string[];
+};
+
+// Modal components types
+
+export type TPatentCard = {
+  patent: TAboutJSON['patents'][number];
+};
+
+export type TSlideItem = {
+  slide: TDiagramSlide;
+};
+
+export type TModalCompProps = TPatentCard & TSlideItem;

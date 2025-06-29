@@ -1,0 +1,42 @@
+@use '@styles/helpers/mixins' as *;
+@use '@styles/helpers/functions' as *;
+@use '@styles/helpers/media' as *;
+
+.public {
+  @include bg-image-set('/img/backgrounds/publications_bg');
+}
+
+.dark-wrapper {
+  background: var(--c-black-tr40);
+  padding: rem(40) var(--side-spacing) rem(64);
+}
+
+@media screen and (min-width: rem($desktop-xl)) {
+  section:has(.public) {
+    @include section-bg-gradient(var(--c-greyish-blue-2), #272d37);
+  }
+}
+
+@media screen and (min-width: rem($laptop)) {
+  section:has(.public) {
+    background-color: var(--c-greyish-blue-2);
+  }
+}
+
+@media screen and (max-width: rem($tablet)) {
+}
+
+@media screen and (max-width: rem($mobile-l)) {
+}
+
+@media screen and (max-width: rem($mobile-m)) {
+  .dark-wrapper {
+    padding-bottom: rem(48);
+  }
+}
+
+@media screen and (max-width: rem($mobile-s)) {
+  .dark-wrapper {
+    padding-block: rem(32);
+  }
+}

@@ -53,6 +53,8 @@
   max-height: 90dvh;
   gap: rem(20) rem(32);
 
+  overflow-y: auto;
+
   &__diagram {
     grid-column: span 2;
     background: var(--c-whitish-blue);
@@ -124,21 +126,9 @@
   }
 
   .modal-slide {
-    &__equip-list {
-      margin-inline: auto;
-    }
-
     &__equip-list,
     &__flow-list {
       font-size: rem(16);
-    }
-  }
-}
-
-@media screen and (max-width: rem(850)) {
-  .modal-slide {
-    &__equip-list {
-      margin-inline: auto;
     }
   }
 }
@@ -171,10 +161,6 @@
 
   .modal-slide {
     padding: rem(20);
-
-    &__equip-list {
-      margin-inline: rem(20) 0;
-    }
 
     &__flow-list {
       margin-inline: 0 rem(20);
@@ -214,8 +200,9 @@
     &__flow-list {
       font-size: rem(14);
     }
+
     &__equip-list {
-      margin-inline: 0;
+      margin-inline: auto;
     }
 
     &__flow-list {
@@ -239,19 +226,6 @@
   }
 
   .modal-slide {
-    &__diagram {
-      padding: rem(10);
-    }
-
-    &__equip-list,
-    &__flow-list {
-      font-size: rem(12);
-    }
-  }
-}
-
-@media screen and (max-width: rem(380)) {
-  .modal-slide {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, min-content);
     padding: rem(16) rem(12) rem(12);
@@ -263,9 +237,13 @@
       grid-column: span 1;
     }
 
+    &__diagram {
+      padding: rem(10);
+    }
+
     &__equip-list,
     &__flow-list {
-      margin-inline: rem(50) 0;
+      margin-inline: auto;
     }
   }
 }

@@ -9,10 +9,8 @@
     "header": "Products",
     "main": {
       "title": "Jet devices",
-      "img_alt": {
-        "vhc": "Photo of VHC-device",
-        "staem": "Photo of steam ejector"
-      },
+      "img_alt": ["Photo of VHC-device", "Photo of steam ejector"],
+
       "text": [
         "We specialize in the development and production of jet devices of various designs and purposes - ejectors, jet pumps and compressors, injectors and mixers, - which are used in many industries: in petrochemistry, refinery, oil and gas production, metallurgy, paper industry, textile, food, thermal and nuclear energy, space and deep-sea technology and others.",
         "The development of the devices is carried out in accordance with the Customer's Technical Requirements using modern calculation methods developed and experimentally confirmed by our specialists.",
@@ -23,18 +21,30 @@
       {
         "title": "Separators and barometric tanks",
         "img_alt": "Photo of the ASTA-50 apparatus",
-        "text": [
-          "We develop and manufacture non-standard equipment that is part of our systems, which includes special vessels of various configurations – absorption and separation three-phase apparatus (ASTA), separators and barometric tanks.",
-          "This equipment is supplied both as a complete set, as part of the systems supplied to the Customer, and individually – for the purpose of upgrading installations or replacing according to their service life."
-        ]
+        "pargraph_and_link": {
+          "start": "We develop and manufacture non-standard equipment that is part of ",
+          "end": ", which includes special vessels of various configurations – absorption and separation three-phase apparatus (ASTA), separators and barometric tanks.",
+          "link": {
+            "label": "our systems",
+            "href": "/solutions",
+            "aria_label": "Link to our solutions page"
+          }
+        },
+        "paragraph": "This equipment is supplied both as a complete set, as part of the systems supplied to the Customer, and individually – for the purpose of upgrading installations or replacing according to their service life."
       },
       {
         "title": "Special filters",
-        "img_alt": "Photo of a special filter for working fluid",
-        "text": [
-          "In an effort to increase the reliability and trouble-free operation of the installations, we provide additional passive protection measures. Thus, the delivery set of our systems includes special filters for the working fluid that protect the process equipment.",
-          "Such solutions allow us to guarantee compliance with the design parameters of the developed systems and equipment."
-        ]
+        "img_alt": "Фото специального фильтра рабочей жидкости",
+        "pargraph_and_link": {
+          "start": "In an effort to increase the reliability and trouble-free operation of the installations, we provide additional passive protection measures. Thus, the delivery set of ",
+          "end": " includes special filters for the working fluid that protect the process equipment.",
+          "link": {
+            "label": "our systems",
+            "href": "/solutions",
+            "aria_label": "Link to our solutions page"
+          }
+        },
+        "paragraph": "Such solutions allow us to guarantee compliance with the design parameters of the developed systems and equipment."
       }
     ]
   },

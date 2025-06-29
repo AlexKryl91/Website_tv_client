@@ -222,7 +222,8 @@
 
 @media screen and (max-width: rem(672)) {
   .solutions {
-    padding-bottom: rem(60);
+    padding-block: calc(var(--navbar-h) + rem(40)) rem(60);
+
     &__header {
       font-size: rem(26);
       line-height: rem(32);
